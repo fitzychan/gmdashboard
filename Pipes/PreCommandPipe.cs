@@ -1,0 +1,69 @@
+﻿using CommonBlocks;
+using CommonCode.FileUtility;
+using DmAssistant.RollMeOne;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System;
+using System.Linq;
+using System.IO;
+
+namespace Pipes.PreParsedFileProject
+{
+    public interface IPreCommandPipe
+    {
+        ObservableCollection<string> LoadTablesCommand();
+        ICollection<IMainBlock> RollOneCommand(ICollection<string> selectedItems);
+        void OpenFileLocation(ICollection<string> selectedChart);
+        void OpenFile(ICollection<string> selectedChart);
+    }
+
+    public class PreCommandPipe : IPreCommandPipe
+    {
+        IRollMeOne RollMeHandle;
+
+        public PreCommandPipe()
+        {
+            RollMeHandle = new RollMeOne();
+        }
+
+        public ObservableCollection<string> LoadTablesCommand()
+        {
+            var mainFileList = new ObservableCollection<string>();
+
+            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf"}))
+            {
+                mainFileList.Add(chart.Name);
+            }
+            return mainFileList;
+        }
+
+        public ICollection<IMainBlock> RollOneCommand(ICollection<string> selectedItems)
+        {
+            if (selectedItems != null && selectedItems.Count > 0)
+            {
+                 return RollMeHandle.RollOnTables(selectedItems);
+            }
+            return new List<IMainBlock>();
+        }
+        public void AddTablesToRepo()
+        {
+            FileUtility.AddToFileRepo();
+        }
+
+        public void DeleteTableCommand(ObservableCollection<string> selectedCharts)
+        {
+            var foundFiles = FileUtility.LocateSpecificCharts(selectedCharts).ToList();
+            foundFiles.ForEach(x => File.Delete(x.FullName));
+        }
+        public void OpenFileLocation(ICollection<string> selectedChart)
+        {
+            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            FileUtility.OpenFileLocation(foundFile);
+        }
+        public void OpenFile(ICollection<string> selectedChart)
+        {
+            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            FileUtility.OpenFile(foundFile);
+        }
+    }
+}

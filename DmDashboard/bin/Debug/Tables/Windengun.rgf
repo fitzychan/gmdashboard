@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta>
+      <culture>en-US</culture>
+      <editor>ReoGrid Core</editor>
+      <core-ver>2.0.1.0</core-ver>
+    </meta>
+    <rows>1000</rows>
+    <cols>1000</cols>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <settings meta="30475026396" />
+    <script />
+  </head>
+  <style font="Calibri" font-size="10.25" align="general" valign="middle" />
+  <rows />
+  <cols>
+    <col col="0" width="442" last-width="442" />
+  </cols>
+  <v-borders />
+  <h-borders />
+  <cells>
+    <cell row="0" col="0">d6 This place is a ...</cell>
+    <cell row="1" col="0">1. Palace built by an air elemental lord. ...</cell>
+    <cell row="2" col="0">2. Series of caves in a floating earth mote. ...</cell>
+    <cell row="3" col="0">3. Series of deep tunnels with constant, howling wind. ...</cell>
+    <cell row="4" col="0">4. Stronghold built by beings of elemental air. ...</cell>
+    <cell row="5" col="0">5. Temple dedicated to a wind god. ...</cell>
+    <cell row="6" col="0">6. Maze of semi-solid clouds. ...</cell>
+    <cell row="7" col="0">d6 Ambient sounds: You hear a/an ...</cell>
+    <cell row="8" col="0">1. Constant howl of wind. ...</cell>
+    <cell row="9" col="0">2. Constant rush of air. ...</cell>
+    <cell row="10" col="0">3. Constant monotone whistling. ...</cell>
+    <cell row="11" col="0">4. Eerie, shifting succession of musical chords. ...</cell>
+    <cell row="12" col="0">5. Intermittent clap of thunder. ...</cell>
+    <cell row="13" col="0">6. Flute playing somewhere. ...</cell>
+    <cell row="14" col="0">d6 Major feature: You see a/an ...</cell>
+    <cell row="15" col="0">1. Intersection with swiftly shifting winds. ...</cell>
+    <cell row="16" col="0">2. Large cloud sculpture. ...</cell>
+    <cell row="17" col="0">3. Shimmering, eerie fog. ...</cell>
+    <cell row="18" col="0">4. Barrel of feathered arrows. ...</cell>
+    <cell row="19" col="0">5. Altar to a wind god. ...</cell>
+    <cell row="20" col="0">6. Tremendous beanstalk or staircase descending far below where you stand. ...</cell>
+    <cell row="21" col="0">d6 Minor feature: You notice a/an ...</cell>
+    <cell row="22" col="0">1. Small cloud shaped like an animal. ...</cell>
+    <cell row="23" col="0">2. Floating lamp. ...</cell>
+    <cell row="24" col="0">3. Icon of a wind god. ...</cell>
+    <cell row="25" col="0">4. Rush of cool air. ...</cell>
+    <cell row="26" col="0">5. Sudden shrill whistle in the distance. ...</cell>
+    <cell row="27" col="0">6. Swirl of dust. ...</cell>
+    <cell row="28" col="0">d6 NPC: You meet a/an ...</cell>
+    <cell row="29" col="0">1. Ghost of an unfortunate explorer. ...</cell>
+    <cell row="30" col="0">2. Half-mad elemental cultist. ...</cell>
+    <cell row="31" col="0">3. Nervous beastshifter (roll on beast table). ...</cell>
+    <cell row="32" col="0">4. Contemplative monk. ...</cell>
+    <cell row="33" col="0">5. Interplanar traveler. ...</cell>
+    <cell row="34" col="0">6. Inventor with a flying contraption. ...</cell>
+    <cell row="35" col="0">d6 Beast: You meet a/an ...</cell>
+    <cell row="36" col="0">1. Raven. ...</cell>
+    <cell row="37" col="0">2. Bat. ...</cell>
+    <cell row="38" col="0">3. Hawk. ...</cell>
+    <cell row="39" col="0">4. Giant bee. ...</cell>
+    <cell row="40" col="0">5. Pterodactyl. ...</cell>
+    <cell row="41" col="0">6. Swarm of moths. ...</cell>
+    <cell row="42" col="0">d6 Secondary Monster: You come upon a/an ...</cell>
+    <cell row="43" col="0">1. Air elemental. ...</cell>
+    <cell row="44" col="0">2. Arrowhawk. ...</cell>
+    <cell row="45" col="0">3. Invisible stalker. ...</cell>
+    <cell row="46" col="0">4. Wyvern. ...</cell>
+    <cell row="47" col="0">5. Spectre. ...</cell>
+    <cell row="48" col="0">6. Roc. ...</cell>
+    <cell row="49" col="0">d6 Primary monster: This place is currently ruled by a/an ...</cell>
+    <cell row="50" col="0">1. Djinn prince. ...</cell>
+    <cell row="51" col="0">2. Cloud giant. ...</cell>
+    <cell row="52" col="0">3. Giant eagle. ...</cell>
+    <cell row="53" col="0">4. Evil entropomancer. ...</cell>
+    <cell row="54" col="0">5. Beholder. ...</cell>
+    <cell row="55" col="0">6. Wraith. ...</cell>
+    <cell row="56" col="0">d6 Traps/hazard: You must survive the ...</cell>
+    <cell row="57" col="0">1. Trap door to a tremendous fall. ...</cell>
+    <cell row="58" col="0">2. Poisoned dart trap. ...</cell>
+    <cell row="59" col="0">3. Magic crossbow turret trap. ...</cell>
+    <cell row="60" col="0">4. Runes that explode in bursts of lightning. ...</cell>
+    <cell row="61" col="0">5. Sealing chamber that turns into a vacuum. ...</cell>
+    <cell row="62" col="0">6. Curse of listlessness. ...</cell>
+    <cell row="63" col="0">d6 Reward/treasure: If you survive, you may find a/an ...</cell>
+    <cell row="64" col="0">1. Infamous giant’s treasure hoard. ...</cell>
+    <cell row="65" col="0">2. Wreck of a legendary airship. ...</cell>
+    <cell row="66" col="0">3. Rod of elemental power. ...</cell>
+    <cell row="67" col="0">4. Bow that belonged to an ancient hero. ...</cell>
+    <cell row="68" col="0">5. Powerful wizard’s lost spellbook. ...</cell>
+    <cell row="69" col="0">6. Imprisoned dragon. ...</cell>
+  </cells>
+  <LinkedItems />
+</grid>

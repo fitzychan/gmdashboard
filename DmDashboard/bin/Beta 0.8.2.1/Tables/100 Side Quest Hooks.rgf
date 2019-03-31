@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta>
+      <culture>en-US</culture>
+      <editor>ReoGrid Core</editor>
+      <core-ver>2.0.1.0</core-ver>
+    </meta>
+    <rows>1000</rows>
+    <cols>1000</cols>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <settings meta="30475026396" />
+    <script />
+  </head>
+  <style font="Calibri" font-size="10.25" align="general" valign="middle" />
+  <rows />
+  <cols>
+    <col col="0" width="4390" last-width="70" />
+    <col col="1" width="70" last-width="4359" />
+  </cols>
+  <v-borders />
+  <h-borders />
+  <cells>
+    <cell row="0" col="0">d100RollTitle ...</cell>
+    <cell row="1" col="0">1.A farmer approaches the party and needs help. One of his chickens turns a strange neon green when placed in moonlight, and he needs help figuring out why. ...</cell>
+    <cell row="2" col="0">2.Your party finds a list of 10 names including someone they are close to. The first 4 names are crossed out. ...</cell>
+    <cell row="3" col="0">3.A courier catches up to the party. They have been left a run down mansion in the will of someone they have never met. The only condition? It be lived in for 5 days. It is of course... Haunted! ...</cell>
+    <cell row="4" col="0">4.A well known constellation disappears from sight. The village is divided between people who remember it, and those who don't. The debates begin to spark an escalating series of feuds and fights. ...</cell>
+    <cell row="5" col="0">5.A large river begins inexplicably stops for 1 hour before sunset. ...</cell>
+    <cell row="6" col="0">6.You enter a clearing where 2 duelists lash out at one another. The clearing is in a time loop, repeating the duel over and over again. ...</cell>
+    <cell row="7" col="0">7.Rumor reaches your ears of a traveling merchant peddling sets of cursed sewing needles. ...</cell>
+    <cell row="8" col="0">8.Old Jeb the farmer claims his sheepdog had puppies, but they all have split tails and he doesn't know their sire. ...</cell>
+    <cell row="9" col="0">9.The sawmill catches fire. The bucket brigade keeps it contained, but it refuses to extinguish after 2 days. ...</cell>
+    <cell row="10" col="0">10.For exactly 1 round a day, everyone in town falls sway under the HOLD PERSON spell. Life continues, but everyone is on edge. "Protection" totems begin surfacing in every market shop. ...</cell>
+    <cell row="11" col="0">11.Strange, mud-coated animate skeletons have risen in a nearby swamp. They won’t attack unless attacked first and try to speak with anyone nearby, but the coating of mud makes their speech indecipherable. ...</cell>
+    <cell row="12" col="0">12.Snowberry bushes only bloom before a blizzard. Collect five snowberry blooms for an alchemist before the storm hits. ...</cell>
+    <cell row="13" col="0">13.A suit of enchanted armor with dozens of arms has been razing nearby villages. Watch out, each arm holds a hand crossbow, and each one can attack every turn. ...</cell>
+    <cell row="14" col="0">14.A goblin comes running towards you and yells "he's coming!" and dies. ...</cell>
+    <cell row="15" col="0">15.A small pack of wererats have taken up residence in the city sewers, and keep causing trouble for the locals. ...</cell>
+    <cell row="16" col="0">16.A farmer says he's heard strange singing in the night in his corn field, but whenever he goes out to look, he doesn't find anyone. If that wasn't strange enough, one morning he found his scarecrows had been moved into a circle. ...</cell>
+    <cell row="17" col="0">17.The party is told of a local merchant who specializes in Magical items. The merchant's name is Foezek and is described as an intelligent, compassionate Shedu. But, when the PCs seek out the shop, they find another being claiming to be Foezek and is more interested in them leaving the shop than dealing with them. In truth, this bandit killed Foezek and is dealing his magical items to an adversary of the DM's choosing. Foezek's body can be found in the shop (basement, or behind the counter, etc.). ...</cell>
+    <cell row="18" col="0">18.The party is walking through a town when they meet an blind old man who is crawling on the ground looking for his ring. A guard watched him drop it and took it for himself. ...</cell>
+    <cell row="19" col="0">19.The party finds a dagger on the body of an enemy that is much heavier than a dagger should be. ...</cell>
+    <cell row="20" col="0">20.The party wakes up mixed up in each other's bodies after night of drinking at an inn. ...</cell>
+    <cell row="21" col="0">21.A small chest from the spell Leomund's Secret Chest falls from the sky. When the party finds a wizard to open the chest is filled with their own equipment, along with a note book keeping track of their actions. ...</cell>
+    <cell row="22" col="0">22.The party continues to wake up in the same inn, but different rooms each morning. ...</cell>
+    <cell row="23" col="0">23.One of the party members is suddenly extremely allergic to cats, the rest of the party members clothes are suddenly made of cat fur. The change in clothing isn't immediately noticable. ...</cell>
+    <cell row="24" col="0">24.The party is summoned by a king to be his friends for a day. ...</cell>
+    <cell row="25" col="0">25.There is a bounty out on the dish breaking bandit. ...</cell>
+    <cell row="26" col="0">26.One of the party members suddenly starts to sleepwalk, and breaks dishes in his sleep. ...</cell>
+    <cell row="27" col="0">27.An angry gnome tinkers with the sleeping party's equipment. Everything now has combination locks. ...</cell>
+    <cell row="28" col="0">28.Weird noises have been heard at night coming from an older resident's home in town. When investigated, you discover a worried old man attempting to disguise his worry at your interest in the noise and his business. If convinced that your aid is genuine, or if more discreet measures of observations are taken, you discover his wife is afflicted with lycanthropy despite having no bite marks. ...</cell>
+    <cell row="29" col="0">29.The local towns people are complaining about a goblin tribe that has set up camp near by. They are acting strange and have begun constructing statues of a goblin with a pointy hat all over the area. ...</cell>
+    <cell row="30" col="0">30.As the party is walking through a road they come across a beggar. He is crippled and asks for some money to help him buy food. As the party continues to walk down the road they find another beggar who looks exactly like the one they just met! When asked he says that he doesn’t have a twin brother or anything of the sort. He doesn’t know what the party is taking about and just wants some coin to buy food. As the party continues to walk they find the same man yet again. He to knows nothing. Upon further investigation they discoverer that the man was once an assistant to a local wizard. And the wizard is an expert in human cloning. ...</cell>
+    <cell row="31" col="0">31.The daughter of a local politician/Noble person keeps getting kidnapped by local goblins. The party is hired to solve it once and for all. ...</cell>
+    <cell row="32" col="0">32.A horse with no rider, but fully equipped is walking in the opposite direction of the party. There is a note pinned to it's saddlebags, "send help!" ...</cell>
+    <cell row="33" col="0">33.The party takes a shortcut through a friendly looking forest not shown on their map. It seems oddly silent, and soon notice all the wildlife is deep asleep - including insects and even flowers. As their eyes get heavier and heavier a wild man bursts out of the bushes, eyes propped open. ...</cell>
+    <cell row="34" col="0">34.Traveling through the forest the party is stopped by the sound of a booming voice nearby "Your Wish has been granted!". Shortly after they come apon a clearing filled red mist and a goblin holding a brass lamp laughing maniacally. The party now has to deal with what stuipd thing he has wished for. ...</cell>
+    <cell row="35" col="0">35.You are confronted by a party of identical adventurers, who seem more surprised than you. They have been tracking you down for a long time, following rumours of a party of adventurers giving them a bad name. Worst of all they seem to have been adventuring longer than you... ...</cell>
+    <cell row="36" col="0">36.Construction of a new museum has been halted when its found that all the workers continue to forget what they're building, could the new exhibit be to blame? ...</cell>
+    <cell row="37" col="0">37.You've gotten word about a logging village up north that has put up a massive reward for any adventurers willing to travel to the village, investigate the rash of disappearances and locate any of the missing persons: dead or alive. ...</cell>
+    <cell row="38" col="0">38.A cranky old man in town complains that his pocket watchers stolen, and he has his suspicions on who the thief is. The townsfolk say that he’s a senile old man who probably lost it. ...</cell>
+    <cell row="39" col="0">39.As your party steps through town, you suddenly start to feel the ground shake as a group of Monsterous Centipede's erupt from the dirt, attacking the party. As they are defeated, it becomes apparent that they were summoned creatures. ...</cell>
+    <cell row="40" col="0">40.One of the party's magical or valued items has been stolen and is now held in a high security bank in a bustling city. The party must now break into the bank to retrieve their items. ...</cell>
+    <cell row="41" col="0">41.A farmer asks for help. His crops are constantly getting trashed. He wants the group/player to keep watch over the night. It ends up being that the poor farmers’ trusty scarecrow has been brought to life by dark magic. It is optional to buy or make a new scarecrow. ...</cell>
+    <cell row="42" col="0">42.A PC gets bit by a werewolf. There is a cure for it, however they must convince the mad wizard to give it to you. ...</cell>
+    <cell row="43" col="0">43.A passing man swears to you that he is a genie who will most definitely grant you three wishes if you return his stolen lamp to him. ...</cell>
+    <cell row="44" col="0">44.Every town or settlement the party goes to has an outline of a fish stenciled on a main building. The first one is really big and noticeable; the rest are subtle enough that the party won't see them unless they announce that they're examining the place. The town where the quest will happen has the WORD "fish" stenciled on a building. ...</cell>
+    <cell row="45" col="0">45.You come across a trail of blood (unicorn) leading to a spooky forest. ...</cell>
+    <cell row="46" col="0">46.The party is followed by an owl, hooting softly, eyes glowing the gentle yellow that might be magic or might be simple reflection. Over the next several days more owls join, until when the group sets down to sleep at night all they can see are hundreds of owl eyes staring down at them. Then, one of the owls scratches a message into the dirt, before flying off into the night- FOLLOW. ...</cell>
+    <cell row="47" col="0">47.An unknown NPC mage has dimension doored into the middle of a fight, after all healing spells have been used by the team. He/She is on death's door and carrying a note with his/hers killers name. He says a few words before dying. ...</cell>
+    <cell row="48" col="0">48.Graffiti is scrawled on the walls of two buildings in town. It appears to be some sort of code. The messages are marked “1” and “3”. Message “2” is nowhere to be found. ...</cell>
+    <cell row="49" col="0">49.A scrap of paper floats on the wind. It glides on the breeze. Eventually in a gust the paper catches on one of the adventures faces. Tearing it off their face, and looking at the parchment they see it is... ...</cell>
+    <cell row="50" col="0">50.Gold! Adventure! Fame! Cries an elf on a soap box, "the faint of heart need not apply!" (For adventures who need more than obvious plot hooks.) ...</cell>
+    <cell row="51" col="0">51.Looking off to the distance, they can see a flashing light (similar to a signal mirror). Someone is trying to signal far off. Whether it is aide, is indiscernible to the group as the light stops almost as soon as it starts. There is only one way to find out... ...</cell>
+    <cell row="52" col="0">52.While passing by a pond, you hear a deep bellowing noise, only to see a fisherman trapped by a giant frog. He calls for help. ...</cell>
+    <cell row="53" col="0">53.A paladin with the insignia of a lion's head on her shield asks you to solve the local pest problem. Turns out the "pests" are full sized orcs. ...</cell>
+    <cell row="54" col="0">54.A house outside of town is being circled by hundreds of birds. Upon approaching, the party sees that their beaks are lined with teeth, and the birds are twitching as though trying to escape possession. From the sounds inside, someone is clambering to hide within the building. ...</cell>
+    <cell row="55" col="0">55.Kobolds have been attacking the town. All wearing similar regalia and a matching symbol. a raving man claims to have escaped from the kobolds' lair. He describes a terrible dragon as the source of worship for the kobolds. The dragon is really a pseudodragon with delusions of grandeur, trained in illusion magic and has duped the kobolds into gathering a hoard for him. ...</cell>
+    <cell row="56" col="0">56.In a large city, urchins are a regular problem. This trio of kidlets, however, has been luring travelers in to abandoned alleyways, where the deranged doppelganger among them eats the human and the other two children keep what was it his/her pockets. ...</cell>
+    <cell row="57" col="0">57.A dryad clad in wooden armor leans against a tree his side torn wide open. He hands the party a pouch full of tiny leaves. Taking a pinch and blowing them into the air will lead the party to an ancient temple entrance almost over grown with vines. When close the pouch of leaves crumbles to dust along with the vines covering then entrance of the temple. ...</cell>
+    <cell row="58" col="0">58.You find a small silver coin in the middle of a street and upon picking it up, in your mind you see a small hut deep in the forest. When you come back to reality, only you can see it but a small fae pixie glowing bright blue will show you the way. ...</cell>
+    <cell row="59" col="0">59.The party encounters a man running out from the wood-line, coming towards then. He appears to be in shock over what he has seen, and tells the party that he was attacked while hunting. The man directs the party to the spot were he encounter the creature. ...</cell>
+    <cell row="60" col="0">60.A local temple has reported strange events in the surrounding area: beasts attacking villagers, bandit lords more closer to the village, and mysterious lights and sounds that can only be observed from within the village. ...</cell>
+    <cell row="61" col="0">61.A bounty hunter asks the party if they known any of the names on a list of his. The list contains about 20 names, roll a d20 for the characters knowing any of the names, 1-10 unknown and 11-20 known. The names on the list can be from characters backstory or names of NPCs the party has met throughout the campaign. The bounty hunter will known what each person on the list as done, and how much the reward is for the capture. ...</cell>
+    <cell row="62" col="0">62.A seemingly exorbitant amount of gold is offered on the message board to get rid of a 'house spider'. It turns out that it's about a spider-like mimic in the shape of a house. ...</cell>
+    <cell row="63" col="0">63.The moon stops traveling across the sky, and everyone's time pieces stop working. Word around the continent is a group of warlocks are attempting to gain power from a new patron - the god of Time ...</cell>
+    <cell row="64" col="0">64.More than three people in a given town have all their teeth fall out at the same time ...</cell>
+    <cell row="65" col="0">65.A nearby civil war is raging, and one of the high ranking officers of one side or the other holes up in a cave. If approached, they will act incredibly defensive. A child is crying somewhere deeper in the cave, and this person refuses to answer any questions about said child. ...</cell>
+    <cell row="66" col="0">66.An allegedly crooked officer of the law is found dead in an alley way and only one person in the whole town seems to care about it at all. ...</cell>
+    <cell row="67" col="0">67.The party is on a faire where a magician is performing tricks with a severed head that can talk. Throughout the show the head blinks in weird patterns. The party talks to the head to find out he is kidnapped and begs for help in finding his body back. ...</cell>
+    <cell row="68" col="0">68.The party comes across an Inn in the middle of nowhere and they decide to stay. They wake up on the ground where the inn used to be and there's no sign of any building ever being there. ...</cell>
+    <cell row="69" col="0">69.Walking through town, the party suddenly gets surrounded by the city guard. A respected captain was murdered. Witnesses say they saw someone looking similar to one of the party members. Upon looking through their things, said member appears to have lost an item easily traced back to him (one half of a pair of gloves/earrings/daggers, family insignia, one of a kind necklace etc.). Sure enough, said item was found at the scene of the crime. Someone is framing them. Not necessarily a doppelganger. ...</cell>
+    <cell row="70" col="0">70.The party stumbles across a dead old man. Amongst his meagre belongings is a thick tome with extensive records about everything they’ve done right up till today, with even more detail than they themselves knew. ...</cell>
+    <cell row="71" col="0">71.The party finds various dead animals with missing pieces, almost torn and shred. As they approach the heart of the forest the number of dead creatures increases. Upon investigation they find out it's the guardian spirit of the forest who has been corrupted and it's confused. ...</cell>
+    <cell row="72" col="0">72.A flyer appears in the sacks of each party member. A mid level demon has opened a store and invites all those with ambitions to visit to make deals. ...</cell>
+    <cell row="73" col="0">73.A rumor reaches the party's ears of a group of brigands hiding out in the woods. They have a code that is the reverse of Robin Hood and his Merry Men: Steal from the poor, and give to the rich. None of the local nobles seem interested in the pillaged goods of their subjects, and are constantly giving back the loot they keep finding on their doorsteps. ...</cell>
+    <cell row="74" col="0">74.The local apothecary is desperate due to the sudden absence of all the local medicinal plants in the area. All the groves and clearings appear to have been picked clean, and even the owner's secret garden is now empty. She had told no one of her hidden garden, and so has no idea who or what could have taken all of the plants in the brief period of time between her most recent check and her previous one. ...</cell>
+    <cell row="75" col="0">75.A human peasant and a member of the fey came across each other in the woods and, over the course of multiple moonlit encounters, fell deeply in love. The peasant's family has a deep-rooted fear of the fey, and is actively trying to put a stop to the pair's relationship. The family is even more fearful that the peasant will leave for the Feywild and never return, and goes to the party to convince them to help break the two lovers up. The human is in love with the Fey's otherworldly allure and sharp wit; talking to them makes the peasant feel alive in a way that they've never felt before. The Fey was originally only interested in the concept of a secretive human lover, but eventually came to love the peasant's dedication to their relationship despite the risk of alienating other loved ones. ...</cell>
+    <cell row="76" col="0">76.While at the market waiting for another adventurer to arrive, you pass the time by idly counting the number of stone gargoyles mounted on the town hall. There are fourteen, all with a silly grin. ...</cell>
+    <cell row="77" col="0">77.While at the blacksmith to repair your armour, you overhear the blacksmith explaining to his apprentice to not stray off to the hills to see his new sweetheart because he heard from the baker's cousin's stepmother that there are kobolds about. ...</cell>
+    <cell row="78" col="0">78.While waiting patiently for your turn to see the Bishop, you get your ear bent by some local shopkeeper about how the town council is a bunch of idiots, and how they simply wasted all that money on getting 13 gargoyle statues erected on the town hall. Thirteen! That's an unlucky number! ...</cell>
+    <cell row="79" col="0">79.A street urchin attempts to filch your purse, he runs off down an alley. The urchin escapes, but in the alley you found a homeless halfling bum. Clearly dead. Looks like he fell from a great height. ...</cell>
+    <cell row="80" col="0">80.The price of that foreign wine you like so much has tripled in price. The barkeep mutters something about pirates. The barkeep explains it's just a euphemism for the wagoneers guild and their extortionate ways. ...</cell>
+    <cell row="81" col="0">81.A dead homeless halfling found in an alley had a small bottle of very cheap whisky. The label has a brand mark you've not seen before - 4 vertical slashes and 2 short slashes across the bottom. ...</cell>
+    <cell row="82" col="0">82.The pommel of a sword you found on your last adventure rattled loose. Inside you a scrap of parchment with lots of scratchmarks, almost looks like writing. ...</cell>
+    <cell row="83" col="0">83.A wanted poster has been nailed up - Wanted: Black Pete, for Brigandry. ...</cell>
+    <cell row="84" col="0">84.The scribe you made inquiries with last week has got back to you. She says the Tomb of Three Chieftains can be found outside Millthorp. ...</cell>
+    <cell row="85" col="0">85.While at market, you saw three wagons being carefully guarded by scruffy and shifty looking mercenaries. There are barrels of cheap rotgut in the wagon. ...</cell>
+    <cell row="86" col="0">86.A pilgrim accosts you in the street. He asks if you'll be travelling east anytime soon. ...</cell>
+    <cell row="87" col="0">87.The bakery has no cake. He explains it's because there's a shortage of milk. ...</cell>
+    <cell row="88" col="0">88.A patrol of the Kings Guard rode fast down main street. They almost ran you over. ...</cell>
+    <cell row="89" col="0">89.There's a parade of pilgrims on main street, heading for the commons. They appear somber and morose. ...</cell>
+    <cell row="90" col="0">90.Southbridge, just outside town, has been closed to traffic due to disrepair. Merchants complain about the 2 hour detour they now incur by first heading east. ...</cell>
+    <cell row="91" col="0">91.The town guard are seen practicing new drills on the common. Apparently a local bandit has enlisted a wizard, and so training in avoiding fireballs is called for. ...</cell>
+    <cell row="92" col="0">92.The local priesthood is paying gold for water collected from the Opal Caves to treat a spreading fever ...</cell>
+    <cell row="93" col="0">93.An apothecary will pay for certain herbs growing in the Frog Marches. ...</cell>
+    <cell row="94" col="0">94.The local Stonecutters Guild are not petitioning for work contracts; labourers are grumbling. ...</cell>
+    <cell row="95" col="0">95.A frost giant approaches the group. The giant politely asks for help. He lost his pet owlbear and needs help finding it. He promises a very handsome amount of gp as well as “a powerful ally” if you find the creature. ...</cell>
+    <cell row="96" col="0">96.A goblin in noble clothes crashes through the window and rolls over the ground. The symbol of the king's guard is embroidered on his half-cape. As he gets up, he panics and looks around, fixing his eyes upon the party. "The Goat-Riders are coming! Please, hide me!" ...</cell>
+    <cell row="97" col="0">97.A large burly man has started a daily ritual of throwing a goat at the side of a local noble's house. He is not damaging the house, so he is not doing anything that will make the local law enforcement arrest him, but the noble wants him dealt with, and will pay you to get rid of him, however. ...</cell>
+    <cell row="98" col="0">98.A sword in the stone can be sensed by all creatures in the land with "Detect Magic" but lately it seems that the presence is becoming overbearing. Magic users are worried that unless the true king draws the sword, proving his lineage, or the spell "Detect Magic" will become obsolete. ...</cell>
+    <cell row="99" col="0">99.As the group walks through the forest, one member hears very quiet crying. The crying is coming from a lost juvenile harpy. It is the job of the group to protect this harpy. They can either keep and raise the creature, or return it to its mother. ...</cell>
+    <cell row="100" col="0">100.The party finds a smouldering crater containing a metal wreck. Inside, they find an eccentric kobold who insists she has returned from the moon. ...</cell>
+  </cells>
+  <LinkedItems />
+</grid>

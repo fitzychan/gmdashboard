@@ -1,0 +1,80 @@
+﻿<Window x:Class="DialogService.ChartBuilderDialog.ChartBuilderView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:local="clr-namespace:DialogService.ChartBuilderDialog"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:rg="clr-namespace:unvell.ReoGrid;assembly=unvell.ReoGrid"
+        mc:Ignorable="d ignore" 
+        WindowStyle="None"
+        DataContext="{Binding ChartBuilderViewModel}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Mode="Dark" Padding="5" Grid.Row="0">
+            <DockPanel Grid.ColumnSpan="2" >
+                <Menu IsMainMenu="True" DockPanel.Dock="Top">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="Save" IsEnabled="False">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ContentSave" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Save As.." Click="SaveAs_Click"/>
+                        <MenuItem Header="Import" Click="Import_Click"/>
+                        <MenuItem Header="Reset Sheet" Click="ResetSheet_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Close" Click="Close_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="_Edit" >
+                        <MenuItem Header="_Cut" Command="Cut" IsEnabled="True">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ContentCut" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Copy" Command="Copy">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ContentCopy" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Paste" Command="Paste">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ContentPaste" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Chart Actions" >
+                        <MenuItem Header="Descriptor" InputGestureText="Ctrl+Q" Click="DesignateDescriptor_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="FormatTitle" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Roll" InputGestureText="Ctrl+W" Click="DesignateRoll_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Select" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Subroll" InputGestureText="Ctrl+E" Click="DesignateSubroll_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="VectorSelection" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+
+            </DockPanel>
+        </materialDesign:ColorZone>
+        <rg:ReoGridControl x:Name="grid" Grid.Row="1"/>
+    </Grid>
+</Window>

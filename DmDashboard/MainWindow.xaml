@@ -1,0 +1,181 @@
+﻿<Window x:Class="DmDashboard.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:domain="clr-namespace:DmDashboard.ViewModel"
+    mc:Ignorable="d"
+    DataContext="{Binding Main, Source={StaticResource Locator}}"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextElement.FontWeight="Regular"
+    TextElement.FontSize="13"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    Background="#FAF4E1"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+
+    WindowStartupLocation="CenterScreen" Icon="pack://siteoforigin:,,,/Resources/rpg cover.png"
+    >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid  VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Mode="Dark" Padding="5" Grid.Row="0">
+            <DockPanel Grid.ColumnSpan="2" >
+                <StackPanel Orientation="Horizontal"
+                                    materialDesign:RippleAssist.IsCentered="True">
+                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="RightAndAlignTopEdges" StaysOpen="False">
+                        <StackPanel>
+                            <Button Content="Chart Builder" Command="{Binding StartChartBuilderCommand}" />
+                         <!--<Button Content="Select Progressive Chart" IsEnabled="False"/>
+                            <Button Content="Save Progressive Chart" IsEnabled="False"/>
+                            <Button Content="New Progressive Chart" IsEnabled="False"/>-->
+                            <Separator/>
+                            <Button Content="About" Click="ShowAbout_Click"/>
+                            <Button Content="Exit" Click="CloseProgram_Click"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+                <Button HorizontalAlignment="Right" Background="Red" Click="CloseProgram_Click">
+                    <materialDesign:PackIcon Kind="close" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                </Button>
+            </DockPanel>
+        </materialDesign:ColorZone>
+        
+        <Grid Margin="15" Grid.Row="1" Height="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--This one is for holding the charts list-->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"/>-->
+                <StackPanel Grid.Column="0" Margin=" 0 0 -5 0">
+                    <Button ToolTip="Refresh Tables" Margin="0 0 0 2" Command="{Binding LoadTablesCommand}" FontSize="24" >
+                        <DockPanel HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="Refresh" Width="20" /> 
+                            <TextBlock FontSize="12" Text="Refresh"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Roll Me One" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding RollOnTableCommand}" FontSize="24" >
+                        <DockPanel HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="DiceD20" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock FontSize="12" Text="Roll" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Locate Tables" Margin="0 2" Command="{Binding LocateTableCommand}" FontSize="24">
+                        <DockPanel >
+                              <materialDesign:PackIcon Kind="Magnify" Width="20" /> 
+                            <TextBlock FontSize="12" Text="Browse"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Delete" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding DeleteTableCommand}" FontSize="24">
+                        <DockPanel >
+                            <materialDesign:PackIcon Kind="Delete" Width="20" />
+                            <TextBlock FontSize="12" Text="Delete"/>
+                        </DockPanel>
+                    </Button>
+                </StackPanel>
+                <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
+                        <GroupBox.ContextMenu >
+                            <ContextMenu >
+                                <MenuItem Header="Roll This One" Command="{Binding RollOnTableCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Refresh" Command="{Binding LoadTablesCommand}"/>
+                                <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
+                            <Separator/>
+                            <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
+                        </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200"/>
+                    </GroupBox>
+                
+            </Grid>
+            <!--This one is for holding the outcomes-->
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin=" 8 0 -5 0">
+                    <Button ToolTip="Save Chart To File" Margin="0 0 0 2" Command="{Binding SaveToFileCommand}" >
+                        <DockPanel HorizontalAlignment="Left">
+                            <!--<materialDesign:PackIcon Kind="ContentSave" Width="20"/>-->
+                            <TextBlock FontSize="12" Text="Save Chart To File"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Add Chart To File" Margin="0 2" Command="{Binding AddToFileCommand}">
+                        <DockPanel HorizontalAlignment="Left">
+                           <!-- <materialDesign:PackIcon Kind="NotePlus" Width="20"/>-->
+                            <TextBlock FontSize="12" Text="Add Chart To File"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Save Selected" Margin="0 2" Command="{Binding SaveSelectedToFileCommand}">
+                        <DockPanel HorizontalAlignment="Left">
+                            <!--  <materialDesign:PackIcon Kind="ContentSaveSettings" Width="20"/>-->
+                            <TextBlock FontSize="12" Text="Save Selected To File"/>
+                        </DockPanel>
+                    </Button>
+                    <Button ToolTip="Add Selected To File" Margin="0 2" Command="{Binding AddSelectedToFileCommand}">
+                        <DockPanel HorizontalAlignment="Left">
+                            <!-- <materialDesign:PackIcon Kind="NotePlusOutline" Width="20"/> -->
+                            <TextBlock FontSize="12" Text="Add Selected To File"/>
+                        </DockPanel>
+                    </Button>
+                <!--<Button ToolTip="Re-Roll Selected" Margin="0 2 0 0" Command="{Binding AddToFileCommand}">
+                        <materialDesign:PackIcon Kind="Undo" Margin="-10 0 0 0" />
+                    </Button>-->
+                </StackPanel>
+                <materialDesign:Card Grid.Column="1" VerticalContentAlignment="Top" VerticalAlignment="Stretch" >
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <GroupBox Header="{Binding Preamble}" Style="{DynamicResource MaterialDesignCardGroupBox}">
+                            <ItemsControl  ItemsSource="{Binding OutcomeDataModel}" Grid.IsSharedSizeScope="True">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type domain:MainRollOutcomeDataModel}">
+                                        <Border x:Name="Border">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition SharedSizeGroup="Checkerz" />
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox VerticalAlignment="Top" IsChecked="{Binding IsSelected}"/>
+                                                <StackPanel Margin="10 0 0 0" Grid.Column="1">
+                                                    <TextBlock FontWeight="Bold" Text="{Binding Title}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding RollResult}" TextWrapping="Wrap"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource MaterialDesignSelection}" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </GroupBox>
+                    </ScrollViewer>
+                </materialDesign:Card>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

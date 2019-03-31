@@ -1,0 +1,18 @@
+The plan is to do it from top to bottom... and the General updates are things that I would like.
+
+
+ENGINE UPGRADES
+1. Descriptor rolls
+2. We need parallel rolls.  So if you link a char at the title with another chart at the title it will roll on it.  This means it a sub chart will always roll no matter the outcome...
+3. We need to support dashes "4-6" we need this because lots and LOTS of charts need to be able to modify probability.
+
+BIG FEATURES
+1. WEB UI that talks to api that lives on a linux box.
+2. Site that holds all the Charts in a github style. (Merge, Fork, contributor) functionality.
+3. A way to incorperate maps into the engine system...  My thoughts are to confer with https://www.mipui.net/ and see if he wants to colaborate on making a thing.
+
+GENERAL UPDATES
+1. Support of adding text files to the ChartBuilder screen.  Like you can right click them once they are loaded and "convert" the format type?  Perhaps we can just load them into the mainBlock style
+then create a save from mainBlocks to whatever format we want.
+2. Progressive rolls
+3. Share button?

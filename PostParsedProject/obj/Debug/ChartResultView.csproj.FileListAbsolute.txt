@@ -1,0 +1,64 @@
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\ChartResultView.exe.config
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\ChartResultView.exe
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\ChartResultView.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\CommonBlocks.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\CommonBlocks.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\MainWindow.g.cs
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\App.g.cs
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView_MarkupCompile.cache
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView_MarkupCompile.lref
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\MainWindow.baml
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.g.resources
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.Properties.Resources.resources
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.csproj.GenerateResource.Cache
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.exe
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\BlockUtility.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\BlockUtility.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\ChartResultView.csprojResolveAssemblyReference.cache
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\fitzy\Source\Repos\NewRepo\ChartResultView\obj\Debug\App.baml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\ChartResultView.exe.config
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.exe
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\ChartResultView.exe
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\ChartResultView.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\BlockUtility.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\CommonBlocks.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.csprojResolveAssemblyReference.cache
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\MainWindow.g.cs
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\App.g.cs
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView_MarkupCompile.cache
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView_MarkupCompile.lref
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\App.baml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\MainWindow.baml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.g.resources
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.Properties.Resources.resources
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\ChartResultView.csproj.GenerateResource.Cache

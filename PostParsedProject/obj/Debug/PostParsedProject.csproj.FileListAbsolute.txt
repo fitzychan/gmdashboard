@@ -1,0 +1,204 @@
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\PostParsedProject.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\PostParsedProject.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\PostParsedProject.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\NewRepo\ChartResultView\obj\Debug\PostParsedProject.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\PostParsedProject.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\PostParsedProject.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.xml
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+G:\DmDashboard\PostParsedProject\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+G:\DmDashboard\PostParsedProject\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\DmDashboard\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+G:\DmDashboard\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+G:\DmDashboard\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+G:\DmDashboard\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+G:\DmDashboard\PostParsedProject\obj\Debug\PostParsedProject.dll
+G:\DmDashboard\PostParsedProject\obj\Debug\PostParsedProject.pdb
+E:\Dev\dnd\PostParsedProject\bin\Debug\PostParsedProject.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\PostParsedProject.pdb
+E:\Dev\dnd\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+E:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+E:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+E:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
+E:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb
+E:\Dev\dnd\PostParsedProject\bin\Debug\CommonCode.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\PostParsedProject.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\PostParsedProject.pdb
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\CommonCode.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\log4net.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\log4net.xml
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\obj\Debug\PostParsedProject.dll
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\obj\Debug\PostParsedProject.pdb
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\PostParsedProject.dll.CodeAnalysisLog.xml
+C:\Users\fitzy\Desktop\DnD\PostParsedProject\bin\Debug\PostParsedProject.dll.lastcodeanalysissucceeded
+E:\Dev\dnd\PostParsedProject\bin\Debug\log4net.dll
+E:\Dev\dnd\PostParsedProject\bin\Debug\log4net.xml
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\PostParsedProject.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\PostParsedProject.pdb
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\CommonCode.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\log4net.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\log4net.xml
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
+C:\Users\FitzyNSierra-Dev\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\PostParsedProject.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\PostParsedProject.pdb
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\CommonCode.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\log4net.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\CommonCode.pdb
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\log4net.xml
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+E:\Dev\dndAlpa\dnd\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+E:\Dev\dndAlpa\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+E:\Dev\dndAlpa\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
+E:\Dev\dndAlpa\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb
+E:\Dev\DmDash\PostParsedProject\bin\Debug\PostParsedProject.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\PostParsedProject.pdb
+E:\Dev\DmDash\PostParsedProject\bin\Debug\CommonCode.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\log4net.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\CommonCode.pdb
+E:\Dev\DmDash\PostParsedProject\bin\Debug\log4net.xml
+E:\Dev\DmDash\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\Dev\DmDash\PostParsedProject\obj\Debug\PostParsedProject.csprojResolveAssemblyReference.cache
+E:\Dev\DmDash\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+E:\Dev\DmDash\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.Cache
+E:\Dev\DmDash\PostParsedProject\obj\Debug\PostParsedProject.dll
+E:\Dev\DmDash\PostParsedProject\obj\Debug\PostParsedProject.pdb
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\PostParsedProject.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\PostParsedProject.pdb
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\CommonCode.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\log4net.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\log4net.xml
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csprojAssemblyReference.cache
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.cache
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CoreCompileInputs.cache
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CopyComplete
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
+C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb
+C:\Dev\dnd\PostParsedProject\bin\Debug\PostParsedProject.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\PostParsedProject.pdb
+C:\Dev\dnd\PostParsedProject\bin\Debug\CommonCode.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\log4net.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Dev\dnd\PostParsedProject\bin\Debug\log4net.xml
+C:\Dev\dnd\PostParsedProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csprojAssemblyReference.cache
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.cache
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CoreCompileInputs.cache
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CopyComplete
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
+C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb

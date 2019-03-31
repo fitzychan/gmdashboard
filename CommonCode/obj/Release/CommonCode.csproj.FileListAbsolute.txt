@@ -1,0 +1,8 @@
+E:\Dev\dnd\CommonCode\bin\Release\CommonCode.dll
+E:\Dev\dnd\CommonCode\bin\Release\CommonCode.pdb
+E:\Dev\dnd\CommonCode\obj\Release\CommonCode.dll
+E:\Dev\dnd\CommonCode\obj\Release\CommonCode.pdb
+C:\Users\Fitzy\Source\Repos\dnd\CommonCode\bin\Release\CommonCode.dll
+C:\Users\Fitzy\Source\Repos\dnd\CommonCode\bin\Release\CommonCode.pdb
+C:\Users\Fitzy\Source\Repos\dnd\CommonCode\obj\Release\CommonCode.dll
+C:\Users\Fitzy\Source\Repos\dnd\CommonCode\obj\Release\CommonCode.pdb

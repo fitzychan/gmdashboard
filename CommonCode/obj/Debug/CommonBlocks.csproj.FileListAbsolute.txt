@@ -1,0 +1,10 @@
+C:\Users\fitzy\Documents\Visual Studio 2015\Projects\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.dll
+C:\Users\fitzy\Documents\Visual Studio 2015\Projects\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.pdb
+C:\Users\fitzy\Documents\Visual Studio 2015\Projects\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.dll
+C:\Users\fitzy\Documents\Visual Studio 2015\Projects\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.pdb
+C:\Users\fitzy\Documents\Visual Studio 2015\Projects\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.csprojResolveAssemblyReference.cache
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.pdb
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.csprojResolveAssemblyReference.cache
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.dll
+C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.pdb

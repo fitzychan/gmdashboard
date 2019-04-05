@@ -1,40 +1,39 @@
-﻿using CommonBlocks;
+﻿using CommonCode.Blocks;
 using CommonCode.FileUtility;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Pipes.PostParsedProject
 {
     public interface IPostCommandPipe
     {
-        void SaveChartCommand(MainBlock block);
-        void AddToChartCommand(MainBlock block);
+        void SaveChartCommand(Chart block);
+        void AddToChartCommand(Chart block);
     }
 
     public class PostCommandPipe : IPostCommandPipe
     {
-        public void AddToChartCommand(MainBlock block)
+        public void AddToChartCommand(Chart block)
         {
             if (block == null)
                 return;
             FileUtility.AddToChartCommand(block);
         }
 
-        public void SaveChartCommand(MainBlock block)
+        public void SaveChartCommand(Chart block)
         {
             if (block == null)
                 return;
             FileUtility.SaveChartCommand(block);
         }
-        public void AddSelectedToChartCommand(List<RollBlock> blocks)
+        public void AddSelectedToChartCommand(List<IRoll> blocks)
         {
             if (!blocks.Any())
                 return;
             FileUtility.AddSelectedToChartCommand(blocks);
         }
 
-        public void SaveSelectedChartCommand(List<RollBlock> blocks)
+        public void SaveSelectedChartCommand(List<IRoll> blocks)
         {
             if (!blocks.Any())
                 return;

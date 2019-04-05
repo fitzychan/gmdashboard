@@ -18,3 +18,14 @@ C:\Users\Fitzy\Source\Repos\dnd\Pipes\bin\Release\PreParsedFileProject.pdb
 C:\Users\Fitzy\Source\Repos\dnd\Pipes\obj\Release\Pipes.csprojResolveAssemblyReference.cache
 C:\Users\Fitzy\Source\Repos\dnd\Pipes\obj\Release\Pipes.dll
 C:\Users\Fitzy\Source\Repos\dnd\Pipes\obj\Release\Pipes.pdb
+C:\Dev2\gmdashboard\Pipes\bin\Release\Pipes.dll
+C:\Dev2\gmdashboard\Pipes\bin\Release\Pipes.pdb
+C:\Dev2\gmdashboard\Pipes\bin\Release\CommonCode.dll
+C:\Dev2\gmdashboard\Pipes\bin\Release\PreParsedFileProject.dll
+C:\Dev2\gmdashboard\Pipes\bin\Release\CommonCode.pdb
+C:\Dev2\gmdashboard\Pipes\bin\Release\PreParsedFileProject.pdb
+C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.csprojAssemblyReference.cache
+C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
+C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.dll
+C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.pdb

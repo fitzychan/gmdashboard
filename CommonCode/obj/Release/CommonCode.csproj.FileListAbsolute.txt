@@ -6,3 +6,8 @@ C:\Users\Fitzy\Source\Repos\dnd\CommonCode\bin\Release\CommonCode.dll
 C:\Users\Fitzy\Source\Repos\dnd\CommonCode\bin\Release\CommonCode.pdb
 C:\Users\Fitzy\Source\Repos\dnd\CommonCode\obj\Release\CommonCode.dll
 C:\Users\Fitzy\Source\Repos\dnd\CommonCode\obj\Release\CommonCode.pdb
+C:\Dev2\gmdashboard\CommonCode\bin\Release\CommonCode.dll
+C:\Dev2\gmdashboard\CommonCode\bin\Release\CommonCode.pdb
+C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.dll
+C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.pdb

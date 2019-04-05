@@ -105,3 +105,16 @@ C:\Dev\dnd\PreParsedFileProject\obj\Debug\PreParsedFileProject.csproj.CoreCompil
 C:\Dev\dnd\PreParsedFileProject\obj\Debug\PreParsedFileProject.csproj.CopyComplete
 C:\Dev\dnd\PreParsedFileProject\obj\Debug\PreParsedFileProject.dll
 C:\Dev\dnd\PreParsedFileProject\obj\Debug\PreParsedFileProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Debug\PreParsedFileProject.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Debug\PreParsedFileProject.csprojAssemblyReference.cache
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\PreParsedFileProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\PreParsedFileProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\CommonCode.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\log4net.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\PostParsedProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\CommonCode.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Debug\log4net.xml
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Debug\PreParsedFileProject.csproj.CopyComplete
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Debug\PreParsedFileProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Debug\PreParsedFileProject.pdb

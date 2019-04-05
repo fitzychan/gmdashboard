@@ -1,18 +1,17 @@
-﻿using CommonBlocks;
+﻿using CommonCode.Blocks;
 using CommonCode.FileUtility;
 using DmAssistant.RollMeOne;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System;
-using System.Linq;
 using System.IO;
+using System.Linq;
 
 namespace Pipes.PreParsedFileProject
 {
     public interface IPreCommandPipe
     {
         ObservableCollection<string> LoadTablesCommand();
-        ICollection<IMainBlock> RollOneCommand(ICollection<string> selectedItems);
+        ICollection<IChart> RollOneCommand(ICollection<string> selectedItems);
         void OpenFileLocation(ICollection<string> selectedChart);
         void OpenFile(ICollection<string> selectedChart);
     }
@@ -37,13 +36,13 @@ namespace Pipes.PreParsedFileProject
             return mainFileList;
         }
 
-        public ICollection<IMainBlock> RollOneCommand(ICollection<string> selectedItems)
+        public ICollection<IChart> RollOneCommand(ICollection<string> selectedItems)
         {
             if (selectedItems != null && selectedItems.Count > 0)
             {
                  return RollMeHandle.RollOnTables(selectedItems);
             }
-            return new List<IMainBlock>();
+            return new List<IChart>();
         }
         public void AddTablesToRepo()
         {

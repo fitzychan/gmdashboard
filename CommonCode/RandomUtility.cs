@@ -7,38 +7,22 @@ using System.Threading.Tasks;
 
 namespace CommonCode
 {
-    public static class RandomUtility
+    public class RandomUtility : IRandomUtility, IDisposable
     {
-        private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
-        // Main method.
-        private static void Main()
-        {
-            const int totalRolls = 25000;
-            int[] results = new int[6];
+        private RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 
-            // Roll the dice 25000 times and display
-            // the results to the console.
-            for (int x = 0; x < totalRolls; x++)
-            {
-                byte roll = RollDice((byte)results.Length);
-                results[roll - 1]++;
-            }
-            for (int i = 0; i < results.Length; ++i)
-            {
-                Console.WriteLine("{0}: {1} ({2:p1})", i + 1, results[i], (double)results[i] / (double)totalRolls);
-            }
+        public void Dispose()
+        {
             rngCsp.Dispose();
-            Console.ReadLine();
         }
 
         // This method simulates a roll of the dice. The input parameter is the
         // number of sides of the dice.
-
-        public static byte RollDice(int diceNumber)
+        public int RollDice(int diceNumber)
         {
             byte numberSides = (byte)diceNumber;
             if (numberSides <= 0)
-                throw new ArgumentOutOfRangeException("numberSides");
+                throw new ArgumentOutOfRangeException("Incorrect Number Of sides ");
 
             // Create a byte array to hold the random value.
             byte[] randomNumber = new byte[1];
@@ -51,10 +35,10 @@ namespace CommonCode
             // Return the random number mod the number
             // of sides.  The possible values are zero-
             // based, so we add one.
-            return (byte)((randomNumber[0] % numberSides) + 1);
+            return (randomNumber[0] % numberSides) + 1;
         }
 
-        private static bool IsFairRoll(byte roll, byte numSides)
+        private bool IsFairRoll(byte roll, byte numSides)
         {
             // There are MaxValue / numSides full sets of numbers that can come up
             // in a single byte.  For instance, if we have a 6 sided die, there are
@@ -68,5 +52,10 @@ namespace CommonCode
             // to use.
             return roll < numSides * fullSetsOfValues;
         }
+    }
+
+    public interface IRandomUtility
+    {
+        int RollDice(int diceNumber);
     }
 }

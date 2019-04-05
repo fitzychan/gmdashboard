@@ -18,3 +18,16 @@ C:\Users\Fitzy\Source\Repos\dnd\PreParsedFileProject\bin\Release\log4net.xml
 C:\Users\Fitzy\Source\Repos\dnd\PreParsedFileProject\obj\Release\PreParsedFileProject.csprojResolveAssemblyReference.cache
 C:\Users\Fitzy\Source\Repos\dnd\PreParsedFileProject\obj\Release\PreParsedFileProject.dll
 C:\Users\Fitzy\Source\Repos\dnd\PreParsedFileProject\obj\Release\PreParsedFileProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\PreParsedFileProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\PreParsedFileProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\CommonCode.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\log4net.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\PostParsedProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\CommonCode.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PreParsedFileProject\bin\Release\log4net.xml
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Release\PreParsedFileProject.csprojAssemblyReference.cache
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Release\PreParsedFileProject.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Release\PreParsedFileProject.csproj.CopyComplete
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Release\PreParsedFileProject.dll
+C:\Dev2\gmdashboard\PreParsedFileProject\obj\Release\PreParsedFileProject.pdb

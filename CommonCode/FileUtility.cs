@@ -1,5 +1,4 @@
-﻿using CommonBlocks;
-using Microsoft.Win32;
+﻿using CommonCode.Blocks;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,15 +6,13 @@ using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonCode.FileUtility
 {
     public class FileUtility
     {
-        public static void SaveChartCommand(IMainBlock resultMainBlock)
+        public static void SaveChartCommand(Chart resultMainBlock)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -27,11 +24,16 @@ namespace CommonCode.FileUtility
 
             if (saveRolldChart.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveRolldChart.FileName, resultMainBlock.ToString());
+                var stringAgg = resultMainBlock.Preamble;
+                foreach(var block in resultMainBlock.ChartRolls)
+                {
+                    stringAgg += ((Roll)block).Outcome;
+                }
+                File.WriteAllText(saveRolldChart.FileName, stringAgg);
             }
         }
 
-        public static void AddToChartCommand(IMainBlock resultMainBlock)
+        public static void AddToChartCommand(Chart resultMainBlock)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -43,11 +45,16 @@ namespace CommonCode.FileUtility
 
             if (saveRolldChart.ShowDialog() == DialogResult.OK)
             {
-                File.AppendAllText(saveRolldChart.FileName, resultMainBlock.ToString());
+                var stringAgg = resultMainBlock.Preamble;
+                foreach (var block in resultMainBlock.ChartRolls)
+                {
+                    stringAgg += ((Roll)block).Outcome;
+                }
+                File.AppendAllText(saveRolldChart.FileName, stringAgg);
             }
 
         }
-        public static void SaveSelectedChartCommand(List<RollBlock> blocks)
+        public static void SaveSelectedChartCommand(List<IRoll> blocks)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -62,13 +69,13 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach (var block in blocks)
                 {
-                    textToWrite += block.ToString();
+                    textToWrite += ((Roll)block).Outcome;
                 }
                 File.WriteAllText(saveRolldChart.FileName, textToWrite);
             }
         }
 
-        public static void AddSelectedToChartCommand(List<RollBlock> blocks)
+        public static void AddSelectedToChartCommand(List<IRoll> blocks)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -83,7 +90,7 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach(var block in blocks)
                 {
-                    textToWrite += block.ToString();
+                    textToWrite += ((Roll)block).Outcome;
                 }
                 File.AppendAllText(saveRolldChart.FileName, textToWrite);
             }

@@ -1,70 +1,54 @@
-﻿using CommonBlocks;
-using System;
+﻿using CommonCode.Blocks;
+using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace CommonCode.RollUtility
 {
     public interface IRollUtility
     {
-        IMainBlock RollOnMainBlock(IMainBlock mainBlock);
+        IChart RollOnChart(IChart chart);
     }
     public class RollUtility : IRollUtility
     {
-        MainBlock localMainBlock;
-        int rolledNumber;
 
-        public IMainBlock RollOnMainBlock(IMainBlock mainBlock)
+        public IChart RollOnChart(IChart chart)
         {
-            localMainBlock = (MainBlock)mainBlock;
-            if (localMainBlock == null)
-            {
-                MessageBox.Show("The file is improperly formatted", "Bad file", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new MainBlock();
-            }
-            else
-            {
-                foreach (var rollBlock in localMainBlock.Blocks)
-                {
-                    if (rollBlock.BlockType == typeof(RollBlock))
-                    {
-                        var localRollBlock = ((RollBlock)rollBlock);
-                        localRollBlock.Result = RollOnBlock(localRollBlock);
-                    }
 
+            if (chart.TypeOfChart == ObjectTypes.Chart)
+            {
+                foreach (var chartRoll in ((Chart)chart).ChartRolls)
+                {
+                    RollOnRoll(chartRoll);
                 }
             }
-            return localMainBlock;
+            return chart;
         }
 
-        private string RollOnBlock(IRoll roll)
+        public string RollOnRoll(IRoll roll)
         {
-            string returnString = string.Empty;
-            try
-            {                                   //This is because arrays start at 0 we need to shift the outcome by one.  NOT the dice passed in.
-                rolledNumber = RandomUtility.RollDice(((RollBlock)roll).Dice) - 1;
-
-                if(roll.RollType == typeof(DescriptorBlock))
-                {
-                    return roll.GetOutcome();
-                }
-
-                var tempRoll = ((RollBlock)roll).Outcomes.ElementAt(rolledNumber);
-                if (tempRoll.GetType() == typeof(RegularRoll))
-                {
-                    returnString = (((RegularRoll)tempRoll).GetOutcome());
-                }
-                else if (tempRoll.GetType() == typeof(SubRoll))
-                {
-                    //TODO we are here trying to get the spaceing correct.... We should be doing this all in one place...
-                    returnString = (((SubRoll)tempRoll).SubBlockOutcome.BlockDescriptor + Environment.NewLine + "\t" + RollOnBlock(((SubRoll)tempRoll).SubBlockOutcome)) + Environment.NewLine;
-                }
-                return returnString;
-            }
-            catch (Exception e)
+            string rollOnRollResult = string.Empty;
+            using (var utility = new RandomUtility())
             {
-                // throw;
-                return "Error in RollOnBlock:" + e.Message;
+                if (roll.TypeOfRoll == ObjectTypes.Roll || roll.TypeOfRoll == ObjectTypes.RangeRoll || roll.TypeOfRoll == ObjectTypes.TextRoll)
+                {
+                    var chartRoll = (Roll)roll;
+                    //TODO  THIS SHOULD BE USEING THE DICE NUMBER TO PICK THE ROLL...
+                    //THE REASON WE ARE NOT IS BECAUSE WE HAVE NOT FULL GOTTEN THE PRECENT ROLL
+                    var diceOutcome = utility.RollDice(((Roll)roll).Outcomes.Count) - 1;
+
+                    var resultOfRoll = chartRoll.Outcomes.ElementAt(diceOutcome);
+                    if (resultOfRoll.TypeOfRoll == ObjectTypes.Roll)
+                    {
+                        chartRoll.Outcome += chartRoll.Description + RollOnRoll(resultOfRoll);
+                    }
+                    else
+                    {
+                        var outcome = chartRoll.Description + " " + resultOfRoll.GetDescription;
+                        chartRoll.Outcome = outcome;
+                        return outcome;
+                    }
+                }
+                return "";
             }
         }
     }

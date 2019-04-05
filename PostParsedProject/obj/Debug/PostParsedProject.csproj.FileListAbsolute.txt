@@ -202,3 +202,16 @@ C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CoreCompileInput
 C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.csproj.CopyComplete
 C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.dll
 C:\Dev\dnd\PostParsedProject\obj\Debug\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.csprojAssemblyReference.cache
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.Properties.Resources.resources
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.csproj.GenerateResource.cache
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\PostParsedProject.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\CommonCode.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\log4net.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\CommonCode.pdb
+C:\Dev2\gmdashboard\PostParsedProject\bin\Debug\log4net.xml
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.csproj.CopyComplete
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.dll
+C:\Dev2\gmdashboard\PostParsedProject\obj\Debug\PostParsedProject.pdb

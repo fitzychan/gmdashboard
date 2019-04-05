@@ -43,12 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blocks\ChartTypes.cs" />
-    <Compile Include="Blocks\MainBlock.cs" />
     <Compile Include="Blocks\RollBlockV2.cs" />
     <Compile Include="FileUtility.cs" />
     <Compile Include="LinkedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Blocks\RollBlock.cs" />
     <Compile Include="RandomUtility.cs" />
     <Compile Include="RollUtility.cs" />
   </ItemGroup>

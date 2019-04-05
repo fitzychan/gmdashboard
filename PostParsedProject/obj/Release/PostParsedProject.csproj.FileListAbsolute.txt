@@ -40,3 +40,16 @@ C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Release\PostParsedProject.
 C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Release\PostParsedProject.csproj.GenerateResource.Cache
 C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Release\PostParsedProject.dll
 C:\Users\Fitzy\Source\Repos\dnd\PostParsedProject\obj\Release\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\PostParsedProject.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\PostParsedProject.pdb
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\CommonCode.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\log4net.dll
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\CommonCode.pdb
+C:\Dev2\gmdashboard\PostParsedProject\bin\Release\log4net.xml
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.csprojAssemblyReference.cache
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.Properties.Resources.resources
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.csproj.GenerateResource.cache
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.csproj.CoreCompileInputs.cache
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.csproj.CopyComplete
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.dll
+C:\Dev2\gmdashboard\PostParsedProject\obj\Release\PostParsedProject.pdb

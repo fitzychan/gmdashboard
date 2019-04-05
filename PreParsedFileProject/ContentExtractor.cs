@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CommonCode.Blocks;
+using System;
 using System.IO;
-using System.Runtime.InteropServices;
-using CommonBlocks;
 using System.Xml.Linq;
-using System.Windows;
 
 namespace DmAssistant.BlockBuilder
 {
     public interface IContentExtractor
     {
-        IMainBlock ExtractData(FileInfo file);
+        IChart ExtractData(FileInfo file);
     }
 
     public class ContentExtractor : IContentExtractor
@@ -21,12 +17,10 @@ namespace DmAssistant.BlockBuilder
 
         public ContentExtractor()
         {
-            parseBlock = new BlockBuilder();
             parseBlockV2 = new BlockBuilderV2();
         }
 
-
-        public IMainBlock ExtractData(FileInfo file)
+        public IChart ExtractData(FileInfo file)
         {
             switch (file.Extension)
             {
@@ -34,36 +28,20 @@ namespace DmAssistant.BlockBuilder
                     {
                         return TxtExtractor(file);
                     }
-                case ".xlsx":
-                    {
-                        return XmlExtractor(file);
-                    }
-                case ".csv":
-                    {
-                        return CsvExtractor(file);
-                    }
                 case ".rgf":
                     {
                         return RollMeOneFormatExtractor(file);
                     }
             }
-            return new MainBlock();
-
+            return new Chart();
         }
-        private IMainBlock CsvExtractor(FileInfo chartPath)
+ 
+        private IChart RollMeOneFormatExtractor(FileInfo chartPath)
         {
-            throw new NotImplementedException();
-        }
-        private IMainBlock RollMeOneFormatExtractor(FileInfo chartPath)
-        {
-            return parseBlock.BuildFromRgf(XDocument.Load(chartPath.FullName));
-        }
-        private IMainBlock XmlExtractor(FileInfo chartPath)
-        {
-            throw new NotImplementedException();
+            return parseBlockV2.BuildFromRgf(XDocument.Load(chartPath.FullName));
         }
 
-        public IMainBlock TxtExtractor(FileInfo chartPaths)
+        public IChart TxtExtractor(FileInfo chartPaths)
         {
             string cellValues = "";
             try
@@ -78,9 +56,7 @@ namespace DmAssistant.BlockBuilder
             {
                 //TODO Log4Net
             }
-            var test = parseBlockV2.BuildFromTxt(cellValues);
-
-            return parseBlock.BuildFromTxt(cellValues);
+            return parseBlockV2.BuildFromTxt(cellValues);
         }
     }
 }

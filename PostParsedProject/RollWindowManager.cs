@@ -1,20 +1,19 @@
-﻿using CommonBlocks;
+﻿using CommonCode.Blocks;
 using System.Collections.Generic;
 
 namespace PostParsedProject.RollWindowManager
 {
     public interface IRollWindowManager
     {
-        void AddMainRoll(IMainBlock mainBlocks);
+        void AddMainRoll(IChart mainBlocks);
     }
 
 
     public class RollWindowManager : IRollWindowManager
     {
-        List<IMainBlock> blocks = new List<IMainBlock>();
+        List<IChart> blocks = new List<IChart>();
 
-
-        public void AddMainRoll(IMainBlock mainBlock)
+        public void AddMainRoll(IChart mainBlock)
         {
             blocks.Add(mainBlock);
         }

@@ -6,68 +6,63 @@ using System.Threading.Tasks;
 
 namespace CommonCode.Blocks
 {
-    //This represents all the charts that was passed to us.
-    //public class AggregateCharts
-    //{
-    //    public List<IBlockV2> RollCharts { get; set; }
-    //}
-
-    public class ChartAggregate 
-    {
-        //How many possible outcomes there could be
-        public int Dice { get; set; }
-        //Title of the chart
-        public string Descriptor { get; set; }
-        public List<ChartV2> Charts { get; set; }
-    }
-
-    public interface IChartV2
+    public interface IChart
     {
         Guid TypeOfChart { get; }
     }
 
-    public class ChartV2 : IChartV2
+    public class Chart : IChart
     {
         public Guid TypeOfChart => ObjectTypes.Chart;
         //this is its place in the list.
-        public int Dice { get; set; }
         //This is what we want to display if we land on this
-        public string Descriptor { get; set; }
+        public string Preamble { get; set; }
 
-        public List<IRollV2> ChartRolls { get; set; } = new List<IRollV2>();
+        public List<IRoll> ChartRolls { get; set; } = new List<IRoll>();
     }
 
-    public interface IRollV2
+    public interface IRoll
     {
         Guid TypeOfRoll { get; }
+        string GetDescription { get; }
+        int GetDice { get; }
     }
 
-    public class RollV2 : IRollV2
+    public class Roll : IRoll
     {
-        public Guid TypeOfRoll => ObjectTypes.SubRoll;
+        public Guid TypeOfRoll => ObjectTypes.Roll;
         public string Description { get; set; }
-        public int Number { get; set; }
-        public List<IRollV2> Outcomes { get; set; } = new List<IRollV2>();
+        public int Dice { get; set; }
+        public string Outcome { get; set; } = "";
+        public List<IRoll> Outcomes { get; set; } = new List<IRoll>();
+
+        public int GetDice => Outcomes.Count;
+
+        public string GetDescription => Description;
     }
 
-    public class RangeRollV2 : IRollV2
+    public class RangeRoll : IRoll
     {
         public Guid TypeOfRoll => ObjectTypes.RangeRoll;
         public string Description { get; set; }
         public int NumberUpperBound { get; set; }
         public int NumberLowerBound { get; set; }
-        public List<IRollV2> Outcomes { get; set; } = new List<IRollV2>();
+        public string Outcome { get; set; } = "";
+        public List<IRoll> Outcomes { get; set; } = new List<IRoll>();
+        public int GetDice => Outcomes.Count;
+        public string GetDescription => Description;
     }
 
-    public class OutcomeRollV2 : IRollV2
+    public class TextRoll : IRoll
     {
-        public string Description { get; internal set; }
+        public string Description { get; set; }
 
-        public OutcomeRollV2(string description)
+        public TextRoll(string description)
         {
             Description = description;
         }
-        public Guid TypeOfRoll => ObjectTypes.DescriptorRoll;
+        public Guid TypeOfRoll => ObjectTypes.TextRoll;
+        public string GetDescription => Description;
+        public int GetDice => 0;
     }
-
 }

@@ -238,3 +238,4 @@ C:\someshit\gmdashboard\DialogService\obj\Debug\DialogService.csproj.CoreCompile
 C:\someshit\gmdashboard\DialogService\obj\Debug\DialogService.csproj.CopyComplete
 C:\someshit\gmdashboard\DialogService\obj\Debug\DialogService.dll
 C:\someshit\gmdashboard\DialogService\obj\Debug\DialogService.pdb
+C:\someshit\gmdashboard\DialogService\obj\Debug\DialogService.csprojAssemblyReference.cache

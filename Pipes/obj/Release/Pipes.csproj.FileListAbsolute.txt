@@ -29,3 +29,14 @@ C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
 C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
 C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.dll
 C:\Dev2\gmdashboard\Pipes\obj\Release\Pipes.pdb
+C:\someshit\gmdashboard\Pipes\bin\Release\Pipes.dll
+C:\someshit\gmdashboard\Pipes\bin\Release\Pipes.pdb
+C:\someshit\gmdashboard\Pipes\bin\Release\CommonCode.dll
+C:\someshit\gmdashboard\Pipes\bin\Release\PreParsedChart.dll
+C:\someshit\gmdashboard\Pipes\bin\Release\CommonCode.pdb
+C:\someshit\gmdashboard\Pipes\bin\Release\PreParsedChart.pdb
+C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.csprojAssemblyReference.cache
+C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
+C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
+C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.dll
+C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.pdb

@@ -1,0 +1,13 @@
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\PreParsedChart.dll
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\PreParsedChart.pdb
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\CommonCode.dll
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\log4net.dll
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\PostParsedChart.dll
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\CommonCode.pdb
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\PostParsedChart.pdb
+C:\someshit\gmdashboard\PreParsedChart\bin\Release\log4net.xml
+C:\someshit\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csprojAssemblyReference.cache
+C:\someshit\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CoreCompileInputs.cache
+C:\someshit\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CopyComplete
+C:\someshit\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.dll
+C:\someshit\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.pdb

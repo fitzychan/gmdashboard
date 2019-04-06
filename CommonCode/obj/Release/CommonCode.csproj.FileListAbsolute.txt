@@ -11,3 +11,8 @@ C:\Dev2\gmdashboard\CommonCode\bin\Release\CommonCode.pdb
 C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.csproj.CoreCompileInputs.cache
 C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.dll
 C:\Dev2\gmdashboard\CommonCode\obj\Release\CommonCode.pdb
+C:\DndStuff\gmdashboard\CommonCode\bin\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\CommonCode\bin\Release\CommonCode.pdb
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.pdb

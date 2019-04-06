@@ -1,0 +1,13 @@
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\PreParsedChart.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\PreParsedChart.pdb
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\log4net.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\PostParsedChart.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\CommonCode.pdb
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\PostParsedChart.pdb
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\log4net.xml
+C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csprojAssemblyReference.cache
+C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CopyComplete
+C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.dll
+C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.pdb

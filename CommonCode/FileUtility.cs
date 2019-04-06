@@ -1,4 +1,5 @@
 ﻿using CommonCode.Blocks;
+using CommonCode.Rolls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,7 +28,7 @@ namespace CommonCode.FileUtility
                 var stringAgg = resultMainBlock.Preamble;
                 foreach(var block in resultMainBlock.ChartRolls)
                 {
-                    stringAgg += ((Roll)block).Outcome;
+                    stringAgg += ((StandardRoll)block).Outcome;
                 }
                 File.WriteAllText(saveRolldChart.FileName, stringAgg);
             }
@@ -48,7 +49,7 @@ namespace CommonCode.FileUtility
                 var stringAgg = resultMainBlock.Preamble;
                 foreach (var block in resultMainBlock.ChartRolls)
                 {
-                    stringAgg += ((Roll)block).Outcome;
+                    stringAgg += ((StandardRoll)block).Outcome;
                 }
                 File.AppendAllText(saveRolldChart.FileName, stringAgg);
             }
@@ -69,7 +70,7 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach (var block in blocks)
                 {
-                    textToWrite += ((Roll)block).Outcome;
+                    textToWrite += ((StandardRoll)block).Outcome;
                 }
                 File.WriteAllText(saveRolldChart.FileName, textToWrite);
             }
@@ -90,7 +91,7 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach(var block in blocks)
                 {
-                    textToWrite += ((Roll)block).Outcome;
+                    textToWrite += ((StandardRoll)block).Outcome;
                 }
                 File.AppendAllText(saveRolldChart.FileName, textToWrite);
             }

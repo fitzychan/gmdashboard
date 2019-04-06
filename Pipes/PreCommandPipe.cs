@@ -1,6 +1,6 @@
 ﻿using CommonCode.Blocks;
 using CommonCode.FileUtility;
-using DmAssistant.RollMeOne;
+using GmDashboard.RollMeOne;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;

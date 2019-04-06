@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace DmDashboard
+namespace GmDashboard
 {
     /// <summary>
     /// Interaction logic for App.xaml

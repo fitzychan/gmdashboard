@@ -1,9 +1,10 @@
 ﻿using CommonCode.Blocks;
+using CommonCode.Rolls;
 using System;
 using System.IO;
 using System.Xml.Linq;
 
-namespace DmAssistant.BlockBuilder
+namespace GmDashboard.BlockBuilder
 {
     public interface IContentExtractor
     {
@@ -17,7 +18,7 @@ namespace DmAssistant.BlockBuilder
 
         public ContentExtractor()
         {
-            parseBlockV2 = new BlockBuilderV2();
+            parseBlockV2 = new BlockBuilder();
         }
 
         public IChart ExtractData(FileInfo file)

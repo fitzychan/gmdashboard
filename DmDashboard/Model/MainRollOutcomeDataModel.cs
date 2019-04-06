@@ -1,8 +1,9 @@
 ﻿using CommonCode.Blocks;
+using CommonCode.Rolls;
 using GalaSoft.MvvmLight;
 using System;
 
-namespace DmDashboard.ViewModel
+namespace GmDashboard.ViewModel
 {
     public class MainRollOutcomeDataModel : ViewModelBase
     {
@@ -19,9 +20,9 @@ namespace DmDashboard.ViewModel
         {
             _rollBlock = rollBlock;
             Title = _rollBlock.GetDescription.Replace("\r", "").Replace("\n", "") + Environment.NewLine + "-----------------------------------";
-            if (_rollBlock.TypeOfRoll == ObjectTypes.Roll)
+            if (_rollBlock.TypeOfRoll == ObjectTypes.StandardRoll)
             {
-                RollResult = ((Roll)_rollBlock).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine;
+                RollResult = ((StandardRoll)_rollBlock).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine;
             }
         }
 
@@ -63,6 +64,6 @@ namespace DmDashboard.ViewModel
             }
         }
         //This is something that will keep us form getting the wierd data model shit done...
-        public Roll Block { get { return (Roll)_rollBlock; } }
+        public StandardRoll Block { get { return (StandardRoll)_rollBlock; } }
     }
 }

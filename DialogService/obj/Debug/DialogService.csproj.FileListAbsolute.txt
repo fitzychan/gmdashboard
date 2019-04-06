@@ -207,4 +207,3 @@ C:\Dev2\gmdashboard\DialogService\obj\Debug\DialogService.csproj.CoreCompileInpu
 C:\Dev2\gmdashboard\DialogService\obj\Debug\DialogService.csproj.CopyComplete
 C:\Dev2\gmdashboard\DialogService\obj\Debug\DialogService.dll
 C:\Dev2\gmdashboard\DialogService\obj\Debug\DialogService.pdb
-C:\Dev2\gmdashboard\DialogService\obj\Debug\DialogService.csprojAssemblyReference.cache

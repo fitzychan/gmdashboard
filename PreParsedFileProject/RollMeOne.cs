@@ -1,10 +1,10 @@
 ﻿using CommonCode.Blocks;
 using CommonCode.FileUtility;
 using CommonCode.RollUtility;
-using DmAssistant.BlockBuilder;
+using GmDashboard.BlockBuilder;
 using System.Collections.Generic;
 
-namespace DmAssistant.RollMeOne
+namespace GmDashboard.RollMeOne
 {
     public interface IRollMeOne
     {

@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DmDashboard.ViewModel;
+using GmDashboard.ViewModel;
 
-namespace DmDashboard
+namespace GmDashboard
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

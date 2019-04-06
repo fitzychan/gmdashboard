@@ -1,4 +1,5 @@
 ﻿using CommonCode.Blocks;
+using CommonCode.Rolls;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,15 +30,15 @@ namespace CommonCode.RollUtility
             string rollOnRollResult = string.Empty;
             using (var utility = new RandomUtility())
             {
-                if (roll.TypeOfRoll == ObjectTypes.Roll || roll.TypeOfRoll == ObjectTypes.RangeRoll || roll.TypeOfRoll == ObjectTypes.TextRoll)
+                if (roll.TypeOfRoll == ObjectTypes.StandardRoll || roll.TypeOfRoll == ObjectTypes.RangeRoll || roll.TypeOfRoll == ObjectTypes.TextRoll)
                 {
-                    var chartRoll = (Roll)roll;
+                    var chartRoll = (StandardRoll)roll;
                     //TODO  THIS SHOULD BE USEING THE DICE NUMBER TO PICK THE ROLL...
                     //THE REASON WE ARE NOT IS BECAUSE WE HAVE NOT FULL GOTTEN THE PRECENT ROLL
-                    var diceOutcome = utility.RollDice(((Roll)roll).Outcomes.Count) - 1;
+                    var diceOutcome = utility.RollDice(((StandardRoll)roll).Outcomes.Count) - 1;
 
                     var resultOfRoll = chartRoll.Outcomes.ElementAt(diceOutcome);
-                    if (resultOfRoll.TypeOfRoll == ObjectTypes.Roll)
+                    if (resultOfRoll.TypeOfRoll == ObjectTypes.StandardRoll)
                     {
                         chartRoll.Outcome += chartRoll.Description + RollOnRoll(resultOfRoll);
                     }

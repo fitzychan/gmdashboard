@@ -51,9 +51,9 @@
       <Project>{BE468DEA-6E5F-4008-9729-F0116D712EE0}</Project>
       <Name>CommonCode</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PreParsedFileProject\PreParsedFileProject.csproj">
+    <ProjectReference Include="..\PreParsedFileProject\PreParsedChart.csproj">
       <Project>{27FF0466-9C7A-4F52-B241-ED69A6245DEE}</Project>
-      <Name>PreParsedFileProject</Name>
+      <Name>PreParsedChart</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:DmDashboard"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:GmDashboard"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -16,7 +16,7 @@ using DialogService.ChartBuilderDialog;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace DmDashboard.ViewModel
+namespace GmDashboard.ViewModel
 {
     /// <summary>
     /// This class contains static references to all the view models in the

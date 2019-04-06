@@ -1,4 +1,5 @@
 using CommonCode.Blocks;
+using CommonCode.Rolls;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Pipes;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace DmDashboard.ViewModel
+namespace GmDashboard.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

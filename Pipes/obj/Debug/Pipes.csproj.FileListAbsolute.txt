@@ -93,3 +93,14 @@ C:\someshit\gmdashboard\Pipes\bin\Debug\PreParsedChart.dll
 C:\someshit\gmdashboard\Pipes\bin\Debug\CommonCode.pdb
 C:\someshit\gmdashboard\Pipes\bin\Debug\PreParsedChart.pdb
 C:\someshit\gmdashboard\Pipes\obj\Debug\Pipes.csproj.CopyComplete
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\Pipes.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\Pipes.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\CommonCode.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\PreParsedChart.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\CommonCode.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Debug\PreParsedChart.pdb
+C:\DndStuff\gmdashboard\Pipes\obj\Debug\Pipes.csprojAssemblyReference.cache
+C:\DndStuff\gmdashboard\Pipes\obj\Debug\Pipes.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\Pipes\obj\Debug\Pipes.csproj.CopyComplete
+C:\DndStuff\gmdashboard\Pipes\obj\Debug\Pipes.dll
+C:\DndStuff\gmdashboard\Pipes\obj\Debug\Pipes.pdb

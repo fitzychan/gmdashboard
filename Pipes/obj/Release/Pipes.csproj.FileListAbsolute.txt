@@ -40,3 +40,14 @@ C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
 C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
 C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.dll
 C:\someshit\gmdashboard\Pipes\obj\Release\Pipes.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Release\Pipes.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\Pipes.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\PreParsedChart.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\CommonCode.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Release\PreParsedChart.pdb
+C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.csprojAssemblyReference.cache
+C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
+C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.dll
+C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.pdb

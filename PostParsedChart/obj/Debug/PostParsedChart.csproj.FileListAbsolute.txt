@@ -24,3 +24,16 @@ C:\someshit\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csproj.CoreCom
 C:\someshit\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csproj.CopyComplete
 C:\someshit\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.dll
 C:\someshit\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.pdb
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\PostParsedChart.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\PostParsedChart.pdb
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\CommonCode.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\log4net.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\CommonCode.pdb
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Debug\log4net.xml
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csprojAssemblyReference.cache
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.Properties.Resources.resources
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csproj.GenerateResource.cache
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.csproj.CopyComplete
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.dll
+C:\DndStuff\gmdashboard\PostParsedChart\obj\Debug\PostParsedChart.pdb

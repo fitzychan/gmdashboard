@@ -42,7 +42,7 @@ namespace GmDashboard
 
         private void ShowAbout_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("This was coded with love by dustin evaska!  If you have questions you can reach me at evaska.dustin@gmail.com", "Gm-Dashboard", MessageBoxButton.OK);
+            MessageBox.Show("This was coded with love!  If you have questions hit me up on reddit @GmJam", "Gm-Dashboard", MessageBoxButton.OK);
         }
     }
 }

@@ -44,5 +44,10 @@ namespace GmDashboard
         {
             MessageBox.Show("This was coded with love by GmJam!  If you have questions you can reach me on reddit at @GmJam", "Gm-Dashboard", MessageBoxButton.OK);
         }
+
+        private void ChartList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

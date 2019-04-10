@@ -1,0 +1,161 @@
+BehindTheTables: What’s in the CAVERN? by Orkish Blade (orkish.blade@gmail.com) Originally posted at www.reddit.com/r/DnDBehindTheScreen
+INTO THE DARK…
+d10 Entrance: The cave mouth is...
+1. Wide and tall, letting much daylight into
+the entry chamber.
+2. A wide sinkhole.
+3. An easy to spot, narrow passage.
+4. A steep, slippery sloped tunnel.
+5. A man-made tunnel.
+6. A collapsed tunnel, impassable without
+excavation.
+7. Marked with several warning signs.
+8. Hidden by the terrain (d4): 1. boulders; 2.
+waterfall; 3. rocky overhang; 4. hillock.
+9. Hidden by vegetation (d4):
+1. a briar patch.
+2. a curtain of moss.
+3. enormous tree roots.
+4. overgrown vines.
+10. Difficult to access (d4):
+1. up or down a cliff face.
+2. down a deep hole.
+3. un an underwater tunnel.
+4. through an illusory rock or wall.
+d20 Distinguishing Landmark: You see...
+1. A trickle of water flowing down the walls
+and across the floor.
+2. An underground lake of potable water.
+3. A pool of stagnant water.
+4. A natural bridge over a chasm.
+5. A narrow chasm with walls close enough
+to climb between.
+6. A deep chasm with no bottom in sight.
+7. A shaft in the ceiling with no light coming
+from it.
+8. A shaft in the ceiling with dim light coming
+from it.
+9. A group of stalagmites arranged in a
+circle.
+10. An arrangement of two large stalactites
+and two large stalagmites, reminiscent of
+fangs in a yawning mouth.
+11. A pair of natural columns.
+12. A large stalactite that has broken off from
+the ceiling and fallen to the floor.
+13. An array of many small stalactites
+spreading across the ceiling.
+14. A damp wall covered in soft mold.
+15. A recess in the wall, covered in slimy
+mold.
+16. A large patch of glowing fungus.
+17. A large patch of small mushrooms.
+18. A group of enormous mushrooms.
+19. A large cavern with a strong echo.
+20. A claustrophobic tunnel with a low ceiling.
+d12 Features: You notice...
+1. A cache of abandoned, decrepit mining
+equipment.
+2. Some old dry bones.
+3. Many bones underfoot.
+4. Evidence of a recent encampment.
+5. An enormous spider web.
+6. A wide slippery patch of mold on the
+floor.
+7. The clatter of rocks falling.
+8. Loose stones underfoot.
+9. An unstable ceiling.
+10. A distant sound—a scream, hammers at
+work, footsteps, or drums.
+11. The name of a previous traveler carved
+into a wall.
+12. Several ancient runes carved into the
+wall.
+d10 Ecology: The creature is...
+1. A predator or a hunter.
+2. A food source for other denizens.
+3. A recently-arrived squatter or invader.
+4. A long-time resident.
+5. A parasite or a scavenger.
+6. A host or the dominant species.
+7. Unusually abundant.
+8. Living in deliberate isolation.
+9. Living in unintentional isolation.
+10. Severely out of place in this cave.
+d6 Hazards/Obstacles: You find...
+1. A colony of poisonous mushrooms.
+2. A patch of toxic mold.
+3. The ceiling caves in.
+4. Several rocks tumble down a sloped wall.
+5. The floor is very slippery.
+6. Your foot misses the floor as you step
+into a pit or chasm.
+d12 The cave wall is...
+1. Slightly damp.
+2. Dripping wet.
+3. Slick with mold.
+4. Covered in soft fungi.
+5. Dry as a bone.
+6. Rough and dry.
+7. Dry and smooth.
+8. Jagged.
+9. Pockmarked.
+10. Crumbling, with loose bits flaking off.
+11. Crumbling, with large chunks falling off at
+a touch.
+12. Covered in an unidentifiable slime.
+d6 The cave ceiling is...
+1. Uncomfortably close to your head.
+2. Covered in stalactites (watch your head!).
+3. Smooth as glass.
+4. Rough and jagged.
+5. Connected to the floor by natural
+columns.
+6. So high it’s difficult to see.
+d12 Travelers/Visitors: You come upon...
+1. An explorer (d4): 1. duergar; 2. goblin; 3.
+human; 4. kobold.
+2. An escaped slave (d6): 1. dwarf; 2.
+goblin; 3. gnome; 4. halfling; 5. human; 6.
+kobold.
+3. A forager (d4): 1. duergar; 2. goblin; 3.
+kobold; 4. orc.
+4. A fugitive criminal (d4): 1. heretic; 2.
+killer; 3. smuggler; 4. thief.
+5. A lost treasure hunter (d4): 1. dwarf; 2.
+half-elf; 3. high elf; 4. human.
+6. A mapmaker (d4): 1. dwarf; 2. goblin; 3.
+gnome; 4. svirfneblin.
+7. A messenger (d4): 1. dark elf; 2. goblin;
+3. gnome; 4. svirfneblin.
+8. A miner (d6): 1. dwarf; 2. gnome; 3.
+goblin; 4. human; 5. kobold; 6. svirfneblin.
+9. A prospector (d4): 1. dwarf; 2. gnome; 3.
+human; 4. svirfneblin.
+10. A scout (d4): 1. dark elf; 2. goblin; 3.
+kobold; 4. orc.
+11. A soldier (d6): 1. dark elf; 2. duergar; 3.
+dwarf; 4. goblin; 5. kobold; 6. orc.
+12. A spy (d4): 1. dark elf; 2. duergar; 3.
+goblin; 4. kobold.
+DARK ELF
+d8 The dark elf is...
+1. A deadly assassin.
+2. A death-marked heretic.
+3. An ambitious mage.
+4. A messenger on an errand.
+5. A powerful priestess.
+6. A capable scout.
+7. A battle-hardened soldier.
+8. A patient and calculating spy.
+d4 The dark elf is looking to...
+1. Track an unnatural beast or invader.
+2. Lead any travelers into a dangerous trap.
+3. Find some knowledge about an ancient
+event or place.
+4. Share some wine while prying for secrets.
+d4 The dark elf carries...
+1. An ancient wand or staff.
+2. A unique gem or piece of jewelry.
+3. A finely-crafted short sword or crossbow.
+4. A tome of dark lore.

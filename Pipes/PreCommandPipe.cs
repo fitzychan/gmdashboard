@@ -29,7 +29,7 @@ namespace Pipes.PreParsedFileProject
         {
             var mainFileList = new ObservableCollection<string>();
 
-            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf"}))
+            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
             {
                 mainFileList.Add(chart.Name);
             }
@@ -40,7 +40,7 @@ namespace Pipes.PreParsedFileProject
         {
             if (selectedItems != null && selectedItems.Count > 0)
             {
-                 return RollMeHandle.RollOnTables(selectedItems);
+                 return RollMeHandle.RollOnSelected(selectedItems);
             }
             return new List<IChart>();
         }
@@ -51,17 +51,17 @@ namespace Pipes.PreParsedFileProject
 
         public void DeleteTableCommand(ObservableCollection<string> selectedCharts)
         {
-            var foundFiles = FileUtility.LocateSpecificCharts(selectedCharts).ToList();
+            var foundFiles = FileUtility.LocateSpecificFiles(selectedCharts).ToList();
             foundFiles.ForEach(x => File.Delete(x.FullName));
         }
         public void OpenFileLocation(ICollection<string> selectedChart)
         {
-            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            var foundFile = FileUtility.LocateSpecificFiles(selectedChart).FirstOrDefault();
             FileUtility.OpenFileLocation(foundFile);
         }
         public void OpenFile(ICollection<string> selectedChart)
         {
-            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            var foundFile = FileUtility.LocateSpecificFiles(selectedChart).FirstOrDefault();
             FileUtility.OpenFile(foundFile);
         }
     }

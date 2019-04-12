@@ -8,8 +8,7 @@ namespace GmDashboard.RollMeOne
 {
     public interface IRollMeOne
     {
-        void SetSelectedItems(ICollection<string> items);
-        ICollection<IChart> RollOnTables(ICollection<string> chartPaths);
+        ICollection<IChart> RollOnSelected(ICollection<string> chartPaths);
         //Need methods that collect data that have been selected and uses that to make a contextual roll....
     }
 
@@ -25,17 +24,11 @@ namespace GmDashboard.RollMeOne
             rollUtill = new RollUtility();
         }
 
-        public void SetSelectedItems(ICollection<string> items)
-        {
-            selectedItems = items;
-        }
-
-        public ICollection<IChart> RollOnTables(ICollection<string> chartPaths)
+        public ICollection<IChart> RollOnSelected(ICollection<string> chartPaths)
         {
             List<IChart> rolledMainBlocks = new List<IChart>();
-            foreach (var chartPath in FileUtility.LocateSpecificCharts(chartPaths))
+            foreach (var chartPath in FileUtility.LocateSpecificFiles(chartPaths))
             {
-                //We dont want to include anything thats not a dummy object in out common code....  This is so we dont get a circular dependency
                 rolledMainBlocks.Add(rollUtill.RollOnChart(contentExtractor.ExtractData(chartPath)));
             }
             return rolledMainBlocks;

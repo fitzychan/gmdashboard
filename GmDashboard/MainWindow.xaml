@@ -70,25 +70,25 @@
                 </Grid.ColumnDefinitions>
                 <!-- <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"/>-->
                 <StackPanel Grid.Column="0" Margin=" 0 0 -5 0">
-                    <Button ToolTip="Refresh Tables" Margin="0 0 0 2" Command="{Binding LoadTablesCommand}" FontSize="24" >
+                    <Button ToolTip="Refresh Tables" Margin="0 0 0 2" Command="{Binding LoadCommand}" FontSize="24" >
                         <DockPanel HorizontalAlignment="Left">
                             <materialDesign:PackIcon Kind="Refresh" Width="20" />
                             <TextBlock FontSize="12" Text="Refresh"/>
                         </DockPanel>
                     </Button>
-                    <Button ToolTip="Roll Me One" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding RollOnTableCommand}" FontSize="24" >
+                    <Button ToolTip="Roll Me One" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding RollCommand}" FontSize="24" >
                         <DockPanel HorizontalAlignment="Left">
                             <materialDesign:PackIcon Kind="DiceD20" Margin="5" VerticalAlignment="Center"/>
                             <TextBlock FontSize="12" Text="Roll" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Button>
-                    <Button ToolTip="Locate Tables" Margin="0 2" Command="{Binding LocateTableCommand}" FontSize="24">
+                    <Button ToolTip="Locate Tables" Margin="0 2" Command="{Binding LocateCommand}" FontSize="24">
                         <DockPanel >
                             <materialDesign:PackIcon Kind="Magnify" Width="20" />
                             <TextBlock FontSize="12" Text="Browse"/>
                         </DockPanel>
                     </Button>
-                    <Button ToolTip="Delete" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding DeleteTableCommand}" FontSize="24">
+                    <Button ToolTip="Delete" Margin="0 2" Click="GetSelectedRollItem_Click" Command="{Binding DeleteCommand}" FontSize="24">
                         <DockPanel >
                             <materialDesign:PackIcon Kind="Delete" Width="20" />
                             <TextBlock FontSize="12" Text="Delete"/>
@@ -96,8 +96,22 @@
                     </Button>
                 </StackPanel>
                 <Grid Grid.Column="1">
-                    <TabControl>
-                        <TabItem Header="Charts">
+                    <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
+                        <GroupBox.ContextMenu >
+                            <ContextMenu >
+                                <MenuItem Header="Roll This One" Command="{Binding RollCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Refresh" Command="{Binding LoadCommand}"/>
+                                <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
+                                <Separator/>
+                                <MenuItem Header="Delete" Command="{Binding DeleteCommand}" Click="GetSelectedRollItem_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200"/>
+                    </GroupBox>
+
+                    <!--<TabControl SelectionChanged="TabControl_SelectionChanged">
+                        <TabItem Header="Charts" >
                             <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
                                 <GroupBox.ContextMenu >
                                     <ContextMenu >
@@ -109,7 +123,7 @@
                                         <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
                                     </ContextMenu>
                                 </GroupBox.ContextMenu>
-                                <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
+                                <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200"/>
                             </GroupBox>
                         </TabItem>
                         <TabItem Header="Functions" >
@@ -124,10 +138,10 @@
                                         <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
                                     </ContextMenu>
                                 </GroupBox.ContextMenu>
-                                <ListView x:Name="FunctionList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
+                                <ListView x:Name="FunctionList" FontSize="18" ItemsSource="{Binding FoundFunctions, Mode=TwoWay}" SelectedItem="{Binding SelectedFunctions , Mode=TwoWay}" MinHeight="200"/>
                             </GroupBox>
                         </TabItem>
-                    </TabControl>
+                    </TabControl>-->
                 </Grid>
             </Grid>
             <!--This one is for holding the outcomes-->

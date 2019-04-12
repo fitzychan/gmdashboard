@@ -1,6 +1,5 @@
 ﻿using CommonCode.Blocks;
 using CommonCode.Rolls;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace CommonCode.RollUtility
@@ -11,7 +10,6 @@ namespace CommonCode.RollUtility
     }
     public class RollUtility : IRollUtility
     {
-
         public IChart RollOnChart(IChart chart)
         {
 

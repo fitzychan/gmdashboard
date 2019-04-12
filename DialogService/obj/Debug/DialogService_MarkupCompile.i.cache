@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\Fitzy\Source\Repos\dnd\DialogService\obj\Debug\
+C:\DndStuff\gmdashboard\DialogService\obj\Debug\
 DialogService
 none
 false
 DEBUG;TRACE
 
-1896221120
+21411151846
 
-111318973330
-221030995384
-ChartBuilderDialog\ChartBuilderView.xaml;
+122147342923
+7644239889
+ChartBuilderDialog\ChartBuilderView.xaml;FunctionDialog\FunctionView.xaml;
 
-False
+True
 

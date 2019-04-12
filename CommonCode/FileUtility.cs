@@ -107,10 +107,8 @@ namespace CommonCode.FileUtility
 
             if (saveRolldChart.ShowDialog() == DialogResult.OK)
             {
-                DirectorySecurity dSecurity = new DirectorySecurity();
-                dSecurity.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), FileSystemRights.FullControl, InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit, PropagationFlags.NoPropagateInherit, AccessControlType.Allow));
-                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Tables", dSecurity);
-                File.SetAttributes(Directory.GetCurrentDirectory() + "\\Tables", FileAttributes.Normal);
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Tables");
+                
                 foreach (var file in saveRolldChart.FileNames)
                 {
                     File.Copy(file, Directory.GetCurrentDirectory() + "\\Tables\\" + file.Split('\\').Last().ToString(), true);
@@ -118,7 +116,7 @@ namespace CommonCode.FileUtility
             }
         }
 
-        public static IEnumerable<FileInfo> LocateSpecificCharts(ICollection<string> itemList)
+        public static IEnumerable<FileInfo> LocateSpecificFiles(ICollection<string> itemList)
         {
             var files = Directory.GetFiles(Directory.GetCurrentDirectory(), "*" + "*" + "*", SearchOption.AllDirectories);
 

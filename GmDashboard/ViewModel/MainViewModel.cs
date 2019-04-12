@@ -6,6 +6,7 @@ using Pipes;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using DialogService;
 
 namespace GmDashboard.ViewModel
 {
@@ -26,6 +27,7 @@ namespace GmDashboard.ViewModel
         //IPreCommandPipe preCommandPipe;
         private ObservableCollection<string> foundCharts = new ObservableCollection<string>();
         private ObservableCollection<string> selectedCharts = new ObservableCollection<string>();
+
         private ObservableCollection<MainRollOutcomeDataModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeDataModel>();
         private ObservableCollection<IChart> mainFinishedBlock;
 
@@ -35,15 +37,14 @@ namespace GmDashboard.ViewModel
         //Main menu bar Commands
         public RelayCommand StartChartBuilderCommand { get; private set; }
 
-        //IPreCommandPipe
-        public RelayCommand LoadTablesCommand { get; private set; }
-        public RelayCommand RollOnTableCommand { get; private set; }
-        public RelayCommand LocateTableCommand { get; private set; }
-        public RelayCommand DeleteTableCommand { get; private set; }
+        public RelayCommand LoadCommand { get; private set; }
+        public RelayCommand RollCommand { get; private set; }
+        public RelayCommand LocateCommand { get; private set; }
+        public RelayCommand DeleteCommand { get; private set; }
+
+
         public RelayCommand OpenContainingFoldersCommand { get; set; }
         public RelayCommand OpenFileCommand { get; set; }
-
-        //IPostCommandPipe postCommandPipe;
         public RelayCommand SaveToFileCommand { get; private set; }
         public RelayCommand AddToFileCommand  { get; private set; }
         public RelayCommand SaveSelectedToFileCommand { get; private set; }
@@ -63,13 +64,15 @@ namespace GmDashboard.ViewModel
             ////    // Code runs "for real"
             ////}
             //These commands are used in the main menu stuff.  Its where we are going to stick most of our secondary functions
-            StartChartBuilderCommand = new RelayCommand(() => DialogService.DialogService.ShowChartBuilder());
+            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
-            LoadTablesCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadTablesCommand());
-            RollOnTableCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
-            LocateTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadTablesCommand.Execute(null); });
-            DeleteTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadTablesCommand.Execute(null); });
+            LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadTablesCommand());
+            RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
+            LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
+            DeleteCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
+
+
             OpenContainingFoldersCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFileLocation(SelectedCharts));
             OpenFileCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFile(SelectedCharts));
             //end of pre commands
@@ -83,7 +86,7 @@ namespace GmDashboard.ViewModel
             //end of postcommand pipe
 
             //When main is populated we want to load up the tables
-            LoadTablesCommand.Execute(null);
+            LoadCommand.Execute(null);
         }
 
         public ObservableCollection<MainRollOutcomeDataModel> OutcomeDataModel

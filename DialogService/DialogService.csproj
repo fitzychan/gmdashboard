@@ -59,6 +59,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -85,7 +86,10 @@
     <Compile Include="ChartBuilderDialog\ChartBuilderViewModel.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\DescriptorCell.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\SubRollCell.cs" />
-    <Compile Include="DialogService.cs" />
+    <Compile Include="Dialogs.cs" />
+    <Compile Include="FunctionDialog\FunctionView.xaml.cs">
+      <DependentUpon>FunctionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +98,10 @@
   <ItemGroup>
     <Page Include="ChartBuilderDialog\ChartBuilderView.xaml">
       <SubType>Form</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunctionDialog\FunctionView.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

@@ -164,12 +164,12 @@ namespace DialogService.ChartBuilderDialog
                     if(rollCounter != 0)
                     {
                         cell = sheet.CreateAndGetCell(row, col);
-                        cell.Data = rollCounter + ". __________ ...";
+                        cell.Data = rollCounter + ". __________ .";
                     }
                     else
                     {
                         cell = sheet.CreateAndGetCell(row, col);
-                        cell.Data = "d" + totalRows + " ___________ ...";
+                        cell.Data = "d" + totalRows + " ___________ .";
                     }
 
                 }
@@ -177,11 +177,11 @@ namespace DialogService.ChartBuilderDialog
                 {
                     if(rollCounter != 0 )
                     {
-                        cell.Data = rollCounter + "." + cell.Data + " ...";
+                        cell.Data = rollCounter + ". " + cell.Data + " .";
                     }
                     else
                     {
-                        cell.Data = "d" + totalRows + cell.Data + " ...";
+                        cell.Data = "d" + totalRows + " " + cell.Data + " ...";
                     }
                 }
 

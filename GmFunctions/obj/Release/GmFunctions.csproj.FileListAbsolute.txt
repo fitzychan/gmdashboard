@@ -1,6 +1,5 @@
 C:\DndStuff\gmdashboard\GmFunctions\bin\Release\GmFunctions.dll
 C:\DndStuff\gmdashboard\GmFunctions\bin\Release\GmFunctions.pdb
-C:\DndStuff\gmdashboard\GmFunctions\obj\Release\GmFunctions.csprojAssemblyReference.cache
 C:\DndStuff\gmdashboard\GmFunctions\obj\Release\GmFunctions.csproj.CoreCompileInputs.cache
 C:\DndStuff\gmdashboard\GmFunctions\obj\Release\GmFunctions.dll
 C:\DndStuff\gmdashboard\GmFunctions\obj\Release\GmFunctions.pdb

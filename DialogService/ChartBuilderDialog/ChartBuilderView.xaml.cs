@@ -238,5 +238,39 @@ namespace DialogService.ChartBuilderDialog
         {
             Close();
         }
+
+        private void CollapseItems_Click(object sender, RoutedEventArgs e)
+        {
+            var sheet = grid.CurrentWorksheet;
+            var range = sheet.SelectionRange;
+
+
+            var listOfItems = new List<string>();
+            
+            sheet.IterateCells(range, false, (row, col, cell) =>
+            {
+                if(cell.DisplayText != null && cell.DisplayText != "")
+                {
+                    listOfItems.Add(cell.DisplayText);
+                }
+                
+                return true;
+            });
+
+            var startCell = range.StartPos;
+
+            for(int i = 0; i < range.Rows; i++)
+            {
+                if(listOfItems.Count > i)
+                {
+                    sheet[startCell.Row + i, startCell.Col] = listOfItems[i];
+                }
+                else
+                {
+                    sheet[startCell.Row + i, startCell.Col] = string.Empty;
+                }
+            }
+
+        }
     }
 }

@@ -1,6 +1,0 @@
-C:\DndStuff\gmdashboard\GmFunctions\bin\Debug\GmFunctions.dll
-C:\DndStuff\gmdashboard\GmFunctions\bin\Debug\GmFunctions.pdb
-C:\DndStuff\gmdashboard\GmFunctions\obj\Debug\GmFunctions.csproj.CoreCompileInputs.cache
-C:\DndStuff\gmdashboard\GmFunctions\obj\Debug\GmFunctions.dll
-C:\DndStuff\gmdashboard\GmFunctions\obj\Debug\GmFunctions.pdb
-C:\DndStuff\gmdashboard\GmFunctions\obj\Debug\GmFunctions.csprojAssemblyReference.cache

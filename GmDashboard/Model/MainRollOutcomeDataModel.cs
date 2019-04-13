@@ -9,7 +9,6 @@ namespace GmDashboard.ViewModel
     {
         private bool isSelected;
         private string preamble;
-        private string title;
         private string rollResult;
         private IRoll _rollBlock;
 
@@ -19,7 +18,6 @@ namespace GmDashboard.ViewModel
         public MainRollOutcomeDataModel(IRoll rollBlock)
         {
             _rollBlock = rollBlock;
-            Title = _rollBlock.GetDescription.Replace("\r", "").Replace("\n", "") + Environment.NewLine + "-----------------------------------";
             if (_rollBlock.TypeOfRoll == ObjectTypes.StandardRoll)
             {
                 RollResult = ((StandardRoll)_rollBlock).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine;
@@ -42,15 +40,6 @@ namespace GmDashboard.ViewModel
             set
             {
                 isSelected = value;
-                RaisePropertyChanged();
-            }
-        }
-        public string Title
-        {
-            get { return title; }
-            set
-            {
-                title = value;
                 RaisePropertyChanged();
             }
         }

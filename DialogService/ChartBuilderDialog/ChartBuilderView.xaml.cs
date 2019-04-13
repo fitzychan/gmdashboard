@@ -164,12 +164,12 @@ namespace DialogService.ChartBuilderDialog
                     if(rollCounter != 0)
                     {
                         cell = sheet.CreateAndGetCell(row, col);
-                        cell.Data = rollCounter + ". __________ ...";
+                        cell.Data = rollCounter + ". __________ .";
                     }
                     else
                     {
                         cell = sheet.CreateAndGetCell(row, col);
-                        cell.Data = "d" + totalRows + " ___________ ...";
+                        cell.Data = "d" + totalRows + " ___________ .";
                     }
 
                 }
@@ -177,11 +177,11 @@ namespace DialogService.ChartBuilderDialog
                 {
                     if(rollCounter != 0 )
                     {
-                        cell.Data = rollCounter + "." + cell.Data + " ...";
+                        cell.Data = rollCounter + ". " + cell.Data + " .";
                     }
                     else
                     {
-                        cell.Data = "d" + totalRows + cell.Data + " ...";
+                        cell.Data = "d" + totalRows + " " + cell.Data + " ...";
                     }
                 }
 
@@ -237,6 +237,40 @@ namespace DialogService.ChartBuilderDialog
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void CollapseItems_Click(object sender, RoutedEventArgs e)
+        {
+            var sheet = grid.CurrentWorksheet;
+            var range = sheet.SelectionRange;
+
+
+            var listOfItems = new List<string>();
+            
+            sheet.IterateCells(range, false, (row, col, cell) =>
+            {
+                if(cell.DisplayText != null && cell.DisplayText != "")
+                {
+                    listOfItems.Add(cell.DisplayText);
+                }
+                
+                return true;
+            });
+
+            var startCell = range.StartPos;
+
+            for(int i = 0; i < range.Rows; i++)
+            {
+                if(listOfItems.Count > i)
+                {
+                    sheet[startCell.Row + i, startCell.Col] = listOfItems[i];
+                }
+                else
+                {
+                    sheet[startCell.Row + i, startCell.Col] = string.Empty;
+                }
+            }
+
         }
     }
 }

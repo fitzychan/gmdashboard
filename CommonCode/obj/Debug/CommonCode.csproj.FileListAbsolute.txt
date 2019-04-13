@@ -64,9 +64,3 @@ C:\someshit\gmdashboard\CommonCode\obj\Debug\CommonCode.csproj.CoreCompileInputs
 C:\someshit\gmdashboard\CommonCode\obj\Debug\CommonCode.dll
 C:\someshit\gmdashboard\CommonCode\obj\Debug\CommonCode.pdb
 C:\someshit\gmdashboard\CommonCode\obj\Debug\CommonCode.csprojAssemblyReference.cache
-C:\DndStuff\gmdashboard\CommonCode\bin\Debug\CommonCode.dll
-C:\DndStuff\gmdashboard\CommonCode\bin\Debug\CommonCode.pdb
-C:\DndStuff\gmdashboard\CommonCode\obj\Debug\CommonCode.csprojAssemblyReference.cache
-C:\DndStuff\gmdashboard\CommonCode\obj\Debug\CommonCode.csproj.CoreCompileInputs.cache
-C:\DndStuff\gmdashboard\CommonCode\obj\Debug\CommonCode.dll
-C:\DndStuff\gmdashboard\CommonCode\obj\Debug\CommonCode.pdb

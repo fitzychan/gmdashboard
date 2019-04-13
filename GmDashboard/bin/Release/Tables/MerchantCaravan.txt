@@ -1,0 +1,190 @@
+d6 The caravan is...
+1. A wagon train.
+2. A long train of pack animals.
+3. A train of pack animals with a few carts.
+4. A train of pack animals with a few wagons.
+5. A train of pack animals with some livestock.
+6. Traveling on foot with a few pack animals.
+d8 The caravan’s pack animals are...
+1. One-humped camels.
+2. Two-humped camels.
+3. Large draft horses.
+4. Reliable garrons.
+5. Sure-footed ponies.
+6. Mules.
+7. Oxen.
+8. Exotic beasts (d6): 1. bison; 2. drakes; 3.
+elephants; 4. elk; 5. giant lizards; 6. zebras.
+d6 The caravan is transporting...
+1. Cloth (d4): 1. cotton, 2. linen; 3. silk, 4. wool.
+2. Drugs or contraband.
+3. Gemstones (d10): 1. diamond; 2. emerald;
+3. jade; 5. obsidian; 5. opal; 6. pearl; 7. ruby;
+8. sapphire; 9. topaz; 10. turquoise.
+4. Metals (d6): 1. arsenic; 2. copper; 3. gold;
+4. lead; 5. silver; 6. tin.
+5. Spices and teas.
+6. Wine and spirits.
+d4 The caravan’s general mood is...
+1. Desperate; a calamity has befallen them.
+2. Foul; morale is bad, and provisions are low.
+3. Tired; the journey is long and longer yet.
+4. Eager; great riches await at journey’s end.
+CARAVAN MASTER
+d8 The caravan master is...
+1. A mysterious foreigner.
+2. A career soldier.
+3. An outcast from a prominent family.
+4. A celebrated explorer.
+5. A femme fatale.
+6. A charming rogue.
+7. A dashing swashbuckler.
+8. A brutish thug.
+d8 The caravan master is looking for...
+1. Information regarding the route ahead.
+2. The location of an ancient ruin.
+3. Extra muscle for the journey.
+4. News from the origin or destination.
+5. Revenge against a bitter rival.
+6. Ways to cheat the caravan’s owner.
+7. Ways to speed up the caravan’s pace.
+8. Drinking companions and storytellers.
+d6 The caravan master is trying to avoid...
+1. Ancient ruins and cursed places.
+2. Barbarians.
+3. Bandits.
+4. Other caravans.
+5. Thieves.
+6. Wild beasts.
+d8 The caravan master carries...
+1. A superbly crafted sword.
+2. Several daggers and a purse of gold.
+3. A trusted blade and a map.
+4. A lucky charm (rabbit’s foot, old coin).
+5. The token of a faraway love.
+6. Extravagant jewels and silks.
+7. Keys of many shapes and sizes.
+8. A little jar of mustache wax.
+ANIMAL HANDLER/PORTER
+d6 The animal handler has...
+1. An awkward gait.
+2. Incredibly large hands.
+3. Holes in the breeches.
+4. Quite an odor.
+5. A threadbare shirt.
+6. A ragged beard.
+d4 The animal handler wants to...
+1. Earn a little silver.
+2. Go back home.
+3. Survive the journey.
+4. Have a drink and a rest.
+d6 The animal handler carries...
+1. A memento from a loved one.
+2. Several morsels of animal feed.
+3. Several morsels of food.
+4. A few copper pieces.
+5. A waterskin.
+6. A wineskin.
+COOK
+d4 The cook greets you with...
+1. A goblet of warm wine.
+2. A glass of water.
+3. A cup of cold porridge.
+4. A hearty handshake.
+d4 The cook is looking for...
+1. Someone more important to talk to.
+2. Some better ingredients.
+3. A good joke or story.
+4. The bottom of a bottle.
+d6 The cook carries...
+1. A filthy rag.
+2. A large wooden spoon.
+3. A grease-smeared apron.
+4. An unusual belt purse.
+5. A pouch full of spices.
+6. A bottle of whisky.
+GUARD
+d6 The guard is...
+1. The son of a miner or fisherman.
+2. A veteran of warfare.
+3. The son of a poor man.
+4. A drunk.
+5. A thug.
+6. A favorite among the ladies.
+d4 The guard works for...
+1. The steady pay.
+2. A chance to dole out pain.
+3. Gold to repay debts.
+4. Gold to aid a family member.
+d10 The guard has...
+1. An unsightly scar.
+2. A foolish grin.
+3. A stupid stare.
+4. A blade with an inscription.
+5. A highly polished blade.
+6. A token from a favorite harlot.
+7. A silk handkerchief.
+8. A flask of wine.
+9. A pair of dice or a deck of cards.
+10. A beautiful, waxed mustache.
+GUIDE
+d4 The guide is...
+1. A nomadic herder.
+2. A strange hermit.
+3. A skilled hunter.
+4. A savage warrior.
+d4 The guide is looking to...
+1. Help the caravan in any way he/she can.
+2. Lead the caravan astray.
+3. Fill his purse with gold.
+4. Eat, drink, and be merry.
+d4 The guide carries...
+1. An unusual map.
+2. A unique trinket or piece of jewelry.
+3. A spear or walking staff.
+4. A large knife and some rope.
+CARAVAN OWNER
+d6 The merchant is...
+1. A member of a trading clan.
+2. A minor lord or lady.
+3. An enterprising trader.
+4. A member of a prominent family.
+5. Of common birth.
+6. The real owner’s representative.
+d6 The merchant seeks someone to...
+1. Obtain a mysterious artifact.
+2. Negotiate a trade contract.
+3. Purchase goods.
+4. Sabotage a rival merchant.
+5. Secure a marriage.
+6. Have a good time with.
+d4 The merchant carries...
+1. A family heirloom.
+2. Several inventories and invoices.
+3. Some very valuable jewels.
+4. A compromising love letter.
+d4 Currency: The merchant will trade in...
+1. Coins and gems.
+2. Gold and silver bullion.
+3. Water, provisions, and other goods.
+4. Shells, beads, and trinkets.
+TRAVELER
+d6 The traveler is...
+1. An exile.
+2. A minstrel.
+3. A pilgrim.
+4. A sellsword.
+5. A storyteller.
+6. A treasure hunter.
+d6 The traveler is searching for...
+1. The answer to a riddle
+2. A long lost friend.
+3. The return of something stolen.
+4. Revenge against a bitter rival.
+5. New adventures.
+6. Steady work.
+d4 Tonight, the traveler is looking for...
+1. Accomplices on a quest.
+2. An audience to entertain.
+3. Someone to hear a sad tale.
+4. Drinking companions.

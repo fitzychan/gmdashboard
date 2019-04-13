@@ -1,0 +1,170 @@
+d20 The company’s colors are...
+1. Black.
+2. Red / scarlet.
+3. Gold.
+4. Forest green.
+5. Royal blue.
+6. Violet.
+7. Silver / light grey.
+8. Bronze.
+9. Tan / khaki.
+10. Brown / beaver.
+11. Dark grey / gunmetal.
+12. White.
+13. Maroon.
+14. Sky blue.
+15. Navy blue.
+16. Dark brown / chocolate.
+17. Teal / turquoise.
+18. Yellow.
+19. Orange.
+20. Olive green.
+d20 The company’s banner features...
+1. A skull.
+2. A clenched fist.
+3. A flame.
+4. A shield.
+5. An arrow.
+6. An axe.
+7. A hammer.
+8. A sword.
+9. The sun.
+10. The moon.
+11. A bear.
+12. A bull.
+13. A dragon.
+14. A falcon.
+15. A lion.
+16. A raven.
+17. A scorpion.
+18. A snake.
+19. A stag.
+20. A wolf.
+d10 The company’s commander is...
+1. A brilliant strategist.
+2. A scion from a prominent family.
+3. An outcast from a prominent family.
+4. A dashing swashbuckler.
+5. A brutish thug.
+6. A celebrated war hero.
+7. A disgraced knight.
+8. An anointed knight.
+9. A career soldier
+10. A former arena champion.
+d6 The company’s attitude toward their
+commander is...
+1. Friendly and loyal.
+2. Respectful and business-like.
+3. Cautious and uncertain.
+4. Terrified and tight-lipped.
+5. Disappointed and disrespectful.
+6. Agitated and restless.
+
+d8 The company specializes in...
+1. Siege-breaking.
+2. Holding redoubts.
+3. Frontal assaults.
+4. Skirmishes.
+5. Patrolling.
+6. Flanking maneuvers.
+7. Guerilla tactics.
+8. Foraging.
+d8 The company is notorious for...
+1. Taking no prisoners.
+2. Scarring or branding prisoners.
+3. Incompetence.
+4. Cowardice.
+5. Singing bawdy songs.
+6. Romantic escapades.
+7. Eating everything that is available.
+8. Drinking too much ale and wine.
+d6 Most soldiers in the company are
+outfitted with...
+1. Patched leather armor.
+2. Leather armor marked with the symbol
+of their liege lord.
+3. Helms and breastplates emblazoned
+with the symbol of their liege lord.
+4. Well-maintained chainmail.
+5. Well-worn scale armor.
+6. Newly-forged scale armor.
+d12 Most soldiers in the company are
+equipped with...
+1. Longswords and shortbows.
+2. Longswords and crossbows.
+3. Longswords and shields.
+4. Shortswords and longbows.
+5. Shortswords and shields.
+6. Mornngstars and crossbows.
+7. Battleaxes and handaxes.
+8. Warhammers and shields.
+9. Spears and shields.
+10. Longspears and shortswords.
+11. Pikes and shortswords.
+12. Halberds and handaxes.
+d8 Most soldiers in the company are...
+1. Trained men-at-arms.
+2. Militia men.
+3. Veterans of war.
+4. Prisoners of war.
+5. Conscripts from a city.
+6. Conscripts from peasant villages.
+7. Convicted criminals.
+8. Green boys.
+
+INDIVIDUAL SOLDIERS
+d12 The soldier is...
+1. A farm boy.
+2. The son of a miner or fisherman.
+3. A veteran of gladiatorial combat.
+4. A veteran of warfare.
+5. A prisoner of war.
+6. A political dissident.
+7. The son of a poor man.
+8. A drunk.
+9. A fugitive criminal.
+10. A former pirate.
+11. A failed craftsman.
+12. A favorite among the ladies.
+d12 The soldier fights for...
+1. The steady pay.
+2. The love of someone he cannot have.
+3. Pure bloodlust.
+4. A chance to deal out sadistic torment.
+5. A chance at vengeance.
+6. Gold to repay debts.
+7. Gold to aid a family member.
+8. A chance to escape from life
+imprisonment.
+9. A chance at redemption.
+10. God and country.
+11. Fortune and glory.
+12. Strength and honor.
+d12 On the soldier’s face is...
+1. A large wart.
+2. An eyepatch.
+3. An unsightly scar.
+4. A haughty sneer.
+5. A look of sadness.
+6. A stupid grin.
+7. An eager grin.
+8. A frame of long, beautiful long hair.
+9. Ferocious sideburns.
+10. A neatly-trimmed goatee.
+11. An unruly beard.
+12. A lush, thick mustache.
+d10 The soldier carries...
+1. A blade with soft leather tassels
+dangling from the pommel.
+2. A blade with a carved hilt (ivory, jade,
+soapstone, ebony, mahogany, or oak).
+3. A blade with beasts sculpted into the
+steel of the guard (dragons, lions,
+scorpions, snakes, spiders, or wolves).
+4. A blade made of blackened steel.
+5. A highly polished blade.
+6. A token from a sweetheart.
+7. A token from a parent.
+8. A letter from a fallen comrade.
+9. A trophy from a fallen enemy.
+10. A ribbon from a faraway maiden.

@@ -96,38 +96,19 @@
                     </Button>
                 </StackPanel>
                 <Grid Grid.Column="1">
-                    <TabControl>
-                        <TabItem Header="Charts">
-                            <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
-                                <GroupBox.ContextMenu >
-                                    <ContextMenu >
-                                        <MenuItem Header="Roll This One" Command="{Binding RollOnTableCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <MenuItem Header="Refresh" Command="{Binding LoadTablesCommand}"/>
-                                        <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <Separator/>
-                                        <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
-                                    </ContextMenu>
-                                </GroupBox.ContextMenu>
-                                <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
-                            </GroupBox>
-                        </TabItem>
-                        <TabItem Header="Functions" >
-                            <GroupBox  Header="Found Functions" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
-                                <GroupBox.ContextMenu >
-                                    <ContextMenu >
-                                        <MenuItem Header="Roll This One" Command="{Binding RollOnTableCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <MenuItem Header="Refresh" Command="{Binding LoadTablesCommand}"/>
-                                        <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
-                                        <Separator/>
-                                        <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
-                                    </ContextMenu>
-                                </GroupBox.ContextMenu>
-                                <ListView x:Name="FunctionList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
-                            </GroupBox>
-                        </TabItem>
-                    </TabControl>
+                    <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
+                        <GroupBox.ContextMenu >
+                            <ContextMenu >
+                                <MenuItem Header="Roll This One" Command="{Binding RollOnTableCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Refresh" Command="{Binding LoadTablesCommand}"/>
+                                <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
+                                <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
+                                <Separator/>
+                                <MenuItem Header="Delete" Command="{Binding DeleteTableCommand}" Click="GetSelectedRollItem_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
+                    </GroupBox>
                 </Grid>
             </Grid>
             <!--This one is for holding the outcomes-->
@@ -178,9 +159,9 @@
                                                     <ColumnDefinition />
                                                 </Grid.ColumnDefinitions>
                                                 <CheckBox VerticalAlignment="Top" IsChecked="{Binding IsSelected}"/>
-                                                <StackPanel Margin="10 0 0 0" Grid.Column="1">
-                                                    <TextBlock FontWeight="Bold" Text="{Binding Title}" TextWrapping="Wrap"/>
-                                                    <TextBlock Text="{Binding RollResult}" TextWrapping="Wrap"/>
+                                                <StackPanel  Grid.Column="1" Margin="5 2 5 0">
+                                                    <Rectangle  HorizontalAlignment="Stretch" Fill="Black" Height="2"/>
+                                                    <TextBlock Text="{Binding RollResult}" TextWrapping="Wrap" Margin="0 5"/>
                                                 </StackPanel>
                                             </Grid>
                                         </Border>

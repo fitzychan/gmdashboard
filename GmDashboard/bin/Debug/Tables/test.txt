@@ -1,8 +1,0 @@
-d7 sdf ...
-1.wef .
-2.sdf .
-3.dfg .
-4.as .
-5.qwer .
-6.xcvb .
-7.asf .

@@ -1,4 +1,0 @@
-C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.dll
-C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\bin\Debug\CommonBlocks.pdb
-C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.dll
-C:\Users\FitzyNSierra-Dev\Desktop\Devstuff\Code Right before the new UI\CommonBlocks\CommonBlocks\obj\Debug\CommonBlocks.pdb

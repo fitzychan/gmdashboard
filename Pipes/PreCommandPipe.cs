@@ -29,7 +29,7 @@ namespace Pipes.PreParsedFileProject
         {
             var mainFileList = new ObservableCollection<string>();
 
-            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf"}))
+            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
             {
                 mainFileList.Add(chart.Name);
             }

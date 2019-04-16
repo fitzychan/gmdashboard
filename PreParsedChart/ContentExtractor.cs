@@ -33,10 +33,20 @@ namespace GmDashboard.BlockBuilder
                     {
                         return RollMeOneFormatExtractor(file);
                     }
+                case ".ps1":
+                    {
+                        return RunPowershellFunction(file);
+                    }
+
             }
             return new Chart();
         }
  
+        private IChart RunPowershellFunction(FileInfo powershell)
+        {
+            return null;
+        }
+
         private IChart RollMeOneFormatExtractor(FileInfo chartPath)
         {
             return parseBlockV2.BuildFromRgf(XDocument.Load(chartPath.FullName));

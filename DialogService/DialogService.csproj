@@ -85,7 +85,7 @@
     <Compile Include="ChartBuilderDialog\ChartBuilderViewModel.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\DescriptorCell.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\SubRollCell.cs" />
-    <Compile Include="DialogService.cs" />
+    <Compile Include="Dialogs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

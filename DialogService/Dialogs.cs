@@ -2,12 +2,18 @@
 
 namespace DialogService
 {
-    public static class  DialogService
+    public static class  Dialogs
     {
-        public static void ShowChartBuilder()
+        public static void ActivateChartBuilder()
         {
             ChartBuilderView dlg = new ChartBuilderView();
             dlg.Show();
         }
+
+        public static void ActiveChartFunction()
+        {
+
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 using CommonCode.Blocks;
 using CommonCode.Rolls;
+using DialogService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Pipes;
@@ -39,7 +40,7 @@ namespace GmDashboard.ViewModel
         public RelayCommand LoadCommand { get; private set; }
         public RelayCommand RollCommand { get; private set; }
         public RelayCommand LocateCommand { get; private set; }
-        public RelayCommand DeleteTableCommand { get; private set; }
+        public RelayCommand DeleteCommand { get; private set; }
         public RelayCommand OpenContainingFoldersCommand { get; set; }
         public RelayCommand OpenFileCommand { get; set; }
 
@@ -63,13 +64,13 @@ namespace GmDashboard.ViewModel
             ////    // Code runs "for real"
             ////}
             //These commands are used in the main menu stuff.  Its where we are going to stick most of our secondary functions
-            StartChartBuilderCommand = new RelayCommand(() => DialogService.DialogService.ShowChartBuilder());
+            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
             LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
             RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
             LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
-            DeleteTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
+            DeleteCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
             OpenContainingFoldersCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFileLocation(SelectedCharts));
             OpenFileCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFile(SelectedCharts));
             //end of pre commands

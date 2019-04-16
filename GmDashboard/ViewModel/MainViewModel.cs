@@ -36,9 +36,9 @@ namespace GmDashboard.ViewModel
         public RelayCommand StartChartBuilderCommand { get; private set; }
 
         //IPreCommandPipe
-        public RelayCommand LoadTablesCommand { get; private set; }
-        public RelayCommand RollOnTableCommand { get; private set; }
-        public RelayCommand LocateTableCommand { get; private set; }
+        public RelayCommand LoadCommand { get; private set; }
+        public RelayCommand RollCommand { get; private set; }
+        public RelayCommand LocateCommand { get; private set; }
         public RelayCommand DeleteTableCommand { get; private set; }
         public RelayCommand OpenContainingFoldersCommand { get; set; }
         public RelayCommand OpenFileCommand { get; set; }
@@ -66,10 +66,10 @@ namespace GmDashboard.ViewModel
             StartChartBuilderCommand = new RelayCommand(() => DialogService.DialogService.ShowChartBuilder());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
-            LoadTablesCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadTablesCommand());
-            RollOnTableCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
-            LocateTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadTablesCommand.Execute(null); });
-            DeleteTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadTablesCommand.Execute(null); });
+            LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
+            RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
+            LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
+            DeleteTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
             OpenContainingFoldersCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFileLocation(SelectedCharts));
             OpenFileCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFile(SelectedCharts));
             //end of pre commands
@@ -83,7 +83,7 @@ namespace GmDashboard.ViewModel
             //end of postcommand pipe
 
             //When main is populated we want to load up the tables
-            LoadTablesCommand.Execute(null);
+            LoadCommand.Execute(null);
         }
 
         public ObservableCollection<MainRollOutcomeDataModel> OutcomeDataModel

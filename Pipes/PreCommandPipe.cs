@@ -10,7 +10,7 @@ namespace Pipes.PreParsedFileProject
 {
     public interface IPreCommandPipe
     {
-        ObservableCollection<string> LoadTablesCommand();
+        ObservableCollection<string> LoadCommand();
         ICollection<IChart> RollOneCommand(ICollection<string> selectedItems);
         void OpenFileLocation(ICollection<string> selectedChart);
         void OpenFile(ICollection<string> selectedChart);
@@ -25,7 +25,7 @@ namespace Pipes.PreParsedFileProject
             RollMeHandle = new RollMeOne();
         }
 
-        public ObservableCollection<string> LoadTablesCommand()
+        public ObservableCollection<string> LoadCommand()
         {
             var mainFileList = new ObservableCollection<string>();
 

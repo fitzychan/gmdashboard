@@ -1,7 +1,7 @@
-﻿using CommonCode.Blocks;
-using CommonCode.FileUtility;
+﻿using CommonCode.FileUtility;
+using CommonCode.Interfaces;
 using CommonCode.RollUtility;
-using GmDashboard.BlockBuilder;
+using GmDashboard.ChartBuilder;
 using System.Collections.Generic;
 
 namespace GmDashboard.RollMeOne
@@ -33,10 +33,26 @@ namespace GmDashboard.RollMeOne
         public ICollection<IChart> RollOnTables(ICollection<string> chartPaths)
         {
             List<IChart> rolledMainBlocks = new List<IChart>();
-            foreach (var chartPath in FileUtility.LocateSpecificCharts(chartPaths))
+            foreach (var file in FileUtility.LocateSpecificCharts(chartPaths))
             {
-                //We dont want to include anything thats not a dummy object in out common code....  This is so we dont get a circular dependency
-                rolledMainBlocks.Add(rollUtill.RollOnChart(contentExtractor.ExtractData(chartPath)));
+                IChart builtChart;
+                if (file.Extension.Contains(".txt"))
+                {
+                    builtChart = contentExtractor.ExtractFromText(file);
+                }
+                else if(file.Extension.Contains(".rgf"))
+                {
+                    builtChart = contentExtractor.ExtractFromRgf(file);
+                }
+                else if (file.Extension.Contains(".ps1"))
+                {
+                    builtChart = contentExtractor.ExtractFromPowerShell(file);
+                }
+                else
+                {
+                    throw new System.NotImplementedException("File format not supported");
+                }
+                rolledMainBlocks.Add(rollUtill.RollOnChart(builtChart));
             }
             return rolledMainBlocks;
         }

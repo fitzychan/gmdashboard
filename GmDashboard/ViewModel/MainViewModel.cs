@@ -1,5 +1,5 @@
-using CommonCode.Blocks;
-using CommonCode.Rolls;
+using CommonCode.Charts;
+using CommonCode.Interfaces;
 using DialogService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;

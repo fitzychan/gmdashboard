@@ -1,4 +1,5 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode;
+using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using GalaSoft.MvvmLight;
 using System;
@@ -18,7 +19,7 @@ namespace GmDashboard.ViewModel
         public MainRollOutcomeDataModel(IRoll rollBlock)
         {
             _rollBlock = rollBlock;
-            if (_rollBlock.TypeOfRoll == ObjectTypes.StandardRoll)
+            if (_rollBlock.TypeOfRoll == GmDashboardTypes.StandardRoll)
             {
                 RollResult = ((StandardRoll)_rollBlock).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine;
             }

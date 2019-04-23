@@ -1,6 +1,6 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Charts;
+using CommonCode.Interfaces;
 using CommonCode.Rolls;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace CommonCode.RollUtility
@@ -15,7 +15,7 @@ namespace CommonCode.RollUtility
         public IChart RollOnChart(IChart chart)
         {
 
-            if (chart.TypeOfChart == ObjectTypes.Chart)
+            if (chart.TypeOfChart == GmDashboardTypes.Chart)
             {
                 foreach (var chartRoll in ((Chart)chart).ChartRolls)
                 {
@@ -30,7 +30,7 @@ namespace CommonCode.RollUtility
             string rollOnRollResult = string.Empty;
             using (var utility = new RandomUtility())
             {
-                if (roll.TypeOfRoll == ObjectTypes.StandardRoll || roll.TypeOfRoll == ObjectTypes.RangeRoll || roll.TypeOfRoll == ObjectTypes.TextRoll)
+                if (roll.TypeOfRoll == GmDashboardTypes.StandardRoll || roll.TypeOfRoll == GmDashboardTypes.RangeRoll || roll.TypeOfRoll == GmDashboardTypes.TextRoll)
                 {
                     var chartRoll = (StandardRoll)roll;
                     //TODO  THIS SHOULD BE USEING THE DICE NUMBER TO PICK THE ROLL...
@@ -38,7 +38,7 @@ namespace CommonCode.RollUtility
                     var diceOutcome = utility.RollDice(((StandardRoll)roll).Outcomes.Count) - 1;
 
                     var resultOfRoll = chartRoll.Outcomes.ElementAt(diceOutcome);
-                    if (resultOfRoll.TypeOfRoll == ObjectTypes.StandardRoll)
+                    if (resultOfRoll.TypeOfRoll == GmDashboardTypes.StandardRoll)
                     {
                         chartRoll.Outcome += chartRoll.Description + RollOnRoll(resultOfRoll);
                     }

@@ -1,4 +1,5 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Charts;
+using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using System;
 using System.Collections.Generic;
@@ -6,22 +7,25 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-namespace GmDashboard.BlockBuilder
+namespace GmDashboard.ChartBuilder
 {
-    public interface IBlockBuilder
+    public interface IChartBuilder
     {
         IChart BuildFromTxt(string stringValues);
         IChart BuildFromRgf(XDocument xDoc);
+        IChart BuildFromParams(string paramString);
     }
 
-    class BlockBuilder : IBlockBuilder
+    public class ChartBuilder : IChartBuilder
     {
 
         readonly Regex chartRegex;
         readonly Regex rangeRegex;
         readonly Regex subrollRegex;
 
-        public BlockBuilder()
+        private const string PARAMETER = ".PARAMETER";
+
+        public ChartBuilder()
         {
             chartRegex = new Regex(@"d-?\d+[\x20]", RegexOptions.IgnoreCase);
             rangeRegex = new Regex(@"-?\d+--?\d+", RegexOptions.IgnoreCase);
@@ -49,7 +53,7 @@ namespace GmDashboard.BlockBuilder
 
             foreach (var chart in listSplitCharts.Select((value, i) => new { i, value }))
             {
-                var blockToAdd = BuildBlockV2(chart.value);
+                var blockToAdd = BuildRolls(chart.value);
 
                 blockToAdd.Description = dRollList.ElementAt(chart.i) + blockToAdd.Description;
 
@@ -62,10 +66,10 @@ namespace GmDashboard.BlockBuilder
 
         private IRoll BuildRollBlocks(string chartString)
         {
-            return BuildBlockV2(chartString);
+            return BuildRolls(chartString);
         }
 
-        private StandardRoll BuildBlockV2(string chartString)
+        private StandardRoll BuildRolls(string chartString)
         {
             var block = new StandardRoll();
             string possibleoutcome = string.Empty;
@@ -180,6 +184,43 @@ namespace GmDashboard.BlockBuilder
         public IChart BuildFromRgf(XDocument xDoc)
         {
             throw new NotImplementedException();
+        }
+
+        public IChart BuildFromParams(string paramString)
+        {
+            var functionChart = new FunctionParamChart();
+
+            var startIndex = paramString.IndexOf("<#") + 2;
+            var endIndex = paramString.IndexOf("#>") - 3;
+
+            var specialParams = Regex.Split(paramString.Substring(startIndex, endIndex), "\r\n|\r|\n");
+
+            var listOfParams = new List<List<string>>();
+
+            for (int i = 0; i < specialParams.Length; i++)
+            {
+                string param = specialParams[i];
+                if (!string.IsNullOrWhiteSpace(param))
+                {
+                    if(param.Contains(PARAMETER))
+                    {
+                        List<string> paramAndNotes = new List<string>
+                        {
+                            param.Replace(PARAMETER, "").TrimStart(' ')
+                        };
+
+                        i++;
+
+                        for( ; !string.IsNullOrWhiteSpace(specialParams[i]); i++)
+                        {
+                            paramAndNotes.Add(specialParams[i]);
+                        }
+                        listOfParams.Add(paramAndNotes);
+                    }
+                }
+            }
+            functionChart.Parameters = listOfParams;
+            return functionChart;
         }
     }
 }

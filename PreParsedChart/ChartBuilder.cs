@@ -1,8 +1,10 @@
 ﻿using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using DialogService;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -13,7 +15,7 @@ namespace GmDashboard.ChartBuilder
     {
         IChart BuildFromTxt(string stringValues);
         IChart BuildFromRgf(XDocument xDoc);
-        IChart BuildFromParams(string paramString);
+        IChart BuildFromParams(string paramString, FileInfo file);
     }
 
     public class ChartBuilder : IChartBuilder
@@ -186,7 +188,7 @@ namespace GmDashboard.ChartBuilder
             throw new NotImplementedException();
         }
 
-        public IChart BuildFromParams(string paramString)
+        public IChart BuildFromParams(string paramString, FileInfo file)
         {
             var functionChart = new FunctionParamChart();
 
@@ -195,7 +197,7 @@ namespace GmDashboard.ChartBuilder
 
             var specialParams = Regex.Split(paramString.Substring(startIndex, endIndex), "\r\n|\r|\n");
 
-            var listOfParams = new List<List<string>>();
+            var listOfParams = new List<Parameter>();
 
             for (int i = 0; i < specialParams.Length; i++)
             {
@@ -204,22 +206,33 @@ namespace GmDashboard.ChartBuilder
                 {
                     if(param.Contains(PARAMETER))
                     {
-                        List<string> paramAndNotes = new List<string>
+                        var localParam = new Parameter
                         {
-                            param.Replace(PARAMETER, "").TrimStart(' ')
+                            Name = param.Replace(PARAMETER, "").TrimStart(' ')
                         };
 
                         i++;
 
                         for( ; !string.IsNullOrWhiteSpace(specialParams[i]); i++)
                         {
-                            paramAndNotes.Add(specialParams[i]);
+                            localParam.Description += specialParams[i];
                         }
-                        listOfParams.Add(paramAndNotes);
+                        listOfParams.Add(localParam);
                     }
                 }
             }
             functionChart.Parameters = listOfParams;
+
+            var readParams = Dialogs.ExtractPowerShellParameters(functionChart);
+
+            functionChart = new FunctionParamChart();
+            foreach(var param in readParams)
+            {
+                functionChart.Parameters.Add(new Parameter { Name = param.Name, Description = param.Description, Value = param.Value });
+            }
+
+            functionChart.PowershellFileInfo = file;
+
             return functionChart;
         }
     }

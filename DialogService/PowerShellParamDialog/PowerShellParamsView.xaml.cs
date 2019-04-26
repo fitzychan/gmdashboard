@@ -11,17 +11,19 @@ namespace DialogService.PowerShellParamDialog
     /// </summary>
     public partial class PowerShellParamsView : Window
     {
-        public ObservableCollection<FunctionParameterViewModel> FunctionParams { get; set; }
+        public List<FunctionParameters> paramResults = new List<FunctionParameters>();
 
-        public PowerShellParamsView(FunctionParamChart functionChart)
+
+        public PowerShellParamsView(FunctionParameterViewModel loadedViewModel)
         {
             InitializeComponent();
-            FunctionParams = new ObservableCollection<FunctionParameterViewModel>();
+            DataContext = loadedViewModel;
+        }
 
-            foreach (var param in functionChart.Parameters)
-            {
-                FunctionParams.Add(new FunctionParameterViewModel { Name = param.First(), Description = param.LastOrDefault()});
-            }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            paramResults = ((FunctionParameterViewModel)DataContext).FunctionParams.ToList();
+            Close();
         }
     }
 }

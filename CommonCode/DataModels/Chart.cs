@@ -1,6 +1,7 @@
 ﻿using CommonCode.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace CommonCode.Charts
 {
@@ -18,6 +19,10 @@ namespace CommonCode.Charts
     {
         public Guid TypeOfChart => GmDashboardTypes.PowerShell;
 
-        public List<List<string>> Parameters { get; set; } = new List<List<string>>();
+        public List<Parameter> Parameters { get; set; } = new List<Parameter>();
+
+        public FileInfo PowershellFileInfo { get; set; }
+
+        public string PowerShellResult { get; set; }
     }
 }

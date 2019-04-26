@@ -56,9 +56,8 @@ namespace GmDashboard.ChartBuilder
         public IChart ExtractFromPowerShell(FileInfo file)
         {
             var extractedString = ExtractStringFromFile(file);
-            var extractedParams = builder.BuildFromParams(extractedString);
-            var powerShellParams = Dialogs.ExtractPowerShellParameters(extractedParams);
-            return new Chart();
+
+            return builder.BuildFromParams(extractedString, file);
         }
     }
 }

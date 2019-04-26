@@ -87,6 +87,7 @@
     <Compile Include="ChartBuilderDialog\CellTypes\DescriptorCell.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\SubRollCell.cs" />
     <Compile Include="Dialogs.cs" />
+    <Compile Include="PowerShellParamDialog\FunctionParameters.cs" />
     <Compile Include="PowerShellParamDialog\FunctionParameterViewModel.cs" />
     <Compile Include="PowerShellParamDialog\PowerShellParamsView.xaml.cs">
       <DependentUpon>PowerShellParamsView.xaml</DependentUpon>

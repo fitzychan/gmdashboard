@@ -1,6 +1,7 @@
 ﻿using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using System.Diagnostics;
 using System.Linq;
 
 namespace CommonCode.RollUtility
@@ -21,6 +22,18 @@ namespace CommonCode.RollUtility
                 {
                     RollOnRoll(chartRoll);
                 }
+            }
+            else if(chart.TypeOfChart == GmDashboardTypes.PowerShell)
+            {
+                var powershellFile = (FunctionParamChart)chart;
+                var orginizedParams = string.Empty;
+
+                foreach(var param in powershellFile.Parameters)
+                {
+                    orginizedParams += "-" + param.Name.ToLower() + " " + param.Value;
+                }
+
+                Process.Start(new ProcessStartInfo() { FileName = powershellFile.PowershellFileInfo.FullName,  });
             }
             return chart;
         }

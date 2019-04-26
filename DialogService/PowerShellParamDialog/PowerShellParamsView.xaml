@@ -1,29 +1,47 @@
 ﻿<Window x:Class="DialogService.PowerShellParamDialog.PowerShellParamsView"
+             xmlns:viewModel = "clr-namespace:DialogService.PowerShellParamDialog" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Height="400" Width="600"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             DataContext="{Binding FunctionParameterViewModel}"
              MinHeight="400" MinWidth="600">
-    <Grid>
+    <Window.DataContext>
+        <viewModel:FunctionParameterViewModel/>
+    </Window.DataContext>
+    <Grid HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <materialDesign:ColorZone Mode="Accent" Padding="5" Grid.Row="0">
             <TextBlock>STUFF</TextBlock>
         </materialDesign:ColorZone>
-        <ItemsControl ItemsSource="{Binding Path=FunctionParameterViewModel, Mode=TwoWay}" Grid.Row="1">
+        <ItemsControl ItemsSource="{Binding Path=FunctionParams, Mode=TwoWay}" Grid.Row="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <!--<Button Content="{Binding=Name}"/>-->
-                    </StackPanel>
+                    <DockPanel >
+                        <StackPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left" Text="{Binding Path = Name, Mode=TwoWay}" FontWeight="ExtraBold"  Background="Bisque"/>
+                            <TextBlock DockPanel.Dock="Left" Text="{Binding Path = Description, Mode=TwoWay}" Background="Bisque"/>
+                        </StackPanel>
+                        <TextBox DockPanel.Dock="Bottom" Text="{Binding Path = Value, Mode=TwoWay}" Width="100" Background="Bisque" HorizontalAlignment="Left"/>
+                    </DockPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Width="100" DockPanel.Dock="Right" Command="{Binding OkCommand}" Click="Button_Click">Ok</Button>
+            <Button Grid.Column="2" Width="100" DockPanel.Dock="Left">Cancel</Button>
+
+        </Grid>
     </Grid>
 </Window>

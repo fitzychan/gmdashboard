@@ -45,7 +45,7 @@ namespace GmDashboard.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ChartBuilderViewModel>();
-            SimpleIoc.Default.Register<FunctionParameterViewModel>();
+            //SimpleIoc.Default.Register<FunctionParameterViewModel>();
         }
 
         public MainViewModel Main
@@ -64,13 +64,13 @@ namespace GmDashboard.ViewModel
                 return ServiceLocator.Current.GetInstance<ChartBuilderViewModel>();
             }
         }
-        public FunctionParameterViewModel FunctionParamDialog
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<FunctionParameterViewModel>();
-            }
-        }
+        //public FunctionParameterViewModel FunctionParamDialog
+        //{
+        //    get
+        //    {
+        //        return ServiceLocator.Current.GetInstance<FunctionParameterViewModel>();
+        //    }
+        //}
 
         public static void Cleanup()
         {

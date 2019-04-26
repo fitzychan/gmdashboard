@@ -3,6 +3,8 @@ using CommonCode.Charts;
 using CommonCode.Interfaces;
 using DialogService.ChartBuilderDialog;
 using DialogService.PowerShellParamDialog;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DialogService
 {
@@ -14,14 +16,23 @@ namespace DialogService
             dlg.Show();
         }
 
-        public static string ExtractPowerShellParameters(IChart powerShellChart)
+        public static List<FunctionParameters> ExtractPowerShellParameters(IChart powerShellChart)
         {
-            string extractedParams = string.Empty;
+            List<FunctionParameters> extractedParams = new List<FunctionParameters>();
 
             if (powerShellChart.TypeOfChart.Equals(GmDashboardTypes.PowerShell))
             {
-                PowerShellParamsView paramView = new PowerShellParamsView((FunctionParamChart)powerShellChart);
+                var functionalParams = new FunctionParameterViewModel();
+                foreach (var param in ((FunctionParamChart)powerShellChart).Parameters)
+                {
+                    functionalParams.FunctionParams.Add(new FunctionParameters() { Name = param.Name, Description = param.Description });
+                }
+
+                PowerShellParamsView paramView = new PowerShellParamsView(functionalParams);
                 paramView.ShowDialog();
+
+                extractedParams = paramView.paramResults;
+
             }
             else
             {
@@ -31,5 +42,6 @@ namespace DialogService
 
             return extractedParams;
         }
+
     }
 }

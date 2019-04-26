@@ -27,7 +27,7 @@
                             <TextBlock DockPanel.Dock="Left" Text="{Binding Path = Name, Mode=TwoWay}" FontWeight="ExtraBold"  Background="Bisque"/>
                             <TextBlock DockPanel.Dock="Left" Text="{Binding Path = Description, Mode=TwoWay}" Background="Bisque"/>
                         </StackPanel>
-                        <TextBox DockPanel.Dock="Bottom" Text="{Binding Path = Value, Mode=TwoWay}" Width="100" Background="Bisque" HorizontalAlignment="Left"/>
+                        <TextBox DockPanel.Dock="Bottom" Text="{Binding Path = Value, Mode=TwoWay}" Width="100" Background="AliceBlue" HorizontalAlignment="Left"/>
                     </DockPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

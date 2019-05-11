@@ -4,6 +4,11 @@ using CommonCode.Rolls;
 using System.Diagnostics;
 using System.Management.Automation;
 using System.Linq;
+using System.IO;
+using System.Management.Automation.Runspaces;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System;
 
 namespace CommonCode.RollUtility
 {
@@ -27,17 +32,10 @@ namespace CommonCode.RollUtility
             else if(chart.TypeOfChart == GmDashboardTypes.PowerShell)
             {
                 var powershellFile = (FunctionParamChart)chart;
-                var orginizedParams = string.Empty;
 
-                foreach(var param in powershellFile.Parameters)
-                {
-                    orginizedParams += " -" + param.Name.ToLower() + " " + param.Value;
-                }
-
-                var thing = RunPowershell(powershellFile, orginizedParams);
-
-                Process.Start(new ProcessStartInfo() { FileName = powershellFile.PowershellFileInfo.FullName,  });
+                powershellFile.PowerShellResult = RunPowershell(powershellFile, powershellFile.Parameters);
             }
+            return new Chart();
             return chart;
         }
 
@@ -68,28 +66,45 @@ namespace CommonCode.RollUtility
                 return "";
             }
         }
-        public string RunPowershell(FunctionParamChart functionChart, string powershellParams)
+        public string RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
-            var shell = PowerShell.Create();
-            shell.(functionChart.PowershellFileInfo.FullName);
-            shell.Commands.AddParameter(powershellParams);
+            var shellResult = string.Empty;
+            RunspaceConfiguration runspaceConfiguration = RunspaceConfiguration.Create();
 
-            var results = shell.Invoke();
-            //var process = new Process();
-            //process.StartInfo.UseShellExecute = false;
-            //process.StartInfo.RedirectStandardOutput = true;
-            //process.StartInfo.FileName = functionChart.PowershellFileInfo.FullName;
-            //process.StartInfo.Arguments =  powershellParams;
+            using (Runspace runspace = RunspaceFactory.CreateRunspace(runspaceConfiguration))
+            {
+                runspace.Open();
+                using (RunspaceInvoke scriptInvoker = new RunspaceInvoke(runspace))
+                {
+                    try
+                    {
+                        scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Unrestricted");
+                        using (PowerShell shell = PowerShell.Create())
+                        {
+                            //var scriptCommand = new Command(functionChart.PowershellFileInfo.FullName);
+                            //pipeline.Commands.Add(scriptCommand);
 
-            //process.Start();
-            //string s = process.StandardOutput.ReadToEnd();
-            //process.WaitForExit();
+                            //var psObjects = pipeline.Invoke();
+                            shell.AddScript(functionChart.PowershellFileInfo.FullName);
+                            powershellParams.ForEach(x => shell.AddParameter(x.Name, x.Value));
 
-            //using (StreamWriter outfile = new StreamWriter("StandardOutput.txt", true))
-            //{
-            //    outfile.Write(s);
-            //}
-            return "";
+
+                            var results = shell.Invoke();
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        shellResult = e.Message;
+                    }
+                    finally
+                    {
+                        scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Restricted");
+                    }
+                }
+               
+            }
+
+            return shellResult ;
         }
     }
 }

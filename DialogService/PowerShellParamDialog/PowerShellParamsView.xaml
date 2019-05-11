@@ -16,7 +16,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <materialDesign:ColorZone Mode="Accent" Padding="5" Grid.Row="0">
+        <materialDesign:ColorZone Mode="PrimaryLight" Padding="5" Grid.Row="0">
             <TextBlock FontSize="26">Parameters</TextBlock>
         </materialDesign:ColorZone>
         <ItemsControl ItemsSource="{Binding Path=FunctionParams, Mode=TwoWay}" Grid.Row="1">

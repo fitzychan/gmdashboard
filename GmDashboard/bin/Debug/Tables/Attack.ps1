@@ -10,7 +10,7 @@
 	Required Dependencies: None
 	Optional Dependencies: None
 
-.PARAMETER Target
+.PARAMETER Monster
 	Used to determine the armor class of the target.
 
 .PARAMETER Modifier
@@ -20,13 +20,12 @@
 	Proficiency in an attack.
 
 .EXAMPLE
-	Roll-ToAttack -Target Kobold -Modifier 2 -Proficency 3
+	Roll-ToAttack -Monster Kobold -Modifier 2 -Proficiency 3
     	You rolled 9 against Kobold (AC 12)! Miss!
 #>
 [cmdletbinding()]    
 	param(
    	 
-    	[Parameter(Mandatory=$TRUE, ValueFromPipeline=$TRUE)]
     	[ValidateSet('Aarakocra','Abjurer','Aboleth','Abominable-Yeti','Acolyte','Air-Elemental','Alhoon','Allosaurus','Androsphinx','Animated-Armor',`
         'Ankheg','Ankylosaurus','Annis-Hag','Ape','Apprentice-Wizard','Arcanaloth','Archdruid','Archer','Archmage','Assassin','Auroch','Awakened-Shrub',`
         'Awakened-Tree','Axe-Beak','Azer','Babau','Baboon','Badger','Balor','Banderhobb','Bandit','Bandit-Captain','Banshee','Barbed-Devil','Bard',`
@@ -83,16 +82,14 @@
         'Young-White-Dragon','Wight','Will-O-Wisp','Winged-Kobold','Winter-Wolf','Wolf','Wood-Woad','Worg','Wraith','Wyvern','Xorn','Xvart',`
         'Xvart-Warlock-of-Raxivort','Yeth-Hound','Yeti','Yochlol','Young-Remorhaz','Yuan-Ti-Abomination','Yuan-Ti-Anathema','Yuan-Ti-Broodguard',`
         'Yuan-Ti Malison','Yuan-Ti-Mind-Whisperer','Yuan-Ti-Nightmare-Speaker','Yuan-Ti-Pit-Master','Yuan-Ti-Pureblood','Zombie')]
-    	[string]
-    	$monster,
-    	[Parameter(Mandatory=$TRUE, ValueFromPipeline=$TRUE)]
+    	[string]$monster,
+		
     	[ValidateRange(-5,10)]
-    	[int]
-    	$modifier,
-    	[Parameter(Mandatory=$TRUE, ValueFromPipeline=$TRUE)]
+    	[int]$modifier,
+		
     	[ValidateRange(0,10)]
-    	[int]
-    	$proficiency
+    	[int]$proficiency
+		
      	)
 
 	$targetList = @"
@@ -659,7 +656,7 @@
 [int]$attackRoll = (get-random -Minimum 1 -Maximum 21)
 [int]$attackTotal = ($attackRoll) + ($proficiency) + ($modifier)
     if($attackRoll -eq 1){
-        Write-Host "You rolled $attackRoll! Critical Miss!" -ForegroundColor Red
+        Write-Output "You rolled $attackRoll! Critical Miss!" -ForegroundColor Red
     }
     elseif($attackRoll -eq 20){
         Write-Host "You rolled $attackRoll! Critical Hit!" -ForegroundColor Green

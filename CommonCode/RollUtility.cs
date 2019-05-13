@@ -1,14 +1,13 @@
 ﻿using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
-using System.Diagnostics;
-using System.Management.Automation;
-using System.Linq;
-using System.IO;
-using System.Management.Automation.Runspaces;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Management.Automation;
+using System.Management.Automation.Runspaces;
 
 namespace CommonCode.RollUtility
 {
@@ -81,15 +80,45 @@ namespace CommonCode.RollUtility
                         scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Unrestricted");
                         using (PowerShell shell = PowerShell.Create())
                         {
-                            //var scriptCommand = new Command(functionChart.PowershellFileInfo.FullName);
-                            //pipeline.Commands.Add(scriptCommand);
-
-                            //var psObjects = pipeline.Invoke();
                             shell.AddScript(functionChart.PowershellFileInfo.FullName);
-                            powershellParams.ForEach(x => shell.AddParameter(x.Name, x.Value));
+                            string thing = string.Empty;
+                            foreach(var param in powershellParams)
+                            {
+                                thing += " -" +param.Name + " " + param.Value;
+                                //shell.AddParameter(param.Name, param.Value);
+                            }
 
+                            //                    shell.AddScript("param($param1) $d = get-date; $s = 'test string value'; " +
+                            //"$d; $s; $param1; get-service");
 
-                            var results = shell.Invoke();
+                            //                    // use "AddParameter" to add a single parameter to the last command/script on the pipeline.
+                            //                    shell.AddParameter("param1", "parameter 1 value!");
+
+                            var proc = new Process
+                            {
+                                StartInfo = new ProcessStartInfo
+                                {
+                                    FileName = "Powershell.exe",
+                                    Arguments = functionChart.PowershellFileInfo.FullName + " " + thing,
+                                    UseShellExecute = false,
+                                    RedirectStandardOutput = true
+                                }
+                            };
+
+                            proc.Start();
+                            //var resper = Process.Start("Powershell.exe", thing);
+                            string thinger = string.Empty;
+                            while (!proc.StandardOutput.EndOfStream)
+                            {
+                                shellResult += proc.StandardOutput.ReadLine();
+                                // do something with line
+                            }
+
+                            //var results = shell.Invoke();
+                            //foreach( var info in shell.Streams.Information)
+                            //{
+                            //    shellResult += info.MessageData + Environment.NewLine;
+                            //}
                         }
                     }
                     catch(Exception e)
@@ -104,7 +133,7 @@ namespace CommonCode.RollUtility
                
             }
 
-            return shellResult ;
+            return shellResult;
         }
     }
 }

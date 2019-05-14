@@ -11,6 +11,11 @@
 .PARAMETER Weapon
 	All available weapons are referenced in “weapons.csv.” Selecting the weapon will request the dice number and type from “weapons.csv.”    
 
+.PARAMETER Modifier
+	Add this based on strong you are 
+
+.PARAMETER Proficiency
+	Add this based on how well you can swing that weapon
 .EXAMPLE
 	Roll-Damage -Weapon Mace
     	Your mace did 4 bludgeoning damage!

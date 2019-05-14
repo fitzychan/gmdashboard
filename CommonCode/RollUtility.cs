@@ -34,7 +34,6 @@ namespace CommonCode.RollUtility
 
                 powershellFile.PowerShellResult = RunPowershell(powershellFile, powershellFile.Parameters);
             }
-            return new Chart();
             return chart;
         }
 
@@ -65,12 +64,14 @@ namespace CommonCode.RollUtility
                 return "";
             }
         }
-        public string RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
+        public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
-            var shellResult = string.Empty;
-            RunspaceConfiguration runspaceConfiguration = RunspaceConfiguration.Create();
-
-            using (Runspace runspace = RunspaceFactory.CreateRunspace(runspaceConfiguration))
+            var shellResult = new List<string>();
+            if(powershellParams.Any(x=>x.Value == null))
+            {
+                return shellResult;
+            }
+            using (Runspace runspace = RunspaceFactory.CreateRunspace(RunspaceConfiguration.Create()))
             {
                 runspace.Open();
                 using (RunspaceInvoke scriptInvoker = new RunspaceInvoke(runspace))
@@ -81,53 +82,41 @@ namespace CommonCode.RollUtility
                         using (PowerShell shell = PowerShell.Create())
                         {
                             shell.AddScript(functionChart.PowershellFileInfo.FullName);
-                            string thing = string.Empty;
+                            string aggParam = string.Empty;
                             foreach(var param in powershellParams)
                             {
-                                thing += " -" +param.Name + " " + param.Value;
-                                //shell.AddParameter(param.Name, param.Value);
+                                aggParam += " -" +param.Name + " " + param.Value;
                             }
 
-                            //                    shell.AddScript("param($param1) $d = get-date; $s = 'test string value'; " +
-                            //"$d; $s; $param1; get-service");
-
-                            //                    // use "AddParameter" to add a single parameter to the last command/script on the pipeline.
-                            //                    shell.AddParameter("param1", "parameter 1 value!");
-
-                            var proc = new Process
+                            using(var shellProcess = new Process())
                             {
-                                StartInfo = new ProcessStartInfo
+                                shellProcess.StartInfo = new ProcessStartInfo
                                 {
                                     FileName = "Powershell.exe",
-                                    Arguments = functionChart.PowershellFileInfo.FullName + " " + thing,
+                                    Arguments = functionChart.PowershellFileInfo.FullName + " " + aggParam,
                                     UseShellExecute = false,
-                                    RedirectStandardOutput = true
+                                    RedirectStandardOutput = true,
+                                    RedirectStandardError = true,
+                                    CreateNoWindow = true
+                                };
+                            
+                                shellProcess.Start();
+
+                                while (!shellProcess.StandardOutput.EndOfStream)
+                                {
+                                    shellResult.Add(shellProcess.StandardOutput.ReadLine() + Environment.NewLine);
                                 }
-                            };
-
-                            proc.Start();
-                            //var resper = Process.Start("Powershell.exe", thing);
-                            string thinger = string.Empty;
-                            while (!proc.StandardOutput.EndOfStream)
-                            {
-                                shellResult += proc.StandardOutput.ReadLine();
-                                // do something with line
                             }
-
-                            //var results = shell.Invoke();
-                            //foreach( var info in shell.Streams.Information)
-                            //{
-                            //    shellResult += info.MessageData + Environment.NewLine;
-                            //}
                         }
                     }
                     catch(Exception e)
                     {
-                        shellResult = e.Message;
+                        shellResult.Add(e.Message);
                     }
                     finally
                     {
                         scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Restricted");
+                        runspace.Close();
                     }
                 }
                

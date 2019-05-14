@@ -16,13 +16,9 @@ namespace GmDashboard.ViewModel
         //TODO we need to make it so we  are not storeing extra text...  I Think this shold just have the block and the IsSelected.
         //This will change how to get the selected data items and it will also change how the data is bound...  It may be a bit more complicated...  But MUUUUCH more elegant
         //and easy to use....
-        public MainRollOutcomeDataModel(IRoll rollBlock)
+        public MainRollOutcomeDataModel(string result)
         {
-            _rollBlock = rollBlock;
-            if (_rollBlock.TypeOfRoll == GmDashboardTypes.StandardRoll)
-            {
-                RollResult = ((StandardRoll)_rollBlock).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine;
-            }
+            RollResult = result;
         }
 
         public string Preamble

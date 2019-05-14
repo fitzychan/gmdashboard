@@ -39,8 +39,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Width="100" DockPanel.Dock="Right" Command="{Binding OkCommand}" Click="Button_Click">Ok</Button>
-            <Button Grid.Column="2" Width="100" DockPanel.Dock="Left">Cancel</Button>
+            <Button Grid.Column="0" Width="100" DockPanel.Dock="Right" Click="Button_Ok">Ok</Button>
+            <Button Grid.Column="2" Width="100" DockPanel.Dock="Left"  Click="Button_Cancel">Cancel</Button>
 
         </Grid>
     </Grid>

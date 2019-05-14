@@ -23,6 +23,6 @@ namespace CommonCode.Charts
 
         public FileInfo PowershellFileInfo { get; set; }
 
-        public string PowerShellResult { get; set; }
+        public List<string> PowerShellResult { get; set; }
     }
 }

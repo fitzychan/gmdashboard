@@ -8,9 +8,6 @@ namespace DialogService.PowerShellParamDialog
 {
     public class FunctionParameterViewModel
     {
-
-        public RelayCommand OkCommand { get; private set; }
-
         public FunctionParameterViewModel()
         {
             FunctionParams = new ObservableCollection<FunctionParameters>();

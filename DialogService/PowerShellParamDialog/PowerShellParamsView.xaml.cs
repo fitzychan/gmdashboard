@@ -20,7 +20,13 @@ namespace DialogService.PowerShellParamDialog
             DataContext = loadedViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Ok(object sender, RoutedEventArgs e)
+        {
+            paramResults = ((FunctionParameterViewModel)DataContext).FunctionParams.ToList();
+            Close();
+        }
+
+        private void Button_Cancel(object sender, RoutedEventArgs e)
         {
             paramResults = ((FunctionParameterViewModel)DataContext).FunctionParams.ToList();
             Close();

@@ -1,9 +1,12 @@
+using CommonCode;
 using CommonCode.Charts;
 using CommonCode.Interfaces;
+using CommonCode.Rolls;
 using DialogService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Pipes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -144,11 +147,21 @@ namespace GmDashboard.ViewModel
                 OutcomeDataModel = new ObservableCollection<MainRollOutcomeDataModel>();
                 foreach (var mainBlock in mainFinishedBlock)
                 {
-                    //Preamble = mainBlock.GetPreamble();
-                    foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
+                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShell)
                     {
-                        OutcomeDataModel.Add(new MainRollOutcomeDataModel(subBlockItem));
+                        foreach (var powerShellResult in ((FunctionParamChart)mainBlock).PowerShellResult)
+                        {
+                            OutcomeDataModel.Add(new MainRollOutcomeDataModel( powerShellResult));
+                        }
                     }
+                    else if (mainBlock.TypeOfChart == GmDashboardTypes.Chart)
+                    {
+                        foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
+                        {
+                            OutcomeDataModel.Add(new MainRollOutcomeDataModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                        }
+                    }
+
                 }
             }
         }

@@ -28,11 +28,15 @@ namespace DialogService
                     functionalParams.FunctionParams.Add(new FunctionParameters() { Name = param.Name, Description = param.Description });
                 }
 
+                if(functionalParams.FunctionParams.Count == 0)
+                {
+                    return extractedParams;
+                }
+
                 PowerShellParamsView paramView = new PowerShellParamsView(functionalParams);
                 paramView.ShowDialog();
 
                 extractedParams = paramView.paramResults;
-
             }
             else
             {

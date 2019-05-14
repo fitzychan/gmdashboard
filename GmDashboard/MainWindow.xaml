@@ -14,7 +14,6 @@
     TextOptions.TextRenderingMode="Auto"
     Background="#FAF4E1"
     FontFamily="{DynamicResource MaterialDesignFont}"
-
     WindowStartupLocation="CenterScreen" Icon="pack://siteoforigin:,,,/Resources/rpg cover.png"
     >
 

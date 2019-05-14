@@ -1,9 +1,5 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonCode.Rolls
 {
@@ -15,7 +11,7 @@ namespace CommonCode.Rolls
         {
             Description = description;
         }
-        public Guid TypeOfRoll => ObjectTypes.TextRoll;
+        public Guid TypeOfRoll => GmDashboardTypes.TextRoll;
         public string GetDescription => Description;
         public int GetDice => 0;
     }

@@ -1,15 +1,12 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonCode.Rolls
 {
     public class RangeRoll : IRoll
     {
-        public Guid TypeOfRoll => ObjectTypes.RangeRoll;
+        public Guid TypeOfRoll => GmDashboardTypes.RangeRoll;
         public string Description { get; set; }
         public int NumberUpperBound { get; set; }
         public int NumberLowerBound { get; set; }

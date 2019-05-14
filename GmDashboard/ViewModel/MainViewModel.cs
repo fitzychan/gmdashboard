@@ -1,8 +1,12 @@
-using CommonCode.Blocks;
+using CommonCode;
+using CommonCode.Charts;
+using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using DialogService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Pipes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -39,7 +43,7 @@ namespace GmDashboard.ViewModel
         public RelayCommand LoadCommand { get; private set; }
         public RelayCommand RollCommand { get; private set; }
         public RelayCommand LocateCommand { get; private set; }
-        public RelayCommand DeleteTableCommand { get; private set; }
+        public RelayCommand DeleteCommand { get; private set; }
         public RelayCommand OpenContainingFoldersCommand { get; set; }
         public RelayCommand OpenFileCommand { get; set; }
 
@@ -63,13 +67,13 @@ namespace GmDashboard.ViewModel
             ////    // Code runs "for real"
             ////}
             //These commands are used in the main menu stuff.  Its where we are going to stick most of our secondary functions
-            StartChartBuilderCommand = new RelayCommand(() => DialogService.DialogService.ShowChartBuilder());
+            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
             LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
             RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
             LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
-            DeleteTableCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
+            DeleteCommand = new RelayCommand(() => { PipeAssessor.PrePipe.DeleteTableCommand(SelectedCharts); LoadCommand.Execute(null); });
             OpenContainingFoldersCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFileLocation(SelectedCharts));
             OpenFileCommand = new RelayCommand(() => PipeAssessor.PrePipe.OpenFile(SelectedCharts));
             //end of pre commands
@@ -143,11 +147,21 @@ namespace GmDashboard.ViewModel
                 OutcomeDataModel = new ObservableCollection<MainRollOutcomeDataModel>();
                 foreach (var mainBlock in mainFinishedBlock)
                 {
-                    //Preamble = mainBlock.GetPreamble();
-                    foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
+                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShell)
                     {
-                        OutcomeDataModel.Add(new MainRollOutcomeDataModel(subBlockItem));
+                        foreach (var powerShellResult in ((FunctionParamChart)mainBlock).PowerShellResult)
+                        {
+                            OutcomeDataModel.Add(new MainRollOutcomeDataModel( powerShellResult));
+                        }
                     }
+                    else if (mainBlock.TypeOfChart == GmDashboardTypes.Chart)
+                    {
+                        foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
+                        {
+                            OutcomeDataModel.Add(new MainRollOutcomeDataModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                        }
+                    }
+
                 }
             }
         }

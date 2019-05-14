@@ -1,15 +1,12 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonCode.Rolls
 {
     public class StandardRoll : IRoll
     {
-        public Guid TypeOfRoll => ObjectTypes.StandardRoll;
+        public Guid TypeOfRoll => GmDashboardTypes.StandardRoll;
         public string Description { get; set; }
         public int Dice { get; set; }
         public string Outcome { get; set; } = "";

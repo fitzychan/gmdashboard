@@ -249,9 +249,12 @@ namespace DialogService.ChartBuilderDialog
             
             sheet.IterateCells(range, false, (row, col, cell) =>
             {
-                if(cell.DisplayText != null && cell.DisplayText != "")
+                if(cell != null)
                 {
-                    listOfItems.Add(cell.DisplayText);
+                    if(cell.DisplayText != null && cell.DisplayText != "")
+                    {
+                        listOfItems.Add(cell.DisplayText);
+                    }
                 }
                 
                 return true;

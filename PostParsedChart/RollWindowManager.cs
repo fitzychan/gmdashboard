@@ -1,4 +1,4 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Interfaces;
 using System.Collections.Generic;
 
 namespace PostParsedProject.RollWindowManager

@@ -1,5 +1,5 @@
-﻿using CommonCode.Blocks;
-using CommonCode.FileUtility;
+﻿using CommonCode.FileUtility;
+using CommonCode.Interfaces;
 using GmDashboard.RollMeOne;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +10,7 @@ namespace Pipes.PreParsedFileProject
 {
     public interface IPreCommandPipe
     {
-        ObservableCollection<string> LoadTablesCommand();
+        ObservableCollection<string> LoadCommand();
         ICollection<IChart> RollOneCommand(ICollection<string> selectedItems);
         void OpenFileLocation(ICollection<string> selectedChart);
         void OpenFile(ICollection<string> selectedChart);
@@ -25,11 +25,11 @@ namespace Pipes.PreParsedFileProject
             RollMeHandle = new RollMeOne();
         }
 
-        public ObservableCollection<string> LoadTablesCommand()
+        public ObservableCollection<string> LoadCommand()
         {
             var mainFileList = new ObservableCollection<string>();
 
-            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf"}))
+            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
             {
                 mainFileList.Add(chart.Name);
             }

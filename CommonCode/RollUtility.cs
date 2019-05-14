@@ -1,7 +1,13 @@
-﻿using CommonCode.Blocks;
+﻿using CommonCode.Charts;
+using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Management.Automation;
+using System.Management.Automation.Runspaces;
 
 namespace CommonCode.RollUtility
 {
@@ -15,12 +21,18 @@ namespace CommonCode.RollUtility
         public IChart RollOnChart(IChart chart)
         {
 
-            if (chart.TypeOfChart == ObjectTypes.Chart)
+            if (chart.TypeOfChart == GmDashboardTypes.Chart)
             {
                 foreach (var chartRoll in ((Chart)chart).ChartRolls)
                 {
                     RollOnRoll(chartRoll);
                 }
+            }
+            else if(chart.TypeOfChart == GmDashboardTypes.PowerShell)
+            {
+                var powershellFile = (FunctionParamChart)chart;
+
+                powershellFile.PowerShellResult = RunPowershell(powershellFile, powershellFile.Parameters);
             }
             return chart;
         }
@@ -30,7 +42,7 @@ namespace CommonCode.RollUtility
             string rollOnRollResult = string.Empty;
             using (var utility = new RandomUtility())
             {
-                if (roll.TypeOfRoll == ObjectTypes.StandardRoll || roll.TypeOfRoll == ObjectTypes.RangeRoll || roll.TypeOfRoll == ObjectTypes.TextRoll)
+                if (roll.TypeOfRoll == GmDashboardTypes.StandardRoll || roll.TypeOfRoll == GmDashboardTypes.RangeRoll || roll.TypeOfRoll == GmDashboardTypes.TextRoll)
                 {
                     var chartRoll = (StandardRoll)roll;
                     //TODO  THIS SHOULD BE USEING THE DICE NUMBER TO PICK THE ROLL...
@@ -38,7 +50,7 @@ namespace CommonCode.RollUtility
                     var diceOutcome = utility.RollDice(((StandardRoll)roll).Outcomes.Count) - 1;
 
                     var resultOfRoll = chartRoll.Outcomes.ElementAt(diceOutcome);
-                    if (resultOfRoll.TypeOfRoll == ObjectTypes.StandardRoll)
+                    if (resultOfRoll.TypeOfRoll == GmDashboardTypes.StandardRoll)
                     {
                         chartRoll.Outcome += chartRoll.Description + RollOnRoll(resultOfRoll);
                     }
@@ -51,6 +63,66 @@ namespace CommonCode.RollUtility
                 }
                 return "";
             }
+        }
+        public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
+        {
+            var shellResult = new List<string>();
+            if(powershellParams.Any(x=>x.Value == null))
+            {
+                return shellResult;
+            }
+            using (Runspace runspace = RunspaceFactory.CreateRunspace(RunspaceConfiguration.Create()))
+            {
+                runspace.Open();
+                using (RunspaceInvoke scriptInvoker = new RunspaceInvoke(runspace))
+                {
+                    try
+                    {
+                        scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Unrestricted");
+                        using (PowerShell shell = PowerShell.Create())
+                        {
+                            shell.AddScript(functionChart.PowershellFileInfo.FullName);
+                            string aggParam = string.Empty;
+                            foreach(var param in powershellParams)
+                            {
+                                aggParam += " -" +param.Name + " " + param.Value;
+                            }
+
+                            using(var shellProcess = new Process())
+                            {
+                                shellProcess.StartInfo = new ProcessStartInfo
+                                {
+                                    FileName = "Powershell.exe",
+                                    Arguments = functionChart.PowershellFileInfo.FullName + " " + aggParam,
+                                    UseShellExecute = false,
+                                    RedirectStandardOutput = true,
+                                    RedirectStandardError = true,
+                                    CreateNoWindow = true
+                                };
+                            
+                                shellProcess.Start();
+
+                                while (!shellProcess.StandardOutput.EndOfStream)
+                                {
+                                    shellResult.Add(shellProcess.StandardOutput.ReadLine() + Environment.NewLine);
+                                }
+                            }
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        shellResult.Add(e.Message);
+                    }
+                    finally
+                    {
+                        scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Restricted");
+                        runspace.Close();
+                    }
+                }
+               
+            }
+
+            return shellResult;
         }
     }
 }

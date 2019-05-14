@@ -1,0 +1,8 @@
+C:\DndStuff\gmdashboard\CommonCode\bin\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\CommonCode\bin\Release\CommonCode.pdb
+C:\DndStuff\gmdashboard\CommonCode\bin\Release\System.Management.Automation.dll
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.csprojAssemblyReference.cache
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.csproj.CoreCompileInputs.cache
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.csproj.CopyComplete
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.dll
+C:\DndStuff\gmdashboard\CommonCode\obj\Release\CommonCode.pdb

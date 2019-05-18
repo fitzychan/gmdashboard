@@ -1,6 +1,7 @@
 ﻿using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -64,10 +65,13 @@ namespace CommonCode.RollUtility
                 return "";
             }
         }
+         
         public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
+            var workingFile = System.IO.Path.GetTempPath() + "//" + Guid.NewGuid() + ".txt";
             var shellResult = new List<string>();
-            if(powershellParams.Any(x=>x.Value == null))
+
+            if (powershellParams.Any(x=>x.Value == null))
             {
                 return shellResult;
             }
@@ -83,12 +87,12 @@ namespace CommonCode.RollUtility
                         {
                             shell.AddScript(functionChart.PowershellFileInfo.FullName);
                             string aggParam = string.Empty;
-                            foreach(var param in powershellParams)
+                            foreach (var param in powershellParams)
                             {
-                                aggParam += " -" +param.Name + " " + param.Value;
+                                aggParam += " -" + param.Name + " " + param.Value;
                             }
 
-                            using(var shellProcess = new Process())
+                            using (var shellProcess = new Process())
                             {
                                 shellProcess.StartInfo = new ProcessStartInfo
                                 {
@@ -97,19 +101,21 @@ namespace CommonCode.RollUtility
                                     UseShellExecute = false,
                                     RedirectStandardOutput = true,
                                     RedirectStandardError = true,
-                                    CreateNoWindow = true
+                                    CreateNoWindow = true,
                                 };
-                            
-                                shellProcess.Start();
 
-                                while (!shellProcess.StandardOutput.EndOfStream)
+                                shellProcess.Start();
+                                using ( var stream = File.Create(workingFile))
                                 {
-                                    shellResult.Add(shellProcess.StandardOutput.ReadLine() + Environment.NewLine);
+                                    shellProcess?.StandardOutput.BaseStream.CopyTo(stream);
+                                    shellProcess?.StandardError.BaseStream.CopyTo(stream);
+                                    //File.AppendAllText(workingFile, shellProcess.StandardOutput.ReadToEnd());
+                                    //File.AppendAllText(workingFile, shellProcess.StandardError.ReadToEnd());
                                 }
                             }
                         }
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         shellResult.Add(e.Message);
                     }
@@ -117,6 +123,8 @@ namespace CommonCode.RollUtility
                     {
                         scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Restricted");
                         runspace.Close();
+                        shellResult.AddRange(File.ReadAllLines(workingFile));
+                        File.Delete(workingFile);
                     }
                 }
                

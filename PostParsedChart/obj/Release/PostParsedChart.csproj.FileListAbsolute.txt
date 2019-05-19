@@ -12,3 +12,14 @@ C:\DndStuff\gmdashboard\PostParsedChart\obj\Release\PostParsedChart.csproj.CoreC
 C:\DndStuff\gmdashboard\PostParsedChart\obj\Release\PostParsedChart.csproj.CopyComplete
 C:\DndStuff\gmdashboard\PostParsedChart\obj\Release\PostParsedChart.dll
 C:\DndStuff\gmdashboard\PostParsedChart\obj\Release\PostParsedChart.pdb
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\ServiceStack.Text.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Memory.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\netstandard.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Numerics.Vectors.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Buffers.dll
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\ServiceStack.Text.xml
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Memory.xml
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Numerics.Vectors.xml
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\DndStuff\gmdashboard\PostParsedChart\bin\Release\System.Buffers.xml

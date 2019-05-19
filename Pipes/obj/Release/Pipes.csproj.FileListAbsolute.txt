@@ -17,3 +17,14 @@ C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.csproj.CoreCompileInputs.cache
 C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.csproj.CopyComplete
 C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.dll
 C:\DndStuff\gmdashboard\Pipes\obj\Release\Pipes.pdb
+C:\DndStuff\gmdashboard\Pipes\bin\Release\ServiceStack.Text.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Memory.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\netstandard.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Numerics.Vectors.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Buffers.dll
+C:\DndStuff\gmdashboard\Pipes\bin\Release\ServiceStack.Text.xml
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Memory.xml
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Numerics.Vectors.xml
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\DndStuff\gmdashboard\Pipes\bin\Release\System.Buffers.xml

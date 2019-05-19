@@ -19,3 +19,14 @@ C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CoreCom
 C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.csproj.CopyComplete
 C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.dll
 C:\DndStuff\gmdashboard\PreParsedChart\obj\Release\PreParsedChart.pdb
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\ServiceStack.Text.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Memory.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\netstandard.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Numerics.Vectors.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Buffers.dll
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\ServiceStack.Text.xml
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Memory.xml
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Numerics.Vectors.xml
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\DndStuff\gmdashboard\PreParsedChart\bin\Release\System.Buffers.xml

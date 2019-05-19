@@ -36,3 +36,14 @@ C:\DndStuff\gmdashboard\DialogService\obj\Release\DialogService.csproj.CoreCompi
 C:\DndStuff\gmdashboard\DialogService\obj\Release\DialogService.csproj.CopyComplete
 C:\DndStuff\gmdashboard\DialogService\obj\Release\DialogService.dll
 C:\DndStuff\gmdashboard\DialogService\obj\Release\DialogService.pdb
+C:\DndStuff\gmdashboard\DialogService\bin\Release\ServiceStack.Text.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Memory.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\netstandard.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Numerics.Vectors.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Buffers.dll
+C:\DndStuff\gmdashboard\DialogService\bin\Release\ServiceStack.Text.xml
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Memory.xml
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Numerics.Vectors.xml
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\DndStuff\gmdashboard\DialogService\bin\Release\System.Buffers.xml

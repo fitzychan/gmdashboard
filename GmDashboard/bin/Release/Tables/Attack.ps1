@@ -10,7 +10,7 @@
 	Required Dependencies: None
 	Optional Dependencies: None
 
-.PARAMETER Target
+.PARAMETER Monster
 	Used to determine the armor class of the target.
 
 .PARAMETER Modifier

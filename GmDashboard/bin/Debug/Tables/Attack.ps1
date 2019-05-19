@@ -655,7 +655,7 @@
 [int]$armorClass = $targetList | Where-Object monsterName -eq $monster | Select-Object -ExpandProperty armorClass
 [int]$attackRoll = (get-random -Minimum 1 -Maximum 21)
 [int]$attackTotal = ($attackRoll) + ($proficiency) + ($modifier)
-Write-Output "Yzxczczczczczczxczscasciss!" -ForegroundColor Red
+Start-Sleep -Seconds 8
     if($attackRoll -eq 1){
         Write-Output "You rolled $attackRoll! Critical Miss!" -ForegroundColor Red
     }

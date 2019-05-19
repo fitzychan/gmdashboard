@@ -68,7 +68,7 @@ namespace CommonCode.RollUtility
          
         public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
-            var workingFile = System.IO.Path.GetTempPath() + "//" + Guid.NewGuid() + ".txt";
+            var workingFile = System.IO.Path.GetTempPath() + "\\" + Guid.NewGuid() + ".txt";
             var shellResult = new List<string>();
 
             if (powershellParams.Any(x=>x.Value == null))
@@ -105,12 +105,21 @@ namespace CommonCode.RollUtility
                                 };
 
                                 shellProcess.Start();
-                                using ( var stream = File.Create(workingFile))
+                                using (var fileStream = File.Create(workingFile))
                                 {
-                                    shellProcess?.StandardOutput.BaseStream.CopyTo(stream);
-                                    shellProcess?.StandardError.BaseStream.CopyTo(stream);
-                                    //File.AppendAllText(workingFile, shellProcess.StandardOutput.ReadToEnd());
-                                    //File.AppendAllText(workingFile, shellProcess.StandardError.ReadToEnd());
+                                    using (var streamWriter = new StreamWriter(fileStream))
+                                    {
+                                        var errorValues = shellProcess.StandardError.BaseStream.ReadToEnd();
+                                        var values = shellProcess.StandardOutput.BaseStream.ReadToEnd();
+                                        if (!string.IsNullOrEmpty(errorValues))
+                                        {
+                                            streamWriter.WriteLine(errorValues);
+                                        }
+                                        if (!string.IsNullOrEmpty(values))
+                                        {
+                                            streamWriter.WriteLine(values);
+                                        }
+                                    }
                                 }
                             }
                         }

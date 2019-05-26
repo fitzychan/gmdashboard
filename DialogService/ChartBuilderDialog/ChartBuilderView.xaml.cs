@@ -89,7 +89,7 @@ namespace DialogService.ChartBuilderDialog
 
         private void Import_Click(object sender, RoutedEventArgs e)
         {
-            var openFileDialog1 = new OpenFileDialog
+            var openFileWindow = new OpenFileDialog
             {
                 Filter = "rgf files (*.rgf) | *.rgf",
                 FilterIndex = 2,
@@ -97,13 +97,25 @@ namespace DialogService.ChartBuilderDialog
                 InitialDirectory = Directory.GetCurrentDirectory() + "\\Tables"
             };
 
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileWindow.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
                     Reset();
                     var sheet = grid.CurrentWorksheet;
-                    sheet.LoadRGF(openFileDialog1.FileName);
+                    sheet.LoadRGF(openFileWindow.FileName);
+                    // TODO AFTER WE LOAD WE NEED TO WAIT FOR THE EVENT AFTER IT LOADED TO RE WIREUP THE CELL ASSOCIATIONS
+                    dkfjghfkjh
+                    var xDoc = XDocument.Load(openFileWindow.FileName);
+
+                    var foundElements = xDoc.Descendants("cell").Attributes("body-type").Where(x => x.Value.Equals("DescriptorCell"));
+
+                    foreach(var descriptor in foundElements)
+                    {
+                        sheet.FocusPos = new CellPosition(int.Parse(descriptor.Parent.Attribute("row").Value), int.Parse(descriptor.Parent.Attribute("row").Value));
+                        SetDescriptor();
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -133,13 +145,18 @@ namespace DialogService.ChartBuilderDialog
         //Ctrl+Q
         private void DesignateDescriptor_Click(object sender, RoutedEventArgs e)
         {
+            SetDescriptor();
+        }
+
+        private void SetDescriptor()
+        {
             //We need to find a way to save the cells that are being highlighted
             //We could also just make a moniker to save to the data.... And save it and rewrite the parserfor that specific chart type.
             var sheet = grid.CurrentWorksheet;
             var selected = sheet.FocusPos;
             var cell = sheet.Cells[selected];
-            
-            if(cell.Data == null)
+
+            if (cell.Data == null)
             {
                 return;
             }

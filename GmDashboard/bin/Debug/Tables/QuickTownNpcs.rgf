@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+﻿<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <head>
     <meta>
       <culture>en-US</culture>
@@ -10,7 +9,7 @@
     <cols>1000</cols>
     <default-row-height>20</default-row-height>
     <default-col-width>70</default-col-width>
-    <settings meta="30475026396" />
+    <settings meta="30475026398" />
     <script />
   </head>
   <style font="Calibri" font-size="10.25" align="general" valign="middle" />
@@ -21,8 +20,8 @@
   <v-borders />
   <h-borders />
   <cells>
-    <cell row="0" col="0">QUICK TOWN NPCs</cell>
-    <cell row="1" col="0">Use these tables for inspiration or roll them up randomly. Some of the tables could be rolled more.</cell>
+    <cell row="0" col="0" body-type="DescriptorCell">QUICK TOWN NPCs<style bgcolor="#b0c4de" /></cell>
+    <cell row="1" col="0" body-type="DescriptorCell">Use these tables for inspiration or roll them up randomly. Some of the tables could be rolled more.<style bgcolor="#b0c4de" /></cell>
     <cell row="2" col="0" body-type="DescriptorCell">ALCHEMIST<style bgcolor="#b0c4de" /></cell>
     <cell row="3" col="0">d6 The alchemist is...</cell>
     <cell row="4" col="0">1. An apothecary.</cell>
@@ -81,7 +80,7 @@
     <cell row="57" col="0">2. A proclamation for a reward.</cell>
     <cell row="58" col="0">3. A knife or sword of the office.</cell>
     <cell row="59" col="0">4. A pocketbook of local laws.</cell>
-    <cell row="60" col="0" body-type="CellBody">NOBLE<style bgcolor="#b0c4de" /></cell>
+    <cell row="60" col="0" body-type="DescriptorCell">NOBLE<style bgcolor="#b0c4de" /></cell>
     <cell row="61" col="0">d6 The noble is...</cell>
     <cell row="62" col="0">1. A knight.</cell>
     <cell row="63" col="0">2. An old lord.</cell>
@@ -103,7 +102,7 @@
     <cell row="79" col="0">4. Some very valuable jewels.</cell>
     <cell row="80" col="0">5. A compromising love letter.</cell>
     <cell row="81" col="0">6. A letter from a powerful lord or lady.</cell>
-    <cell row="82" col="0" body-type="CellBody">PRIEST<style bgcolor="#b0c4de" /></cell>
+    <cell row="82" col="0" body-type="DescriptorCell">PRIEST<style bgcolor="#b0c4de" /></cell>
     <cell row="83" col="0">d6 The priest is...</cell>
     <cell row="84" col="0">1. An acolyte.</cell>
     <cell row="85" col="0">2. A healer.</cell>
@@ -121,7 +120,7 @@
     <cell row="97" col="0">2. A prominently displayed holy symbol.</cell>
     <cell row="98" col="0">3. A pocketbook of sacred texts.</cell>
     <cell row="99" col="0">4. A wineskin.</cell>
-    <cell row="100" col="0" body-type="CellBody">SEER<style bgcolor="#b0c4de" /></cell>
+    <cell row="100" col="0" body-type="DescriptorCell">SEER<style bgcolor="#b0c4de" /></cell>
     <cell row="101" col="0">d6 The seer is...</cell>
     <cell row="102" col="0">1. An astrologer.</cell>
     <cell row="103" col="0">2. A fortune teller.</cell>
@@ -139,7 +138,7 @@
     <cell row="115" col="0">2. A dowsing rod.</cell>
     <cell row="116" col="0">3. A large, sharp-pointed knife.</cell>
     <cell row="117" col="0">4. Several star charts.</cell>
-    <cell row="118" col="0" body-type="CellBody">SMITH<style bgcolor="#b0c4de" /></cell>
+    <cell row="118" col="0" body-type="DescriptorCell">SMITH<style bgcolor="#b0c4de" /></cell>
     <cell row="119" col="0">d4 The smith is...</cell>
     <cell row="120" col="0">1. An armorer.</cell>
     <cell row="121" col="0">2. A blacksmith.</cell>
@@ -155,7 +154,7 @@
     <cell row="131" col="0">2. A metal trinket made by the smith.</cell>
     <cell row="132" col="0">3. A contract commissioning a sword.</cell>
     <cell row="133" col="0">4. Little more than a few coins.</cell>
-    <cell row="134" col="0" body-type="CellBody">TRAVELER<style bgcolor="#b0c4de" /></cell>
+    <cell row="134" col="0" body-type="DescriptorCell">TRAVELER<style bgcolor="#b0c4de" /></cell>
     <cell row="135" col="0">d8 The traveler is...</cell>
     <cell row="136" col="0">1. An exile.</cell>
     <cell row="137" col="0">2. A minstrel.</cell>
@@ -176,7 +175,7 @@
     <cell row="152" col="0">8. Steady work.</cell>
     <cell row="153" col="0">9. Traveling companions.</cell>
     <cell row="154" col="0">10. Drinking companions.</cell>
-    <cell row="155" col="0" body-type="CellBody">BARKEEP/BARMAID<style bgcolor="#b0c4de" /></cell>
+    <cell row="155" col="0" body-type="DescriptorCell">BARKEEP/BARMAID<style bgcolor="#b0c4de" /></cell>
     <cell row="156" col="0">d8 The server greets you with...</cell>
     <cell row="157" col="0">1. A mug of ale.</cell>
     <cell row="158" col="0">2. A goblet of wine.</cell>

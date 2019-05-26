@@ -20,7 +20,7 @@ namespace DialogService
         {
             List<FunctionParameters> extractedParams = new List<FunctionParameters>();
 
-            if (powerShellChart.TypeOfChart.Equals(GmDashboardTypes.PowerShell))
+            if (powerShellChart.TypeOfChart.Equals(GmDashboardTypes.PowerShellChart))
             {
                 var functionalParams = new FunctionParameterViewModel();
                 foreach (var param in ((FunctionParamChart)powerShellChart).Parameters)

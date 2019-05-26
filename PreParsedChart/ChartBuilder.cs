@@ -1,4 +1,5 @@
-﻿using CommonCode.Charts;
+﻿using CommonCode;
+using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using DialogService;
@@ -185,7 +186,123 @@ namespace GmDashboard.ChartBuilder
 
         public IChart BuildFromRgf(XDocument xDoc)
         {
-            throw new NotImplementedException();
+
+            var mainBlock = new ChartRgf();
+            var rollBlock = new RollBlockRgf();
+            var listOfAllRolls = new List<IBlockRgf>();
+            var linkedItems = new List<LinkedItem>();
+
+            var cells = xDoc.Descendants().Where(p => p.Name.LocalName == "cell").OrderBy(column => column.Attribute("col").Value);
+            if (xDoc.Descendants().Any(p => p.Name.LocalName == "LinkedItems")) //"TestCharts.rgf" has the proper formats  This is used for finding all the sublinks
+            {
+                foreach (var linkedItem in xDoc.Descendants().Where(p => p.Name.LocalName == "LinkedItem"))
+                {
+                    var address = linkedItem.Attribute("CellAddress").Value.Split(':');
+                    linkedItems.Add(new LinkedItem { Row = int.Parse(address.First()), Column = int.Parse(address.Last()), LinkId = int.Parse(linkedItem.Attribute("LinkedId").Value) });
+                }
+            }
+
+
+            foreach (var cell in cells)
+            {
+
+                var cellAddress = cell.Attribute("col").Value + ":" + cell.Attribute("row").Value;
+                if (cell.Value.EndsWith("..."))
+                {
+                    string dice = Regex.Match(cell.Value, @"\d+").Value;
+                    if (cell.Value.StartsWith("d" + dice))
+                    {
+                        if (rollBlock.BlockDescriptor.Any())
+                        {
+                            listOfAllRolls.Add(rollBlock);
+                            rollBlock = new RollBlockRgf();
+                        }
+                        if (cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("SubRollCell"))
+                        {
+                            rollBlock.IsSubRollBlock = true;
+                        }
+
+                        rollBlock.Dice = int.Parse(dice);
+                        rollBlock.BlockDescriptor = cell.Value;
+                        rollBlock.CellAddress = cellAddress;
+                    }
+                    else
+                    {
+                        if (cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("SubRollCell"))
+                        {
+                            var linkItem = linkedItems.Where(x => x.Row == int.Parse(cellAddress.Split(':').Last())).Where(x => x.Column == int.Parse(cellAddress.Split(':').First())).First();
+                            // we want everything with the same link id of the titlelink...
+                            var itemsToBeLinked = linkedItems.Where(x => x.LinkId.Equals(linkItem.LinkId)).ToList();
+                            itemsToBeLinked.Remove(linkItem);
+                            rollBlock.Outcomes.Add(new SubRollRgf { RegularOutcome = cell.Value, CellAddress = cellAddress, SubBlockOutcome = new RollBlockRgf { CellAddress = itemsToBeLinked.First().Column + ":" + itemsToBeLinked.First().Row } });
+                        }
+                        else
+                        {
+                            rollBlock.Outcomes.Add(new RollRgf { RegularOutcome = cell.Value, CellAddress = cellAddress });
+                        }
+                    }
+                }
+                else if (cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("DescriptorCell"))
+                {
+                    //This is the descriptor cell color and just looking for the cell type wont work ....  WE need to get the loading to work.
+                    // if (cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("SubRollCell"))
+                    //if (cell.Attribute("col").Value == "0" )
+                    if(rollBlock.Dice == rollBlock.Outcomes.Count)
+                    {
+                        if (rollBlock.BlockDescriptor.Any())
+                        {
+                            listOfAllRolls.Add(rollBlock);
+                            rollBlock = new RollBlockRgf();
+                        }
+                    }
+                    listOfAllRolls.Add(new DescriptorRgf(cell.Value));
+                }
+                else
+                {
+                    rollBlock.Outcomes.Add(new RollRgf { RegularOutcome = cell.Value, CellAddress = cellAddress });
+                }
+                if (cell.Equals(cells.LastOrDefault()))
+                {
+                    //When we hit the end of the list we want to add whatever we have left to the main block.
+                    listOfAllRolls.Add(rollBlock);
+                }
+            }
+
+
+            //Here when we add the rolls to the list we need to box them as the type they are.
+            foreach (var roll in listOfAllRolls)
+            {
+                if (roll.BlockType.Equals(typeof(DescriptorRgf)))
+                {
+                    mainBlock.Blocks.Add((DescriptorRgf)roll);
+                }
+                else if (roll.BlockType.Equals(typeof(RollBlockRgf)))
+                {
+                    if (((RollBlockRgf)roll).IsSubRollBlock)
+                        continue;
+                    mainBlock.Blocks.Add((RollBlockRgf)roll);
+                }
+            }
+
+            ////listOfAllRolls contains all of our charts and all the sub roll outcomes laidout... So we want to skip over anything that is not a subroll
+            foreach (RollBlockRgf roll in listOfAllRolls.Where(x => x.BlockType == typeof(RollBlockRgf)))
+            {
+                for (int i = 0; i < roll.Outcomes.Count; i++)
+                {
+                    if (roll.Outcomes[i].GetType().Equals(typeof(SubRollRgf)))
+                    {
+                        foreach (RollBlockRgf titleRoll in listOfAllRolls.Where(x => x.BlockType != typeof(DescriptorRgf)))
+                        {
+                            if (((SubRollRgf)roll.Outcomes[i]).SubBlockOutcome.CellAddress == titleRoll.CellAddress)
+                            {
+                                ((SubRollRgf)roll.Outcomes[i]).SubBlockOutcome = titleRoll;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return mainBlock;
         }
 
         public IChart BuildFromParams(string paramString, FileInfo file)
@@ -204,7 +321,7 @@ namespace GmDashboard.ChartBuilder
                 string param = specialParams[i];
                 if (!string.IsNullOrWhiteSpace(param))
                 {
-                    if(param.Contains(PARAMETER))
+                    if (param.Contains(PARAMETER))
                     {
                         var localParam = new Parameter
                         {
@@ -213,7 +330,7 @@ namespace GmDashboard.ChartBuilder
 
                         i++;
 
-                        for( ; !string.IsNullOrWhiteSpace(specialParams[i]); i++)
+                        for (; !string.IsNullOrWhiteSpace(specialParams[i]); i++)
                         {
                             localParam.Description += specialParams[i];
                         }
@@ -226,7 +343,7 @@ namespace GmDashboard.ChartBuilder
             var readParams = Dialogs.ExtractPowerShellParameters(functionChart);
 
             functionChart = new FunctionParamChart();
-            foreach(var param in readParams)
+            foreach (var param in readParams)
             {
                 functionChart.Parameters.Add(new Parameter { Name = param.Name, Description = param.Description, Value = param.Value });
             }

@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using System.Windows.Forms;
 
 namespace CommonCode.RollUtility
 {
@@ -29,11 +30,15 @@ namespace CommonCode.RollUtility
                     RollOnRoll(chartRoll);
                 }
             }
-            else if(chart.TypeOfChart == GmDashboardTypes.PowerShell)
+            else if (chart.TypeOfChart == GmDashboardTypes.PowerShellChart)
             {
                 var powershellFile = (FunctionParamChart)chart;
 
                 powershellFile.PowerShellResult = RunPowershell(powershellFile, powershellFile.Parameters);
+            }
+            else if (chart.TypeOfChart == GmDashboardTypes.RfgChart)
+            {
+                RollOnRgf((ChartRgf)chart);
             }
             return chart;
         }
@@ -68,7 +73,7 @@ namespace CommonCode.RollUtility
          
         public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
-            var workingFile = System.IO.Path.GetTempPath() + "\\" + Guid.NewGuid() + ".txt";
+            var workingFile = Path.GetTempPath() + "\\" + Guid.NewGuid() + ".txt";
             var shellResult = new List<string>();
 
             if (powershellParams.Any(x=>x.Value == null))
@@ -140,6 +145,62 @@ namespace CommonCode.RollUtility
             }
 
             return shellResult;
+        }
+
+        public IChart RollOnRgf(ChartRgf rgfChart)
+        {
+            if (rgfChart == null)
+            {
+                MessageBox.Show("The file is improperly formatted", "Bad file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new Chart();
+            }
+            else
+            {
+                foreach (var rollBlock in rgfChart.Blocks)
+                {
+                    if (rollBlock.BlockType == typeof(RollBlockRgf))
+                    {
+                        var localRollBlock = ((RollBlockRgf)rollBlock);
+                        localRollBlock.Result = RollOnRgfBlock(rollBlock);
+                    }
+                }
+            }
+            return rgfChart;
+        }
+
+        private string RollOnRgfBlock(IBlockRgf roll)
+        {
+            string returnString = string.Empty;
+            try
+            {
+                using (var randUtill = new RandomUtility())
+                {
+                    //This is because arrays start at 0 we need to shift the outcome by one.  NOT the dice passed in.
+                    int rolledNumber = randUtill.RollDice(((RollBlockRgf)roll).Dice) - 1;
+
+                    if (roll.BlockType == typeof(DescriptorRgf))
+                    {
+                        return roll.GetOutcome();
+                    }
+
+                    var tempRoll = ((RollBlockRgf)roll).Outcomes.ElementAt(rolledNumber);
+                    if (tempRoll.GetType() == typeof(RollRgf))
+                    {
+                        returnString = (((RollRgf)tempRoll).GetOutcome());
+                    }
+                    else if (tempRoll.GetType() == typeof(SubRollRgf))
+                    {
+                        //TODO we are here trying to get the spacing correct.... We should be doing this all in one place...
+                        returnString = (((SubRollRgf)tempRoll).SubBlockOutcome.BlockDescriptor + Environment.NewLine + "\t" + RollOnRgfBlock(((SubRollRgf)tempRoll).SubBlockOutcome)) + Environment.NewLine;
+                    }
+                }
+                return returnString;
+            }
+            catch (Exception e)
+            {
+                // throw;
+                return "Error in RollOnBlock:" + e.Message;
+            }
         }
     }
 }

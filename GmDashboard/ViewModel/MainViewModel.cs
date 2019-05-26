@@ -147,7 +147,7 @@ namespace GmDashboard.ViewModel
                 OutcomeDataModel = new ObservableCollection<MainRollOutcomeDataModel>();
                 foreach (var mainBlock in mainFinishedBlock)
                 {
-                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShell)
+                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShellChart)
                     {
                         foreach (var powerShellResult in ((FunctionParamChart)mainBlock).PowerShellResult)
                         {
@@ -161,7 +161,20 @@ namespace GmDashboard.ViewModel
                             OutcomeDataModel.Add(new MainRollOutcomeDataModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
                         }
                     }
-
+                    else if (mainBlock.TypeOfChart == GmDashboardTypes.RfgChart)
+                    {
+                        foreach (var subBlockItem in ((ChartRgf)mainBlock).Blocks)
+                        {
+                            if(subBlockItem.BlockType == typeof(DescriptorRgf))
+                            {
+                                OutcomeDataModel.Add(new MainRollOutcomeDataModel(subBlockItem.BlockDescriptor.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            }
+                            else
+                            {
+                                OutcomeDataModel.Add(new MainRollOutcomeDataModel(((RollBlockRgf)subBlockItem).GetOutcome().Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            }
+                        }
+                    }
                 }
             }
         }

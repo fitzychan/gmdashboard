@@ -55,22 +55,22 @@
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Chart Actions" >
-                        <MenuItem Header="Descriptor" InputGestureText="Ctrl+Q" Click="DesignateDescriptor_Click">
+                        <MenuItem Header="Descriptor" Click="DesignateDescriptor_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="FormatTitle" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Collapse" InputGestureText="Ctrl+p" Click="CollapseItems_Click">
+                        <MenuItem Header="Collapse" Click="CollapseItems_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="Selection" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Roll" InputGestureText="Ctrl+W" Click="DesignateRoll_Click">
+                        <MenuItem Header="Roll" Click="DesignateRoll_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="Select" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Subroll" InputGestureText="Ctrl+E" Click="DesignateSubroll_Click">
+                        <MenuItem Header="Subroll" Click="DesignateSubroll_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="VectorSelection" />
                             </MenuItem.Icon>

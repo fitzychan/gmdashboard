@@ -103,19 +103,18 @@ namespace DialogService.ChartBuilderDialog
                 {
                     Reset();
                     var sheet = grid.CurrentWorksheet;
+                    
                     sheet.LoadRGF(openFileWindow.FileName);
-                    // TODO AFTER WE LOAD WE NEED TO WAIT FOR THE EVENT AFTER IT LOADED TO RE WIREUP THE CELL ASSOCIATIONS
-                    dkfjghfkjh
+
                     var xDoc = XDocument.Load(openFileWindow.FileName);
 
                     var foundElements = xDoc.Descendants("cell").Attributes("body-type").Where(x => x.Value.Equals("DescriptorCell"));
 
                     foreach(var descriptor in foundElements)
                     {
-                        sheet.FocusPos = new CellPosition(int.Parse(descriptor.Parent.Attribute("row").Value), int.Parse(descriptor.Parent.Attribute("row").Value));
+                        sheet.FocusPos = new CellPosition(int.Parse(descriptor.Parent.Attribute("row").Value), int.Parse(descriptor.Parent.Attribute("col").Value));
                         SetDescriptor();
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -155,7 +154,7 @@ namespace DialogService.ChartBuilderDialog
             var sheet = grid.CurrentWorksheet;
             var selected = sheet.FocusPos;
             var cell = sheet.Cells[selected];
-
+            
             if (cell.Data == null)
             {
                 return;
@@ -172,7 +171,7 @@ namespace DialogService.ChartBuilderDialog
             var totalRows = range.Rows - 1;
             int rollCounter = 0;
             var sheet = grid.CurrentWorksheet;
-
+            
             sheet.IterateCells(range, false, (row, col, cell) =>
             {
                 
@@ -188,7 +187,6 @@ namespace DialogService.ChartBuilderDialog
                         cell = sheet.CreateAndGetCell(row, col);
                         cell.Data = "d" + totalRows + " ___________ .";
                     }
-
                 }
                 else
                 {

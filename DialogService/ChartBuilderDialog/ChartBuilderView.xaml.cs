@@ -251,7 +251,7 @@ namespace DialogService.ChartBuilderDialog
         {
             var range = Worksheet.SelectionRange;
 
-            var listOfItems = new List<string>();
+            var listOfItems = new List<Cell>();
 
             Worksheet.IterateCells(range, false, (row, col, cell) =>
             {
@@ -259,7 +259,7 @@ namespace DialogService.ChartBuilderDialog
                 {
                     if(cell.DisplayText != null && cell.DisplayText != "")
                     {
-                        listOfItems.Add(cell.DisplayText);
+                        listOfItems.Add(cell);
                     }
                 }
                 
@@ -272,7 +272,7 @@ namespace DialogService.ChartBuilderDialog
             {
                 if(listOfItems.Count > i)
                 {
-                    Worksheet[startCell.Row + i, startCell.Col] = listOfItems[i];
+                    Worksheet[startCell.Row + i, startCell.Col] = listOfItems[i].DisplayText;
                 }
                 else
                 {
@@ -280,6 +280,11 @@ namespace DialogService.ChartBuilderDialog
                 }
             }
 
+        }
+
+        private void ResetCell_Click(object sender, RoutedEventArgs e)
+        {
+            Worksheet.ClearRangeContent(Worksheet.FocusPos.ToAddress(), CellElementFlag.Body | CellElementFlag.Border |CellElementFlag.Style );
         }
     }
 }

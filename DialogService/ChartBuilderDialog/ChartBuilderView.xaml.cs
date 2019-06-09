@@ -12,6 +12,7 @@ namespace DialogService.ChartBuilderDialog
 {
     public class SpecialRollData
     {
+        //We really should be making the key CellPosition
         //Where the cell is,  The linked cells id
         public static Dictionary<string, int> SubRollProperty { get; set; }
         //Location of the Main cell in the roll,  A list of the rolls that are under it...
@@ -284,7 +285,14 @@ namespace DialogService.ChartBuilderDialog
 
         private void ResetCell_Click(object sender, RoutedEventArgs e)
         {
+            RemoveSpecialCell(Worksheet.FocusPos);
             Worksheet.ClearRangeContent(Worksheet.FocusPos.ToAddress(), CellElementFlag.Body | CellElementFlag.Border |CellElementFlag.Style );
+        }
+
+        private void RemoveSpecialCell(CellPosition cellPosition)
+        {
+            SpecialRollData.SubRollProperty.Remove(cellPosition.Row + ":" + cellPosition.Col);
+            SpecialRollData.TitleCellProperty.Remove(cellPosition);
         }
     }
 }

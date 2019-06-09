@@ -82,10 +82,14 @@ namespace GmDashboard.ChartBuilder
             int j = 0;
             for (; j < characterArray.Count(); j++)
             {
+                if(characterArray.Count() -1 == j)
+                {
+                    break;
+                }
                 if (characterArray.ElementAt(j + 1) == '.' && char.IsDigit(characterArray.ElementAt(j)))
                 {
 
-                    //We need to run back the array for all found chars that are number
+                    //We need to run back the array for all found chars that are a number
                     for (; char.IsDigit(characterArray.ElementAt(j)) || characterArray.ElementAt(j) == '-'; j--)
                     {
                     }

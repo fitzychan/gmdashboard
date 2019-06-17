@@ -280,7 +280,6 @@ namespace DialogService.ChartBuilderDialog
                     Worksheet[startCell.Row + i, startCell.Col] = string.Empty;
                 }
             }
-
         }
 
         private void ResetCell_Click(object sender, RoutedEventArgs e)

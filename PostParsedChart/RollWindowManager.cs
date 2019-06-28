@@ -8,7 +8,7 @@ namespace PostParsedProject.RollWindowManager
         void AddMainRoll(IChart mainBlocks);
     }
 
-
+//Test
     public class RollWindowManager : IRollWindowManager
     {
         List<IChart> blocks = new List<IChart>();

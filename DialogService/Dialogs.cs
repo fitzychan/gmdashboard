@@ -14,6 +14,7 @@ namespace DialogService
         {
             ChartBuilderView dlg = new ChartBuilderView();
             dlg.Show();
+            
         }
 
         public static List<FunctionParameters> ExtractPowerShellParameters(IChart powerShellChart)

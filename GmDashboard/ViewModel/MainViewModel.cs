@@ -178,12 +178,12 @@ namespace GmDashboard.ViewModel
                 }
             }
         }
-        private List<IRoll> GetSelected()
+        private List<string> GetSelected()
         {
-            var selectedBlocks = new List<IRoll>();
+            var selectedBlocks = new List<string>();
             foreach (var dataModel in OutcomeDataModel.Where(x => x.IsSelected))
             {
-                selectedBlocks.Add(dataModel.Block);
+                selectedBlocks.Add(dataModel.RollResult);
             }
             return selectedBlocks;
         }

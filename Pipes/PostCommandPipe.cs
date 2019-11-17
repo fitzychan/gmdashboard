@@ -27,14 +27,14 @@ namespace Pipes.PostParsedProject
                 return;
             FileUtility.SaveChartCommand(block);
         }
-        public void AddSelectedToChartCommand(List<IRoll> blocks)
+        public void AddSelectedToChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;
             FileUtility.AddSelectedToChartCommand(blocks);
         }
 
-        public void SaveSelectedChartCommand(List<IRoll> blocks)
+        public void SaveSelectedChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;

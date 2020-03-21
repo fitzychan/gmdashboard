@@ -56,7 +56,7 @@ namespace CommonCode.FileUtility
             }
 
         }
-        public static void SaveSelectedChartCommand(List<IRoll> blocks)
+        public static void SaveSelectedChartCommand(List<string> blocks)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -71,13 +71,13 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach (var block in blocks)
                 {
-                    textToWrite += ((StandardRoll)block).Outcome;
+                    textToWrite += block;
                 }
                 File.WriteAllText(saveRolldChart.FileName, textToWrite);
             }
         }
 
-        public static void AddSelectedToChartCommand(List<IRoll> blocks)
+        public static void AddSelectedToChartCommand(List<string> blocks)
         {
             var saveRolldChart = new SaveFileDialog
             {
@@ -92,7 +92,7 @@ namespace CommonCode.FileUtility
                 string textToWrite = string.Empty;
                 foreach(var block in blocks)
                 {
-                    textToWrite += ((StandardRoll)block).Outcome;
+                    textToWrite += block;
                 }
                 File.AppendAllText(saveRolldChart.FileName, textToWrite);
             }
@@ -169,7 +169,7 @@ namespace CommonCode.FileUtility
             if(fileInfo.Extension == ".rgf")
             {
                 MessageBox.Show("This opens the raw data of the rtf file be careful when editing.", "This is not complete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            }//TODO make this always open ina text window
             Process.Start(fileInfo.FullName);
         }
     }

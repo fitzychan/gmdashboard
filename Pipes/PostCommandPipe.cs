@@ -3,7 +3,7 @@ using CommonCode.FileUtility;
 using CommonCode.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-
+//todo this just seems incorrect
 namespace Pipes.PostParsedProject
 {
     public interface IPostCommandPipe
@@ -27,14 +27,14 @@ namespace Pipes.PostParsedProject
                 return;
             FileUtility.SaveChartCommand(block);
         }
-        public void AddSelectedToChartCommand(List<IRoll> blocks)
+        public void AddSelectedToChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;
             FileUtility.AddSelectedToChartCommand(blocks);
         }
 
-        public void SaveSelectedChartCommand(List<IRoll> blocks)
+        public void SaveSelectedChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;

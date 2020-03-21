@@ -95,19 +95,36 @@
                     </Button>
                 </StackPanel>
                 <Grid Grid.Column="1">
-                    <GroupBox  Header="Found Charts" Padding="5" Grid.Column="1"  Style="{DynamicResource MaterialDesignCardGroupBox}">
-                        <GroupBox.ContextMenu >
-                            <ContextMenu >
-                                <MenuItem Header="Roll This One" Command="{Binding RollCommand}" Click="GetSelectedRollItem_Click"/>
-                                <MenuItem Header="Refresh" Command="{Binding LoadCommand}"/>
-                                <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
-                                <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
-                                <Separator/>
-                                <MenuItem Header="Delete" Command="{Binding DeleteCommand}" Click="GetSelectedRollItem_Click"/>
-                            </ContextMenu>
-                        </GroupBox.ContextMenu>
-                        <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}" MinHeight="200" SelectionChanged="ChartList_SelectionChanged"/>
-                    </GroupBox>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <GroupBox  Header="Found Charts" Padding="5" Grid.Row="0" Style="{DynamicResource MaterialDesignCardGroupBox}">
+                            <GroupBox.ContextMenu >
+                                <ContextMenu >
+                                    <MenuItem Header="Roll This One" Command="{Binding RollCommand}" Click="GetSelectedRollItem_Click"/>
+                                    <MenuItem Header="Refresh" Command="{Binding LoadCommand}"/>
+                                    <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFoldersCommand}" Click="GetSelectedRollItem_Click"/>
+                                    <MenuItem Header="Open File" Command="{Binding OpenFileCommand}" Click="GetSelectedRollItem_Click"/>
+                                    <Separator/>
+                                    <MenuItem Header="Delete" Command="{Binding DeleteCommand}" Click="GetSelectedRollItem_Click"/>
+                                </ContextMenu>
+                            </GroupBox.ContextMenu>
+                            <ListView x:Name="ChartList" FontSize="18" ItemsSource="{Binding FoundCharts, Mode=TwoWay}" SelectedItem="{Binding SelectedChart, Mode=TwoWay}"  SelectionChanged="ChartList_SelectionChanged"/>
+                        </GroupBox>
+                        <TreeView  Grid.Row="1">
+                            <TreeViewItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon Kind="Magnify" Width="20" />
+                                    <TextBlock FontSize="12" Text="Browse"/>
+                                </DockPanel>
+                                <materialDesign:Chip>
+                                    sdfsdfsdf
+                                </materialDesign:Chip>
+                            </TreeViewItem>
+                        </TreeView>
+                    </Grid>
                 </Grid>
             </Grid>
             <!--This one is for holding the outcomes-->

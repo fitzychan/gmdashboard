@@ -289,6 +289,7 @@ namespace GmDashboard.ChartBuilder
             }
 
             ////listOfAllRolls contains all of our charts and all the sub roll outcomes laidout... So we want to skip over anything that is not a subroll
+            fix this... Its fucked.
             foreach (RollBlockRgf roll in listOfAllRolls.Where(x => x.BlockType == typeof(RollBlockRgf)))
             {
                 for (int i = 0; i < roll.Outcomes.Count; i++)

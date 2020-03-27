@@ -12,10 +12,10 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using CommonServiceLocator;
 using DialogService.ChartBuilderDialog;
 using DialogService.PowerShellParamDialog;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 
 namespace GmDashboard.ViewModel
 {

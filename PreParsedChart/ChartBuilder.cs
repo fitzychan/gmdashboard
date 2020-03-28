@@ -22,17 +22,18 @@ namespace GmDashboard.ChartBuilder
     public class ChartBuilder : IChartBuilder
     {
 
-        readonly Regex chartRegex;
-        readonly Regex rangeRegex;
-        readonly Regex subrollRegex;
-
+        private readonly IRegexDetectionUtility rollDetection;
+        private readonly Regex chartRegex;
+        private readonly Regex rangeRegex;
+        private readonly Regex subrollRegex;
         private const string PARAMETER = ".PARAMETER";
 
         public ChartBuilder()
         {
-            chartRegex = new Regex(@"d-?\d+[\x20]", RegexOptions.IgnoreCase);
-            rangeRegex = new Regex(@"-?\d+--?\d+", RegexOptions.IgnoreCase);
-            subrollRegex = new Regex(@"[(]d-?\d+[)]", RegexOptions.IgnoreCase);
+            rollDetection = new RegexDetectionUtility();
+            chartRegex = rollDetection.RollTitleDetector();
+            rangeRegex = rollDetection.RangeRollDetector();
+            subrollRegex = rollDetection.SubRollDetector();
         }
 
         public IChart BuildFromTxt(string stringValues)

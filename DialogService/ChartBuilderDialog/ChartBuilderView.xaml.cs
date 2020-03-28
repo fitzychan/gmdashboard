@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CommonCode;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -25,6 +27,7 @@ namespace DialogService.ChartBuilderDialog
     /// </summary>
     public partial class ChartBuilderView : Window
     {
+        private readonly IRegexDetectionUtility rollDetection;
         Worksheet Worksheet;
         /// <summary>
         /// Initializes a new instance of the ChartBuilderView class.
@@ -32,7 +35,7 @@ namespace DialogService.ChartBuilderDialog
         public ChartBuilderView()
         {
             InitializeComponent();
-
+            rollDetection = new RegexDetectionUtility();
             SpecialRollData.SubRollProperty = new Dictionary<string, int>();
             SpecialRollData.TitleCellProperty = new List<CellPosition>();
 
@@ -194,13 +197,20 @@ namespace DialogService.ChartBuilderDialog
                     {
                         cell.Body = new StandardRollCell();
                         cell.Style.BackColor = new SolidColor("#D8D7DB");
-                        cell.Data = rollCounter + ". " + cell.Data + " .";
+                        if (!rollDetection.OutcomeDetector().IsMatch(cell.Data.ToString().TrimStart().TrimEnd()))
+                        {
+                            cell.Data = rollCounter + ". " + cell.Data + " .";
+                        }
                     }
                     else
                     {
                         cell.Body = new HeadRollCell();
                         cell.Style.BackColor = new SolidColor("#BDBCC3");
-                        cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                        //We need to see if the formating is already there.  If it is we can ignore it
+                        if (!rollDetection.RollTitleDetector().IsMatch(cell.Data.ToString().TrimStart().TrimEnd()))
+                        {
+                            cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                        }
                     }
                 }
 

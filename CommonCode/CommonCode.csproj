@@ -70,6 +70,8 @@
     <Compile Include="DataModels\RangeRoll.cs" />
     <Compile Include="DataModels\Interfaces.cs" />
     <Compile Include="FileUtility.cs" />
+    <Compile Include="IRegexDetectionUtility.cs" />
+    <Compile Include="RegexDetectionUtility.cs" />
     <Compile Include="Rgf\LinkedItem.cs" />
     <Compile Include="Rgf\RgfRollBlocks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

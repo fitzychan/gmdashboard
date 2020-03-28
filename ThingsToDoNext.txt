@@ -1,0 +1,33 @@
+1. Start up GETEA in Kube
+2. Get file and folder setup to look like a tree.  So we can have folders and sub folders.
+3. figure out how to get calls to GITEA with no user.  This is the READ from place first.
+4. figure out how to push to GITEA 
+5. figure out how to have multiple repos in the editor at a time.  This will allow people to not have to make mega repos.
+6. fix the subroll mapping in the the ChartEditor...
+7. build a login integraded in to AD so the same user can automatically exist for GITEA and the client.
+8. Do some leg work and upload charts from reddit into the gitea site.  
+9. DO A BETA!
+
+Fukkin...  After all that the thick client should be DONE...  For awhile...
+
+
+specifics for GITEA...Talk to and potentially pay Chris Ducharm for help on this?
+1. reskin it to look like something new!
+2. Do some customizations to potentially simplify the workflow.  Depends on user feed back.
+3. Add a "Feed" tab where it will act kinda like reddit where it shows new things coming in.
+4. Add a Org of GmDashboard.  This is something that would be nice because its like "sancitioned" charts.  So it feels more official.
+5. finish building the OneShotRPG!!!!!!!!!!!!!!!!!!!  Fuck yea.  Maybe hire/pay toast?
+6. This is a maybe thing...  Create a scraper that scrapes "/r/BehindTheTables" for charts people are putting there.  Then put those in there own Org and call it "BehindTheTables"
+
+Specifics for finializing this as a biz thing...  
+1. Create a website/forum to link to all the things.  I would also like to post tutorial videos on this.  Create a subscription model?
+2. Paetron?
+3. Kickstarter?
+4. Book some booths at some local cons?
+
+
+
+After we get some regular users...Try to build it as a cloud product?
+1. Create a facade API so we can hide the GITEA api...  We are going to build this with the idea of SAAS
+2. See if we cant get users?  Figure out how to charge people for this?
+3. Try to sell it to the BIG BOYEEEEs

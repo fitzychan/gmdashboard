@@ -20,6 +20,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreParsedChart", "PreParsed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GmFunctions", "GmFunctions\GmFunctions.csproj", "{01020BE8-731E-40ED-A0F2-1D3508CB003C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF2C3DF4-A99B-42C2-84BC-5A4D4656DBF3}"
+	ProjectSection(SolutionItems) = preProject
+		ThingsToDoNext.txt = ThingsToDoNext.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -187,7 +187,12 @@ namespace GmDashboard.ChartBuilder
             return block;
         }
 
-
+        /// <summary>
+        /// CURRENTLY WE ARE HAVING AN ISSUE WITH KNOWING WHAT A SUBCELL IS...  We are going to need to dinote them as such.
+        /// This is so we can type match instead of doing string/char matches
+        /// </summary>
+        /// <param name="xDoc"></param>
+        /// <returns></returns>
         public IChart BuildFromRgf(XDocument xDoc)
         {
 
@@ -211,7 +216,8 @@ namespace GmDashboard.ChartBuilder
             {
 
                 var cellAddress = cell.Attribute("col").Value + ":" + cell.Attribute("row").Value;
-                if (cell.Value.EndsWith("..."))
+                //cell.Value.EndsWith("...") || 
+                if (cell.Attribute("body-type") != null && (cell.Attribute("body-type").Value.Equals("SubRollCell") || cell.Attribute("body-type").Value.Equals("HeadRollCell")))
                 {
                     string dice = Regex.Match(cell.Value, @"\d+").Value;
                     if (cell.Value.StartsWith("d" + dice))
@@ -261,7 +267,7 @@ namespace GmDashboard.ChartBuilder
                     }
                     listOfAllRolls.Add(new DescriptorRgf(cell.Value));
                 }
-                else
+                else if(cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("StandardRollCell"))
                 {
                     rollBlock.Outcomes.Add(new RollRgf { RegularOutcome = cell.Value, CellAddress = cellAddress });
                 }
@@ -289,7 +295,7 @@ namespace GmDashboard.ChartBuilder
             }
 
             ////listOfAllRolls contains all of our charts and all the sub roll outcomes laidout... So we want to skip over anything that is not a subroll
-            fix this... Its fucked.
+            //fix this... Its fucked.
             foreach (RollBlockRgf roll in listOfAllRolls.Where(x => x.BlockType == typeof(RollBlockRgf)))
             {
                 for (int i = 0; i < roll.Outcomes.Count; i++)

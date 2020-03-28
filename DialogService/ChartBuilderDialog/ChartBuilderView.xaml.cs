@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using unvell.ReoGrid;
-using unvell.ReoGrid.Graphics;
-using System.Xml.Linq;
 using System.Windows;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using unvell.ReoGrid;
+using unvell.ReoGrid.Graphics;
 
 namespace DialogService.ChartBuilderDialog
 {
@@ -176,10 +176,14 @@ namespace DialogService.ChartBuilderDialog
                     if(rollCounter != 0)
                     {
                         cell = Worksheet.CreateAndGetCell(row, col);
+                        cell.Body = new StandardRollCell();
+                        cell.Style.BackColor = new SolidColor("#D8D7DB");
                         cell.Data = rollCounter + ". __________ .";
                     }
                     else
                     {
+                        cell.Body = new HeadRollCell();
+                        cell.Style.BackColor = new SolidColor("#BDBCC3");
                         cell = Worksheet.CreateAndGetCell(row, col);
                         cell.Data = "d" + totalRows + " ___________ .";
                     }
@@ -188,10 +192,14 @@ namespace DialogService.ChartBuilderDialog
                 {
                     if(rollCounter != 0 )
                     {
+                        cell.Body = new StandardRollCell();
+                        cell.Style.BackColor = new SolidColor("#D8D7DB");
                         cell.Data = rollCounter + ". " + cell.Data + " .";
                     }
                     else
                     {
+                        cell.Body = new HeadRollCell();
+                        cell.Style.BackColor = new SolidColor("#BDBCC3");
                         cell.Data = "d" + totalRows + " " + cell.Data + " ...";
                     }
                 }

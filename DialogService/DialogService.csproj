@@ -73,6 +73,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChartBuilderDialog\CellTypes\HeadRollCell.cs" />
     <Compile Include="ChartBuilderDialog\CellTypes\StandardRollCell.cs" />
     <Compile Include="ChartBuilderDialog\ChartBuilderView.xaml.cs">
       <DependentUpon>ChartBuilderView.xaml</DependentUpon>

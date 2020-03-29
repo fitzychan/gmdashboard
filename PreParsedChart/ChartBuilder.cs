@@ -230,6 +230,7 @@ namespace GmDashboard.ChartBuilder
                         }
                         if (cell.Attribute("body-type") != null && cell.Attribute("body-type").Value.Equals("SubRollCell"))
                         {
+                            //This denoting that a cell is a headcell and the outcome of another cell...
                             rollBlock.IsSubRollBlock = true;
                         }
 

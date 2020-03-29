@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta>
+      <culture>en-US</culture>
+      <editor>ReoGrid Core</editor>
+      <core-ver>2.0.1.0</core-ver>
+    </meta>
+    <rows>1000</rows>
+    <cols>1000</cols>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <settings meta="30475026396" />
+    <script />
+  </head>
+  <style font="Calibri" font-size="10.25" align="general" valign="middle" />
+  <rows />
+  <cols>
+    <col col="0" width="580" last-width="580" />
+  </cols>
+  <v-borders />
+  <h-borders />
+  <cells>
+    <cell row="0" col="0">d10Geography: The city grew up around... ...</cell>
+    <cell row="1" col="0">1.A coastal harbor. ...</cell>
+    <cell row="2" col="0">2.A calm, coastal bay. ...</cell>
+    <cell row="3" col="0">3.A large freshwater lake. ...</cell>
+    <cell row="4" col="0">4.A wide, navigable river. ...</cell>
+    <cell row="5" col="0">5.A river navigable by small craft. ...</cell>
+    <cell row="6" col="0">6.The mouth of a river or a river delta. ...</cell>
+    <cell row="7" col="0">7.The confluence of two rivers. ...</cell>
+    <cell row="8" col="0">8.A series of natural springs. ...</cell>
+    <cell row="9" col="0">9.A well-traveled crossroads. ...</cell>
+    <cell row="10" col="0">10.A water source and a well-traveled road. ...</cell>
+    <cell row="11" col="0">d20Resources: The city is near a region ideal for mining, growing, or grazing... ...</cell>
+    <cell row="12" col="0">1.Iron ore. ...</cell>
+    <cell row="13" col="0">2.Copper ore. ...</cell>
+    <cell row="14" col="0">3.Gold or silver deposits. ...</cell>
+    <cell row="15" col="0">4.Clay or granite deposits. ...</cell>
+    <cell row="16" col="0">5.Quartz or salt deposits. ...</cell>
+    <cell row="17" col="0">6.Peat or coal deposits. ...</cell>
+    <cell row="18" col="0">7.Hardwood lumber. ...</cell>
+    <cell row="19" col="0">8.Barley and oats. ...</cell>
+    <cell row="20" col="0">9.Beans and corn. ...</cell>
+    <cell row="21" col="0">10.Nuts and olives. ...</cell>
+    <cell row="22" col="0">11.Rice or wheat. ...</cell>
+    <cell row="23" col="0">12.Potatoes and leeks. ...</cell>
+    <cell row="24" col="0">13.Sugar cane. ...</cell>
+    <cell row="25" col="0">14.Tobacco. ...</cell>
+    <cell row="26" col="0">15.Cotton. ...</cell>
+    <cell row="27" col="0">16.Fruit trees. ...</cell>
+    <cell row="28" col="0">17.Cabbages and beets. ...</cell>
+    <cell row="29" col="0">18.Cattle. ...</cell>
+    <cell row="30" col="0">19.Dairy cows. ...</cell>
+    <cell row="31" col="0">20.Sheep. ...</cell>
+    <cell row="32" col="0">d20Culture: The city is known for its... ...</cell>
+    <cell row="33" col="0">1.Architectural style. ...</cell>
+    <cell row="34" col="0">2.Architectural feats. ...</cell>
+    <cell row="35" col="0">3.Artists and poets. ...</cell>
+    <cell row="36" col="0">4.Inventive cuisine. ...</cell>
+    <cell row="37" col="0">5.Traditional cuisine. ...</cell>
+    <cell row="38" col="0">6.Suggestive dancing. ...</cell>
+    <cell row="39" col="0">7.Gladiatorial games. ...</cell>
+    <cell row="40" col="0">8.Horse races. ...</cell>
+    <cell row="41" col="0">9.Scholars and sages. ...</cell>
+    <cell row="42" col="0">10.Music and/or dance. ...</cell>
+    <cell row="43" col="0">11.Romance. ...</cell>
+    <cell row="44" col="0">12.Jousting games. ...</cell>
+    <cell row="45" col="0">13.Superior soldiers. ...</cell>
+    <cell row="46" col="0">14.Street festivals. ...</cell>
+    <cell row="47" col="0">15.Religious feasts. ...</cell>
+    <cell row="48" col="0">16.Religious fervor. ...</cell>
+    <cell row="49" col="0">17.Traditional dress. ...</cell>
+    <cell row="50" col="0">18.Unusual dress. ...</cell>
+    <cell row="51" col="0">19.Theater scene. ...</cell>
+    <cell row="52" col="0">20.Wine and/or ale. ...</cell>
+    <cell row="53" col="0">d10Government: The city is ruled by... ...</cell>
+    <cell row="54" col="0">1.The head of a noble family. ...</cell>
+    <cell row="55" col="0">2.A council of distinguished nobles. ...</cell>
+    <cell row="56" col="0">3.A council of wealthy merchants. ...</cell>
+    <cell row="57" col="0">4.A council of elected officials. ...</cell>
+    <cell row="58" col="0">5.An elected mayor. ...</cell>
+    <cell row="59" col="0">6.A benevolent sovereign. ...</cell>
+    <cell row="60" col="0">7.A wicked tyrant. ...</cell>
+    <cell row="61" col="0">8.A brutal warlord. ...</cell>
+    <cell row="62" col="0">9.A cabal of witches and wizards. ...</cell>
+    <cell row="63" col="0">10.The leaders of a religious order. ...</cell>
+    <cell row="64" col="0">d20Historical Event: The city experienced... ...</cell>
+    <cell row="65" col="0">1.Mass conversions. ...</cell>
+    <cell row="66" col="0">2.An earthquake. ...</cell>
+    <cell row="67" col="0">3.An age of exploration. ...</cell>
+    <cell row="68" col="0">4.A terrible famine. ...</cell>
+    <cell row="69" col="0">5.A disastrous flood. ...</cell>
+    <cell row="70" col="0">6.A legendary storm. ...</cell>
+    <cell row="71" col="0">7.An assassination. ...</cell>
+    <cell row="72" col="0">8.A series of riots. ...</cell>
+    <cell row="73" col="0">9.A great discovery. ...</cell>
+    <cell row="74" col="0">10.A vermin infestation. ...</cell>
+    <cell row="75" col="0">11.A destructive fire. ...</cell>
+    <cell row="76" col="0">12.A deadly plague. ...</cell>
+    <cell row="77" col="0">13.A bloody rebellion. ...</cell>
+    <cell row="78" col="0">14.A lengthy siege. ...</cell>
+    <cell row="79" col="0">15.Religious wars. ...</cell>
+    <cell row="80" col="0">16.Territorial wars. ...</cell>
+    <cell row="81" col="0">17.A foreign occupation. ...</cell>
+    <cell row="82" col="0">18.An economic boom. ...</cell>
+    <cell row="83" col="0">19.A great depression. ...</cell>
+    <cell row="84" col="0">20.A dragon attack. ...</cell>
+    <cell row="85" col="0">d12Threats: The people of the city are fearful of (leaders and commonfolk may fear different things)... ...</cell>
+    <cell row="86" col="0">1.Bandits and outlaws. ...</cell>
+    <cell row="87" col="0">2.Barbarian invasions. ...</cell>
+    <cell row="88" col="0">3.Disease outbreaks. ...</cell>
+    <cell row="89" col="0">4.A dragon or legendary beast. ...</cell>
+    <cell row="90" col="0">5.Destructive flooding. ...</cell>
+    <cell row="91" col="0">6.Food shortages. ...</cell>
+    <cell row="92" col="0">7.Occupation by a foreign empire. ...</cell>
+    <cell row="93" col="0">8.The wrath of a vengeful god. ...</cell>
+    <cell row="94" col="0">9.Magic and new inventions. ...</cell>
+    <cell row="95" col="0">10.Pirates, smugglers, and bands of thieves. ...</cell>
+    <cell row="96" col="0">11.A recently established religion. ...</cell>
+    <cell row="97" col="0">12.A rival city. ...</cell>
+    <cell row="98" col="0">d10Defenses: The city is defended by... ...</cell>
+    <cell row="99" col="0">1.A disciplined military guard. ...</cell>
+    <cell row="100" col="0">2.A standing army of devoted soldiers. ...</cell>
+    <cell row="101" col="0">3.A company of sellswords and knaves. ...</cell>
+    <cell row="102" col="0">4.An order of holy knights. ...</cell>
+    <cell row="103" col="0">5.Little; the city’s been sacked many times. ...</cell>
+    <cell row="104" col="0">6.A huge, fortress or citadel within the city. ...</cell>
+    <cell row="105" col="0">7.A series of watchtowers and forts spread throughout the region. ...</cell>
+    <cell row="106" col="0">8.Thick stone walls and impenetrable gates. ...</cell>
+    <cell row="107" col="0">9.High stone walls, catapults, and scorpions. ...</cell>
+    <cell row="108" col="0">10.A powerful magical ward or gigantic golem. ...</cell>
+    <cell row="109" col="0">d12Law Enforcement: The laws are... ...</cell>
+    <cell row="110" col="0">1.Enforced by a strict, orderly city watch. ...</cell>
+    <cell row="111" col="0">2.Enforced by a corrupt, roguish city watch. ...</cell>
+    <cell row="112" col="0">3.Not enforced among the wealthy elite. ...</cell>
+    <cell row="113" col="0">4.Enforced in a haphazard fashion, incomprehensible to visitors. ...</cell>
+    <cell row="114" col="0">5.Not enforced for those who pay bribes. ...</cell>
+    <cell row="115" col="0">6.More like guidelines. ...</cell>
+    <cell row="116" col="0">7.Enforced by a secret society of assassins, mages, or priests. ...</cell>
+    <cell row="117" col="0">8.Enforced by a company of mercenaries. ...</cell>
+    <cell row="118" col="0">9.Simple, easy to learn and to follow. ...</cell>
+    <cell row="119" col="0">10.Extensive and complicated, nonsensical. ...</cell>
+    <cell row="120" col="0">11.Enforced by a cheerful drunken sheriff. ...</cell>
+    <cell row="121" col="0">12.Enforced by a rigid soldier-turned-sheriff. ...</cell>
+    <cell row="122" col="0">d20Power Players: Within or outside the government, power is held by... ...</cell>
+    <cell row="123" col="0">1.A ruthless assassins’ guild. ...</cell>
+    <cell row="124" col="0">2.A populist demagogue. ...</cell>
+    <cell row="125" col="0">3.The captain of a mercenary company. ...</cell>
+    <cell row="126" col="0">4.A champion knight or arena fighter. ...</cell>
+    <cell row="127" col="0">5.One or more crafting guilds. ...</cell>
+    <cell row="128" col="0">6.A dangerous crime boss. ...</cell>
+    <cell row="129" col="0">7.One or more criminal gangs. ...</cell>
+    <cell row="130" col="0">8.A charismatic cult leader. ...</cell>
+    <cell row="131" col="0">9.One or more merchant guilds. ...</cell>
+    <cell row="132" col="0">10.A scheming noble lord or lady. ...</cell>
+    <cell row="133" col="0">11.An outspoken philosopher or scholar. ...</cell>
+    <cell row="134" col="0">12.A celebrated poet and playwright. ...</cell>
+    <cell row="135" col="0">13.A popular priest or priestess. ...</cell>
+    <cell row="136" col="0">14.A secret society of lorekeepers. ...</cell>
+    <cell row="137" col="0">15.Smugglers and black market dealers. ...</cell>
+    <cell row="138" col="0">16.The son or daughter of a deposed ruler. ...</cell>
+    <cell row="139" col="0">17.A wealthy trader of exotic goods. ...</cell>
+    <cell row="140" col="0">18.A conniving vampire or fiend. ...</cell>
+    <cell row="141" col="0">19.A bold war hero. ...</cell>
+    <cell row="142" col="0">20.A clever witch or wizard. ...</cell>
+  </cells>
+  <LinkedItems />
+</grid>

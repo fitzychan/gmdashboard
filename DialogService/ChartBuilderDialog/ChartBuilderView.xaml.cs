@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -123,6 +122,7 @@ namespace DialogService.ChartBuilderDialog
                 }
             }
         }
+
         private string SaveCurrentChartCommand()
         {
             var saveRolldChart = new SaveFileDialog
@@ -247,7 +247,14 @@ namespace DialogService.ChartBuilderDialog
 
                 SpecialRollData.SubRollProperty.Add(selected.Row + ":" + selected.Col , AddSubChartMoniker());
 
-                Worksheet[selected] = new SubRollCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+                if (cell.Body != null && cell.Body.GetType() == typeof(HeadRollCell))
+                {
+                    Worksheet[selected] = new SubRollHeadCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+                }
+                else
+                {
+                    Worksheet[selected] = new SubRollCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+                }
             }
         }
         
@@ -303,7 +310,7 @@ namespace DialogService.ChartBuilderDialog
         private void ResetCell_Click(object sender, RoutedEventArgs e)
         {
             RemoveSpecialCell(Worksheet.FocusPos);
-            Worksheet.ClearRangeContent(Worksheet.FocusPos.ToAddress(), CellElementFlag.Body | CellElementFlag.Border |CellElementFlag.Style );
+            Worksheet.ClearRangeContent(Worksheet.FocusPos.ToAddress(), CellElementFlag.Body | CellElementFlag.Border | CellElementFlag.Style);
         }
 
         private void RemoveSpecialCell(CellPosition cellPosition)

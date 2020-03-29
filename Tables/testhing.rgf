@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta>
+      <culture>en-US</culture>
+      <editor>ReoGrid Core</editor>
+      <core-ver>2.2.0.0</core-ver>
+    </meta>
+    <rows>1000</rows>
+    <cols>1000</cols>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <settings meta="30475026398" />
+    <script />
+  </head>
+  <style font="Calibri" font-size="10.25" align="general" valign="middle" />
+  <rows />
+  <cols>
+    <col col="0" width="549" last-width="549" />
+    <col col="2" width="120" last-width="120" />
+    <col col="4" width="120" last-width="120" />
+    <col col="6" width="120" last-width="120" />
+  </cols>
+  <v-borders />
+  <h-borders />
+  <cells>
+    <cell row="0" col="0" body-type="DescriptorCell">QUICK TOWN NPCs<style bgcolor="#b0c4de" /></cell>
+    <cell row="0" col="2" body-type="HeadRollCell">d6 The alchemist is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="0" col="4">d6 The alchemist is...<style bgcolor="#ffffe0" /></cell>
+    <cell row="0" col="6">d6 The alchemist is...<style bgcolor="#ffffe0" /></cell>
+    <cell row="1" col="0" body-type="DescriptorCell">Use these tables for inspiration or roll them up randomly. Some of the tables could be rolled more.<style bgcolor="#b0c4de" /></cell>
+    <cell row="1" col="2" body-type="StandardRollCell">1. An apothecary.<style bgcolor="#d8d7db" /></cell>
+    <cell row="1" col="4">1. An apothecary.<style bgcolor="#d8d7db" /></cell>
+    <cell row="1" col="6">1. An apothecary.<style bgcolor="#d8d7db" /></cell>
+    <cell row="2" col="0" body-type="DescriptorCell">ALCHEMIST<style bgcolor="#b0c4de" /></cell>
+    <cell row="2" col="2" body-type="StandardRollCell">2. A hedge wizard.<style bgcolor="#d8d7db" /></cell>
+    <cell row="2" col="4">2. A hedge wizard.<style bgcolor="#d8d7db" /></cell>
+    <cell row="2" col="6">2. A hedge wizard.<style bgcolor="#d8d7db" /></cell>
+    <cell row="3" col="0">d6 The alchemist is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="3" col="2" body-type="StandardRollCell">3. An herbalist.<style bgcolor="#d8d7db" /></cell>
+    <cell row="3" col="4">3. An herbalist.<style bgcolor="#d8d7db" /></cell>
+    <cell row="3" col="6">3. An herbalist.<style bgcolor="#d8d7db" /></cell>
+    <cell row="4" col="0">1. An apothecary.<style bgcolor="#d8d7db" /></cell>
+    <cell row="4" col="2" body-type="StandardRollCell">4. A poisonmaker.<style bgcolor="#d8d7db" /></cell>
+    <cell row="4" col="4">4. A poisonmaker.<style bgcolor="#d8d7db" /></cell>
+    <cell row="4" col="6">4. A poisonmaker.<style bgcolor="#d8d7db" /></cell>
+    <cell row="5" col="0">2. A hedge wizard.<style bgcolor="#ffffe0" /></cell>
+    <cell row="5" col="2" body-type="StandardRollCell">5. A potioneer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="5" col="4">5. A potioneer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="5" col="6">5. A potioneer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="6" col="0">3. An herbalist.<style bgcolor="#d8d7db" /></cell>
+    <cell row="6" col="2" body-type="StandardRollCell">6. A pyromancer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="6" col="4">6. A pyromancer.<style bgcolor="#ffffe0" /></cell>
+    <cell row="6" col="6">6. A pyromancer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="7" col="0">4. A poisonmaker.<style bgcolor="#d8d7db" /></cell>
+    <cell row="8" col="0">5. A potioneer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="9" col="0">6. A pyromancer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="10" col="0">d4 The alchemist is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="11" col="0">1. Delivery help.<style bgcolor="#d8d7db" /></cell>
+    <cell row="12" col="0">2. New recipes.<style bgcolor="#d8d7db" /></cell>
+    <cell row="13" col="0">3. Purchasers..<style bgcolor="#d8d7db" /></cell>
+    <cell row="14" col="0">4. Rare ingredients.<style bgcolor="#d8d7db" /></cell>
+    <cell row="15" col="0">d4 The alchemist carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="16" col="0">1. Several vials of acid.<style bgcolor="#d8d7db" /></cell>
+    <cell row="17" col="0">2. Several curatives.<style bgcolor="#d8d7db" /></cell>
+    <cell row="18" col="0">3. An unusual potion.<style bgcolor="#d8d7db" /></cell>
+    <cell row="19" col="0">4. A pyrophoric substance.<style bgcolor="#d8d7db" /></cell>
+    <cell row="20" col="0" body-type="DescriptorCell">CRIMINAL<style bgcolor="#b0c4de" /></cell>
+    <cell row="21" col="0">d6 The criminal is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="22" col="0">1. An assassin.<style bgcolor="#d8d7db" /></cell>
+    <cell row="23" col="0">2. A con artist.<style bgcolor="#d8d7db" /></cell>
+    <cell row="24" col="0">3. A gambler.<style bgcolor="#d8d7db" /></cell>
+    <cell row="25" col="0">4. A poacher.<style bgcolor="#d8d7db" /></cell>
+    <cell row="26" col="0">5. A smuggler.<style bgcolor="#d8d7db" /></cell>
+    <cell row="27" col="0">6. A thief.<style bgcolor="#d8d7db" /></cell>
+    <cell row="28" col="0">d6 The criminal is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="29" col="0">1. Accomplices for a specific task.<style bgcolor="#d8d7db" /></cell>
+    <cell row="30" col="0">2. Revenge against a rival criminal.<style bgcolor="#d8d7db" /></cell>
+    <cell row="31" col="0">3. An easy mark.<style bgcolor="#d8d7db" /></cell>
+    <cell row="32" col="0">4. Extra muscle for some work.<style bgcolor="#d8d7db" /></cell>
+    <cell row="33" col="0">5. Rumors that may lead to a big score.<style bgcolor="#d8d7db" /></cell>
+    <cell row="34" col="0">6. A rowdy evening of carousing.<style bgcolor="#d8d7db" /></cell>
+    <cell row="35" col="0">d6 The criminal carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="36" col="0">1. A crossbow with poisoned darts.<style bgcolor="#d8d7db" /></cell>
+    <cell row="37" col="0">2. Several daggers.<style bgcolor="#d8d7db" /></cell>
+    <cell row="38" col="0">3. A short sword.<style bgcolor="#d8d7db" /></cell>
+    <cell row="39" col="0">4. A lucky charm.<style bgcolor="#d8d7db" /></cell>
+    <cell row="40" col="0">5. The token of a love.<style bgcolor="#d8d7db" /></cell>
+    <cell row="41" col="0">6. Letters for blackmail.<style bgcolor="#d8d7db" /></cell>
+    <cell row="42" col="0" body-type="DescriptorCell">LAW OFFICIAL<style bgcolor="#b0c4de" /></cell>
+    <cell row="43" col="0">d4 The law official is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="44" col="0">1. A constable.<style bgcolor="#d8d7db" /></cell>
+    <cell row="45" col="0">2. A sheriff.<style bgcolor="#d8d7db" /></cell>
+    <cell row="46" col="0">3. A guard captain.<style bgcolor="#d8d7db" /></cell>
+    <cell row="47" col="0">4. A magistrate.<style bgcolor="#d8d7db" /></cell>
+    <cell row="48" col="0">d6 The law official seeks someone to...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="49" col="0">1. Capture a fugitive.<style bgcolor="#d8d7db" /></cell>
+    <cell row="50" col="0">2. Catch a thief.<style bgcolor="#d8d7db" /></cell>
+    <cell row="51" col="0">3. Guard a specific location or person.<style bgcolor="#d8d7db" /></cell>
+    <cell row="52" col="0">4. Investigate a disappearance.<style bgcolor="#d8d7db" /></cell>
+    <cell row="53" col="0">5. Solve a murder mystery.<style bgcolor="#d8d7db" /></cell>
+    <cell row="54" col="0">6. Have an ale with.<style bgcolor="#d8d7db" /></cell>
+    <cell row="55" col="0">d4 The law official carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="56" col="0">1. An arrest warrant for an outlaw.<style bgcolor="#d8d7db" /></cell>
+    <cell row="57" col="0">2. A proclamation for a reward.<style bgcolor="#d8d7db" /></cell>
+    <cell row="58" col="0">3. A knife or sword of the office.<style bgcolor="#d8d7db" /></cell>
+    <cell row="59" col="0">4. A pocketbook of local laws.<style bgcolor="#d8d7db" /></cell>
+    <cell row="60" col="0" body-type="DescriptorCell">NOBLE<style bgcolor="#b0c4de" /></cell>
+    <cell row="61" col="0">d6 The noble is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="62" col="0">1. A knight.<style bgcolor="#d8d7db" /></cell>
+    <cell row="63" col="0">2. An old lord.<style bgcolor="#d8d7db" /></cell>
+    <cell row="64" col="0">3. A young lord.<style bgcolor="#d8d7db" /></cell>
+    <cell row="65" col="0">4. An old lady.<style bgcolor="#d8d7db" /></cell>
+    <cell row="66" col="0">5. A young lady.<style bgcolor="#d8d7db" /></cell>
+    <cell row="67" col="0">6. A wealthy merchant.<style bgcolor="#d8d7db" /></cell>
+    <cell row="68" col="0">d6 The noble seeks someone to...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="69" col="0">1. Dispose of an enemy.<style bgcolor="#d8d7db" /></cell>
+    <cell row="70" col="0">2. Negotiate a trade contract.<style bgcolor="#d8d7db" /></cell>
+    <cell row="71" col="0">3. Prepare an army for war.<style bgcolor="#d8d7db" /></cell>
+    <cell row="72" col="0">4. Sabotage a rival.<style bgcolor="#d8d7db" /></cell>
+    <cell row="73" col="0">5. Secure a marriage.<style bgcolor="#d8d7db" /></cell>
+    <cell row="74" col="0">6. Have a good time with.<style bgcolor="#d8d7db" /></cell>
+    <cell row="75" col="0">d6 The noble carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="76" col="0">1. Several deeds and titles.<style bgcolor="#d8d7db" /></cell>
+    <cell row="77" col="0">2. A family heirloom.<style bgcolor="#d8d7db" /></cell>
+    <cell row="78" col="0">3. Several inventories and invoices.<style bgcolor="#d8d7db" /></cell>
+    <cell row="79" col="0">4. Some very valuable jewels.<style bgcolor="#d8d7db" /></cell>
+    <cell row="80" col="0">5. A compromising love letter.<style bgcolor="#d8d7db" /></cell>
+    <cell row="81" col="0">6. A letter from a powerful lord or lady.<style bgcolor="#d8d7db" /></cell>
+    <cell row="82" col="0" body-type="DescriptorCell">PRIEST<style bgcolor="#b0c4de" /></cell>
+    <cell row="83" col="0">d6 The priest is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="84" col="0">1. An acolyte.<style bgcolor="#d8d7db" /></cell>
+    <cell row="85" col="0">2. A healer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="86" col="0">3. A monk.<style bgcolor="#d8d7db" /></cell>
+    <cell row="87" col="0">4. A preacher.<style bgcolor="#d8d7db" /></cell>
+    <cell row="88" col="0">5. A scholar.<style bgcolor="#d8d7db" /></cell>
+    <cell row="89" col="0">6. A witch-hunter.<style bgcolor="#d8d7db" /></cell>
+    <cell row="90" col="0">d4 The priest is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="91" col="0">1. New converts.<style bgcolor="#d8d7db" /></cell>
+    <cell row="92" col="0">2. Heretics.<style bgcolor="#d8d7db" /></cell>
+    <cell row="93" col="0">3. Relics and rare lore.<style bgcolor="#d8d7db" /></cell>
+    <cell row="94" col="0">4. The bottom of a goblet.<style bgcolor="#d8d7db" /></cell>
+    <cell row="95" col="0">d4 The priest carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="96" col="0">1. A well-used cudgel.<style bgcolor="#d8d7db" /></cell>
+    <cell row="97" col="0">2. A prominently displayed holy symbol.<style bgcolor="#d8d7db" /></cell>
+    <cell row="98" col="0">3. A pocketbook of sacred texts.<style bgcolor="#d8d7db" /></cell>
+    <cell row="99" col="0">4. A wineskin.<style bgcolor="#d8d7db" /></cell>
+    <cell row="100" col="0" body-type="DescriptorCell">SEER<style bgcolor="#b0c4de" /></cell>
+    <cell row="101" col="0">d6 The seer is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="102" col="0">1. An astrologer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="103" col="0">2. A fortune teller.<style bgcolor="#d8d7db" /></cell>
+    <cell row="104" col="0">3. A mystic<style bgcolor="#d8d7db" /></cell>
+    <cell row="105" col="0">4. A lorekeeper.<style bgcolor="#d8d7db" /></cell>
+    <cell row="106" col="0">5. A prophet.<style bgcolor="#d8d7db" /></cell>
+    <cell row="107" col="0">6. A psychic.<style bgcolor="#d8d7db" /></cell>
+    <cell row="108" col="0">d4 The seer is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="109" col="0">1. The answer to a riddle or prophecy.<style bgcolor="#d8d7db" /></cell>
+    <cell row="110" col="0">2. New clients for a reading.<style bgcolor="#d8d7db" /></cell>
+    <cell row="111" col="0">3. News regarding a missing person.<style bgcolor="#d8d7db" /></cell>
+    <cell row="112" col="0">4. Some juicy gossip.<style bgcolor="#d8d7db" /></cell>
+    <cell row="113" col="0">d4 The seer carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="114" col="0">1. A crystal ball.<style bgcolor="#d8d7db" /></cell>
+    <cell row="115" col="0">2. A dowsing rod.<style bgcolor="#d8d7db" /></cell>
+    <cell row="116" col="0">3. A large, sharp-pointed knife.<style bgcolor="#d8d7db" /></cell>
+    <cell row="117" col="0">4. Several star charts.<style bgcolor="#d8d7db" /></cell>
+    <cell row="118" col="0" body-type="DescriptorCell">SMITH<style bgcolor="#b0c4de" /></cell>
+    <cell row="119" col="0">d4 The smith is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="120" col="0">1. An armorer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="121" col="0">2. A blacksmith.<style bgcolor="#d8d7db" /></cell>
+    <cell row="122" col="0">3. A farrier.<style bgcolor="#d8d7db" /></cell>
+    <cell row="123" col="0">4. A weaponsmith.<style bgcolor="#d8d7db" /></cell>
+    <cell row="124" col="0">d4 The smith is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="125" col="0">1. A new apprentice.<style bgcolor="#d8d7db" /></cell>
+    <cell row="126" col="0">2. A journeyman craftsman.<style bgcolor="#d8d7db" /></cell>
+    <cell row="127" col="0">3. Rare metals.<style bgcolor="#d8d7db" /></cell>
+    <cell row="128" col="0">4. A mug of strong ale.<style bgcolor="#d8d7db" /></cell>
+    <cell row="129" col="0">d4 The smith carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="130" col="0">1. A hammer.<style bgcolor="#d8d7db" /></cell>
+    <cell row="131" col="0">2. A metal trinket made by the smith.<style bgcolor="#d8d7db" /></cell>
+    <cell row="132" col="0">3. A contract commissioning a sword.<style bgcolor="#d8d7db" /></cell>
+    <cell row="133" col="0">4. Little more than a few coins.<style bgcolor="#d8d7db" /></cell>
+    <cell row="134" col="0" body-type="DescriptorCell">TRAVELER<style bgcolor="#b0c4de" /></cell>
+    <cell row="135" col="0">d8 The traveler is...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="136" col="0">1. An exile.<style bgcolor="#d8d7db" /></cell>
+    <cell row="137" col="0">2. A minstrel.<style bgcolor="#d8d7db" /></cell>
+    <cell row="138" col="0">3. A peddler.<style bgcolor="#d8d7db" /></cell>
+    <cell row="139" col="0">4. A pilgrim.<style bgcolor="#d8d7db" /></cell>
+    <cell row="140" col="0">5. A refugee.<style bgcolor="#d8d7db" /></cell>
+    <cell row="141" col="0">6. A sellsword.<style bgcolor="#d8d7db" /></cell>
+    <cell row="142" col="0">7. A storyteller.<style bgcolor="#d8d7db" /></cell>
+    <cell row="143" col="0">8. A treasure hunter.<style bgcolor="#d8d7db" /></cell>
+    <cell row="144" col="0">d10 The traveler is seeking...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="145" col="0">1. Accomplices on a quest.<style bgcolor="#d8d7db" /></cell>
+    <cell row="146" col="0">2. The answer to a riddle<style bgcolor="#d8d7db" /></cell>
+    <cell row="147" col="0">3. An audience to entertain.<style bgcolor="#d8d7db" /></cell>
+    <cell row="148" col="0">4. A long lost friend.<style bgcolor="#d8d7db" /></cell>
+    <cell row="149" col="0">5. The return of something stolen.<style bgcolor="#d8d7db" /></cell>
+    <cell row="150" col="0">6. Revenge against a bitter rival.<style bgcolor="#d8d7db" /></cell>
+    <cell row="151" col="0">7. A permanent home.<style bgcolor="#d8d7db" /></cell>
+    <cell row="152" col="0">8. Steady work.<style bgcolor="#d8d7db" /></cell>
+    <cell row="153" col="0">9. Traveling companions.<style bgcolor="#d8d7db" /></cell>
+    <cell row="154" col="0">10. Drinking companions.<style bgcolor="#d8d7db" /></cell>
+    <cell row="155" col="0" body-type="DescriptorCell">BARKEEP/BARMAID<style bgcolor="#b0c4de" /></cell>
+    <cell row="156" col="0">d8 The server greets you with...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="157" col="0">1. A mug of ale.<style bgcolor="#d8d7db" /></cell>
+    <cell row="158" col="0">2. A goblet of wine.<style bgcolor="#d8d7db" /></cell>
+    <cell row="159" col="0">3. A glass of water.<style bgcolor="#d8d7db" /></cell>
+    <cell row="160" col="0">4. An offer to move to a better table.<style bgcolor="#d8d7db" /></cell>
+    <cell row="161" col="0">5. A look of exasperation.<style bgcolor="#d8d7db" /></cell>
+    <cell row="162" col="0">6. A warm handshake.<style bgcolor="#d8d7db" /></cell>
+    <cell row="163" col="0">7. A pat on the back.<style bgcolor="#d8d7db" /></cell>
+    <cell row="164" col="0">8. A pretty smile.<style bgcolor="#d8d7db" /></cell>
+    <cell row="165" col="0">d6 The server is looking for...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="166" col="0">1. An excuse to kick you out.<style bgcolor="#d8d7db" /></cell>
+    <cell row="167" col="0">2. Someone more important to talk to.<style bgcolor="#d8d7db" /></cell>
+    <cell row="168" col="0">3. Someone to do some pest removal.<style bgcolor="#d8d7db" /></cell>
+    <cell row="169" col="0">4. A big tip.<style bgcolor="#d8d7db" /></cell>
+    <cell row="170" col="0">5. A good joke or story.<style bgcolor="#d8d7db" /></cell>
+    <cell row="171" col="0">6. The bottom of a bottle.<style bgcolor="#d8d7db" /></cell>
+    <cell row="172" col="0">d4 The server carries...<style bgcolor="#bdbcc3" /></cell>
+    <cell row="173" col="0">1. A filthy rag.<style bgcolor="#d8d7db" /></cell>
+    <cell row="174" col="0">2. A pristine silk handkerchief.<style bgcolor="#d8d7db" /></cell>
+    <cell row="175" col="0">3. A piece of conspicuous jewelry.<style bgcolor="#d8d7db" /></cell>
+    <cell row="176" col="0">4. An unusual belt purse.<style bgcolor="#d8d7db" /></cell>
+  </cells>
+  <LinkedItems />
+</grid>

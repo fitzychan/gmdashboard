@@ -1,0 +1,211 @@
+RANDOM MINES: WE DIG, DIG, DIG...
+d20 The miners are hauling out...
+1. Chalk. 10. Salt.
+2. Coal. 11. Silver.
+3. Copper. 12. Zinc.
+4. Gold. 13. Diamonds.
+5. Iron. 14. Emeralds.
+6. Lead. 15. Jade.
+7. Lime. 16. Rubies.
+8. Nickel. 17. Sapphires.
+9. Platinum. 18. Turquoise.
+19. Other gems (d6): 1. amethyst; 2.
+aquamarine; 3. garnet; 4. opal; 5. peridot;
+6. tanzanite; 7. topaz, 8. zirconium.
+20. An especially rare metal (d3): 1.
+adamantine; 2. mithral; 3. orium.
+d12 Entrance: The mine’s entrance is...
+1. Up a winding trail from a camp or village.
+2. Up a steep trail from a camp or village.
+3. A wide, natural cave mouth.
+4. A wide open pit.
+5. An easy to spot, narrow passage.
+6. A steep, slippery sloped tunnel.
+7. A tunnel reinforced with wood beams.
+8. A partially collapsed tunnel, impassable
+without excavation.
+9. Marked with several signs.
+10. Hidden by the terrain (d4): 1. boulders; 2.
+waterfall; 3. rocky overhang; 4. hillock.
+11. Hidden by vegetation (d4):
+1. a briar patch.
+2. a curtain of moss.
+3. enormous tree roots.
+4. overgrown vines.
+12. Difficult to access (d4):
+1. up or down a cliff face.
+2. down a deep hole.
+3. un an underwater tunnel.
+4. through an illusory rock or wall.
+d6 Most of the mine is...
+1. A sprawling maze of twisting tunnels.
+2. A sprawling maze of narrow tunnels.
+3. A series of tunnels connecting large
+natural caverns.
+4. A wide open-pit quarry.
+5. A series of tunnels connecting large open
+pits or sinkholes.
+6. A sprawling maze of open trenches.
+d8 Material excavated from the mine is...
+1. Floated on rafts down a stream or river.
+2. Hauled out on pack mules.
+3. Hauled out on mule-drawn carts.
+4. Hauled out on sure-footed ponies.
+5. Hauled out on ox-drawn carts.
+6. Hauled out on the backs of uncommon
+beasts of burden (d4): 1. bears; 2. giant
+lizards; 3. goats; 4. undead horses.
+7. Rolled out in single mine carts.
+8. Rolled out in long trains of mine carts.
+d10 Hazards/Obstacles: You find...
+1. A colony of poisonous mushrooms.
+2. A patch of toxic mold.
+3. A sudden cave in.
+4. Several rocks tumble down a sloped wall.
+5. The floor is very slippery.
+6. Your foot misses the floor as you step into
+a pit or chasm.
+7. A heap of unstable explosives.
+8. A sudden explosion in another part of the
+mine shakes the floor.
+9. The floor is writhing with vermin (d4): 1.
+beetles; 2. centipedes; 3. rats; 4. spiders.
+10. The tunnel or trench is steadily flooding.
+
+d20 Denizens: If you dig deep, you’ll find...
+1. Carrion crawler. 11. Myconids.
+2. Cloaker. 12. Ooze.
+3. Darkmantle. 13. Otyugh.
+4. Drider. 14. Piercer.
+5. Fungi. 15. Roper.
+6. Gargoyle. 16. Rust monster.
+7. Ghosts. 17. Skeletons.
+8. Gricks. 18. Stirges.
+9. Hook horror. 19. Umber hulk.
+10. Mimics. 20. Wraiths.
+d10 Ecology: The creature is...
+1. A predator or a hunter.
+2. A food source for other denizens.
+3. A recently-arrived squatter or invader.
+4. A long-time resident.
+5. A parasite or a scavenger.
+6. A host or the dominant species.
+7. Unusually abundant.
+8. Living in deliberate isolation.
+9. Living in unintentional isolation.
+10. Severely out of place in this mine.
+d12 Neighbors: The miners complain of
+trouble from a nearby colony of...
+1. Cyclops. 7. Grimlocks.
+2. Duergar. 8. Hobgoblins.
+3. Dwarves. 9. Kobolds.
+4. Elves, dark. 10. Orcs.
+5. Gnomes, deep. 11. Troglodytes.
+6. Goblins. 12. Trolls.
+d20 Distinguishing Landmark: You see...
+1. A trickle of water flowing down the walls
+and across the floor.
+2. An underground lake of potable water.
+3. A pool of stagnant water.
+4. A rickety bridge over a chasm.
+5. A narrow chasm with walls close enough to
+climb between.
+6. A deep chasm with no bottom in sight.
+7. A group of boulders arranged in a circle.
+8. A damp wall covered in soft mold.
+9. A recess in the wall, covered in slimy mold.
+10. A large patch of soft fungus.
+11. A cavern with a strong echo.
+12. A claustrophobic tunnel with a low ceiling.
+13. A forked path with tracks for mine carts.
+14. An overturned mine cart.
+15. An unlit lantern mounted to the wall.
+16. A glowing lantern mounted to the wall.
+17. A swirling vein of ore visible in the wall.
+18. A wide vein of ore visible in the wall.
+19. A partially excavated wall with plentiful ore.
+20. A heap of excavated rock.
+d12 Features: You notice...
+1. Some broken mining equipment.
+2. Some old dry bones.
+3. Evidence of a recent, brief encampment.
+4. Evidence of an abandoned campsite.
+5. An enormous spider web.
+6. A wide slippery patch of mold on the floor.
+7. The clatter of rocks falling.
+8. Loose stones underfoot.
+9. The clang of a pick breaking rock.
+10. The distant sound of hammers at work.
+11. A prospector’s mark scratched on the wall.
+12. A cracked wooden beam overhead.
+d4 The mine is widely believed to be...
+1. Full of riches.
+2. A productive place to dig.
+3. Becoming increasingly unprofitable.
+4. Nearly dried up.
+
+d8 The mine is controlled by...
+1. A powerful, well-known merchant guild.
+2. A wealthy noble house.
+3. A partnership of a few prospectors.
+4. A clan or collective of locals.
+5. No one in particular; finders keepers.
+6. A shadowy cabal of merchants.
+7. A vicious warlord or mercenary captain.
+8. A crime boss who’s never visited the site.
+d6 Most of the miners are...
+1. Free men working for wages.
+2. Low-level members of a guild.
+3. Paid with a fraction of what they haul out.
+4. Paid with credit at a merchant’s store.
+5. Prisoners.
+6. Slaves.
+MINER
+d6 The miner has...
+1. A sweat-stained shirt.
+2. Skin blackened with dust.
+3. Hard, leathery hands.
+4. Long whiskers.
+5. An excited laugh.
+6. A raspy voice.
+d4 The miner is looking to...
+1. Get rich quick.
+2. Make some coin to pay off a debt.
+3. Make some coin to send home to family.
+4. Share a drink while prying for rumors.
+d4 The miner carries...
+1. A shovel and a pick.
+2. A length of rope and a lantern.
+3. A pouch of uncut gems or bits of raw ore.
+4. A flask of strong spirits.
+DWARF
+d8 The dwarf is...
+1. A greedy prospector.
+2. A hard-working miner.
+3. A talented weaponsmith.
+4. A meticulous gemcutter.
+5. A highly-skilled armorer.
+6. A capable stonemason.
+7. A battle-hardened soldier.
+8. A fearsome berserk warrior.
+d10 The dwarf’s beard is...
+1. Snowy white. 6. Tangled.
+2. Stony grey. 7. Braided.
+3. Fiery red. 8. Down to the floor.
+4. Black as coal. 9. Neatly trimmed.
+5. Earthy brown. 10. Magnificent.
+d6 The dwarf is looking to...
+1. Re-establish an ancestral claim.
+2. Find a new source for precious gems.
+3. Find some knowledge about an ancient
+event or place.
+4. Drink some ale and swap tales of treasure.
+5. Drink some ale and sing a bawdy song.
+6. Drink some ale and start a fight.
+d6 The dwarf carries...
+1. An old battleaxe with a razor sharp edge.
+2. A highly polished warhammer.
+3. Several handaxes and a crossbow.
+4. A hammer and sack full of climbing gear.
+5. A pick-ax and an old map.
+6. A satchel of potions, tonics, and remedies.

@@ -7,7 +7,7 @@ namespace CommonCode
         readonly Regex chartRegex = new Regex(@"d-?\d+[\x20]", RegexOptions.IgnoreCase);
         readonly Regex rangeRegex = new Regex(@"-?\d+--?\d+", RegexOptions.IgnoreCase);
         readonly Regex subrollRegex = new Regex(@"[(]d-?\d+[)]", RegexOptions.IgnoreCase);
-        readonly Regex outcomeRegex = new Regex(@"(\d+.\s?[A-Za-z\W.*]+\s?.)$", RegexOptions.IgnoreCase);// If this is not good enough we can use this. "(\d+.\s?[A-Za-z\W.*]+\s?.)$" .... ^\d+\..*\. 
+        readonly Regex outcomeRegex = new Regex(@"^\d+\..*\.", RegexOptions.IgnoreCase);
 
 
         public Regex RollTitleDetector()

@@ -1,6 +1,6 @@
-1. Start up GETEA in Kube
+1. Start up GETEA in Kube - DONE
 2. Get file and folder setup to look like a tree.  So we can have folders and sub folders.
-3. figure out how to get calls to GITEA with no user.  This is the READ from place first.
+3. figure out how to get calls to GITEA with no user.  This is the READ from place first. - DONE
 4. figure out how to push to GITEA 
 5. figure out how to have multiple repos in the editor at a time.  This will allow people to not have to make mega repos.
 6. fix the subroll mapping in the the ChartEditor...

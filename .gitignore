@@ -10,7 +10,7 @@
 /DialogService/obj/Debug/ChartBuilderDialog
 *.CopyComplete
 *.cache
-/packages/
+/packages
 /DialogService/obj/Debug/
 /GmDashboard/bin/Debug/
 /GmDashboard/obj/Debug/

@@ -6,7 +6,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using unvell.Common;
 using unvell.ReoGrid;
+using unvell.ReoGrid.Actions;
+using unvell.ReoGrid.Events;
 using unvell.ReoGrid.Graphics;
 
 namespace DialogService.ChartBuilderDialog
@@ -28,6 +31,7 @@ namespace DialogService.ChartBuilderDialog
     {
         private readonly IRegexDetectionUtility rollDetection;
         Worksheet Worksheet;
+        
         /// <summary>
         /// Initializes a new instance of the ChartBuilderView class.
         /// </summary>
@@ -41,8 +45,26 @@ namespace DialogService.ChartBuilderDialog
             Worksheet = grid.CurrentWorksheet;
             Worksheet.DisableSettings(WorksheetSettings.Edit_AutoFormatCell);
             Worksheet.Resize(1000, 1000);
+            grid.ActionPerformed += OnActionPerformed;
+            //public event EventHandler<WorkbookActionEventArgs> ActionPerformed;
+            //grid.KeyDown += new System.Windows.Input.KeyEventHandler(MainWindow_KeyDown);
         }
-
+        //void MainWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        //{
+        //    //if (e.Key == Key.Subtract)
+        //    //{
+        //    //    // Do something
+        //    //}
+        //}
+        private void OnActionPerformed(object sender, EventArgs e)
+        {
+            var runningAction = ((WorkbookActionEventArgs)e).Action;
+            if(runningAction.GetType().Equals(typeof(RemoveRangeDataAction)))
+            {
+                RemoveSpecialCell(((RemoveRangeDataAction)runningAction).Range);
+                Worksheet.ClearRangeContent(((RemoveRangeDataAction)runningAction).Range, CellElementFlag.All);
+            }
+        }
         private void ResetSheet_Click(object sender, RoutedEventArgs e)
         {
             Reset();
@@ -185,10 +207,10 @@ namespace DialogService.ChartBuilderDialog
                     }
                     else
                     {
+                        cell = Worksheet.CreateAndGetCell(row, col);
                         cell.Body = new HeadRollCell();
                         cell.Style.BackColor = new SolidColor("#BDBCC3");
-                        cell = Worksheet.CreateAndGetCell(row, col);
-                        cell.Data = "d" + totalRows + " ___________ .";
+                        cell.Data = "d" + totalRows + " ___________ ...";
                     }
                 }
                 else
@@ -197,7 +219,7 @@ namespace DialogService.ChartBuilderDialog
                     {
                         cell.Body = new StandardRollCell();
                         cell.Style.BackColor = new SolidColor("#D8D7DB");
-                        if (!rollDetection.OutcomeDetector().IsMatch(cell.Data.ToString().TrimStart().TrimEnd()))
+                        if (!rollDetection.OutcomeDetector().IsMatch(cell.Data.ToString()))
                         {
                             cell.Data = rollCounter + ". " + cell.Data + " .";
                         }
@@ -307,16 +329,20 @@ namespace DialogService.ChartBuilderDialog
             }
         }
 
-        private void ResetCell_Click(object sender, RoutedEventArgs e)
-        {
-            RemoveSpecialCell(Worksheet.FocusPos);
-            Worksheet.ClearRangeContent(Worksheet.FocusPos.ToAddress(), CellElementFlag.Body | CellElementFlag.Border | CellElementFlag.Style);
-        }
-
         private void RemoveSpecialCell(CellPosition cellPosition)
         {
             SpecialRollData.SubRollProperty.Remove(cellPosition.Row + ":" + cellPosition.Col);
             SpecialRollData.TitleCellProperty.Remove(cellPosition);
+        }
+        private void RemoveSpecialCell(RangePosition cellRange)
+        {
+            for(var colCounter = cellRange.StartPos.Col; colCounter <= cellRange.EndPos.Col; colCounter++)
+            {
+                for(var rowCounter = cellRange.StartPos.Row; rowCounter <= cellRange.EndPos.Row; rowCounter++)
+                {
+                    RemoveSpecialCell(new CellPosition(rowCounter, colCounter));
+                }
+            }
         }
     }
 }

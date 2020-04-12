@@ -4,7 +4,6 @@ using CommonCode.Interfaces;
 using DialogService.ChartBuilderDialog;
 using DialogService.PowerShellParamDialog;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DialogService
 {
@@ -12,7 +11,7 @@ namespace DialogService
     {
         public static void ActivateChartBuilder()
         {
-            ChartBuilderView dlg = new ChartBuilderView();
+            var dlg = new ChartBuilderView();
             dlg.Show();
         }
 
@@ -46,6 +45,5 @@ namespace DialogService
 
             return extractedParams;
         }
-
     }
 }

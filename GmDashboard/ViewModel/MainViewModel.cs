@@ -38,7 +38,6 @@ namespace GmDashboard.ViewModel
 
         //Main menu bar Commands
         public RelayCommand StartChartBuilderCommand { get; private set; }
-
         //IPreCommandPipe
         public RelayCommand LoadCommand { get; private set; }
         public RelayCommand RollCommand { get; private set; }

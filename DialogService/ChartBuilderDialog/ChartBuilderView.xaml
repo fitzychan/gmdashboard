@@ -60,7 +60,7 @@
                                 <materialDesign:PackIcon Kind="FormatTitle" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Collapse" Click="CollapseItems_Click">
+                        <MenuItem Header="Organize" Click="OrganizeItems_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="Selection" />
                             </MenuItem.Icon>

@@ -221,7 +221,15 @@ namespace DialogService.ChartBuilderDialog
                         cell.Style.BackColor = new SolidColor("#D8D7DB");
                         if (!rollDetection.OutcomeDetector().IsMatch(cell.Data.ToString()))
                         {
-                            cell.Data = rollCounter + ". " + cell.Data + " .";
+                            var peroid = ".";
+                            if (cell.Data.ToString().Replace(" ", "").EndsWith(peroid))
+                            {
+                                cell.Data = rollCounter + ". " + cell.Data;
+                            }
+                            else
+                            {
+                                cell.Data = rollCounter + ". " + cell.Data + " .";
+                            }
                         }
                     }
                     else
@@ -231,7 +239,14 @@ namespace DialogService.ChartBuilderDialog
                         //We need to see if the formating is already there.  If it is we can ignore it
                         if (!rollDetection.RollTitleDetector().IsMatch(cell.Data.ToString().TrimStart().TrimEnd()))
                         {
-                            cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                            if (cell.Data.ToString().Replace(" ", "").EndsWith("..."))
+                            {
+                                cell.Data = "d" + totalRows + " " + cell.Data;
+                            }
+                            else
+                            {
+                                cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                            }
                         }
                     }
                 }
@@ -295,7 +310,7 @@ namespace DialogService.ChartBuilderDialog
             Close();
         }
 
-        private void CollapseItems_Click(object sender, RoutedEventArgs e)
+        private void OrganizeItems_Click(object sender, RoutedEventArgs e)
         {
             var range = Worksheet.SelectionRange;
 

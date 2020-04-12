@@ -38,6 +38,7 @@
                     <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="RightAndAlignTopEdges" StaysOpen="False">
                         <StackPanel>
                             <Button Content="Chart Builder" Command="{Binding StartChartBuilderCommand}" />
+                            <Button Content="Login" Command="{Binding LoginCommand}" />
                          <!--<Button Content="Select Progressive Chart" IsEnabled="False"/>
                             <Button Content="Save Progressive Chart" IsEnabled="False"/>
                             <Button Content="New Progressive Chart" IsEnabled="False"/>-->

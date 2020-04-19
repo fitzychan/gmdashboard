@@ -1,8 +1,4 @@
-﻿using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows;
+﻿using System.Collections.ObjectModel;
 
 namespace DialogService.PowerShellParamDialog
 {

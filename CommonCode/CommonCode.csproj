@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CommonCode</RootNamespace>
     <AssemblyName>CommonCode</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModels\Chart.cs" />
+    <Compile Include="DataModels\Creds.cs" />
     <Compile Include="DataModels\GmDashboardTypes.cs" />
     <Compile Include="DataModels\Parameter.cs" />
     <Compile Include="DataModels\RangeRoll.cs" />

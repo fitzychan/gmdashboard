@@ -1,7 +1,9 @@
 ﻿using CommonCode;
 using CommonCode.Charts;
+using CommonCode.DataModels;
 using CommonCode.Interfaces;
 using DialogService.ChartBuilderDialog;
+using DialogService.LoginDialog;
 using DialogService.PowerShellParamDialog;
 using System.Collections.Generic;
 
@@ -44,6 +46,12 @@ namespace DialogService
 
 
             return extractedParams;
+        }
+        public static Creds ActivateLoginWindow()
+        {
+            var dlg = new LoginParamsView();
+            dlg.ShowDialog();
+            return dlg.Credentials;
         }
     }
 }

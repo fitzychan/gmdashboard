@@ -26,19 +26,19 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid  VerticalAlignment="Stretch">
+    <Grid VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <materialDesign:ColorZone Mode="Dark" Padding="5" Grid.Row="0">
-            <DockPanel Grid.ColumnSpan="2" >
+            <DockPanel Grid.ColumnSpan="3" >
                 <StackPanel Orientation="Horizontal"
                                     materialDesign:RippleAssist.IsCentered="True">
                     <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="RightAndAlignTopEdges" StaysOpen="False">
                         <StackPanel>
                             <Button Content="Chart Builder" Command="{Binding StartChartBuilderCommand}" />
-                            <Button Content="Login" Command="{Binding LoginCommand}" />
+                            <Button Content="Login" Command="{Binding StartLoginCommand}" />
                          <!--<Button Content="Select Progressive Chart" IsEnabled="False"/>
                             <Button Content="Save Progressive Chart" IsEnabled="False"/>
                             <Button Content="New Progressive Chart" IsEnabled="False"/>-->
@@ -48,9 +48,10 @@
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>
-                <Button HorizontalAlignment="Right" Background="Red" Click="CloseProgram_Click">
+                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Background="Red" Click="CloseProgram_Click">
                     <materialDesign:PackIcon Kind="close" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Button>
+                <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0" Text="{Binding ActiveUser.UserName, Mode=TwoWay}"/> 
             </DockPanel>
         </materialDesign:ColorZone>
         

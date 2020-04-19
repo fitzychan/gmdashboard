@@ -1,5 +1,6 @@
 using CommonCode;
 using CommonCode.Charts;
+using CommonCode.DataModels;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using DialogService;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security;
 
 namespace GmDashboard.ViewModel
 {
@@ -27,6 +29,9 @@ namespace GmDashboard.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        //User creds
+        private Creds currentUser = new Creds();
+
         //IPreCommandPipe preCommandPipe;
         private ObservableCollection<string> foundCharts = new ObservableCollection<string>();
         private ObservableCollection<string> selectedCharts = new ObservableCollection<string>();
@@ -38,6 +43,8 @@ namespace GmDashboard.ViewModel
 
         //Main menu bar Commands
         public RelayCommand StartChartBuilderCommand { get; private set; }
+        public RelayCommand StartLoginCommand { get; private set; }
+        
         //IPreCommandPipe
         public RelayCommand LoadCommand { get; private set; }
         public RelayCommand RollCommand { get; private set; }
@@ -66,7 +73,8 @@ namespace GmDashboard.ViewModel
             ////    // Code runs "for real"
             ////}
             //These commands are used in the main menu stuff.  Its where we are going to stick most of our secondary functions
-            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder());
+            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder()); 
+            StartLoginCommand = new RelayCommand(() => ActiveUser = Dialogs.ActivateLoginWindow());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
             LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
@@ -87,6 +95,19 @@ namespace GmDashboard.ViewModel
 
             //When main is populated we want to load up the tables
             LoadCommand.Execute(null);
+        }
+
+        public Creds ActiveUser
+        {
+            get
+            {
+                return currentUser;
+            }
+            set
+            {
+                currentUser = value;
+                RaisePropertyChanged();
+            }
         }
 
         public ObservableCollection<MainRollOutcomeDataModel> OutcomeDataModel
@@ -177,6 +198,7 @@ namespace GmDashboard.ViewModel
                 }
             }
         }
+
         private List<string> GetSelected()
         {
             var selectedBlocks = new List<string>();

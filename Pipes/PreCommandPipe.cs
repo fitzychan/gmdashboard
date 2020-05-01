@@ -28,6 +28,8 @@ namespace Pipes.PreParsedFileProject
         public ObservableCollection<string> LoadCommand()
         {
             var mainFileList = new ObservableCollection<string>();
+            here is async quick attempt to call an API
+            var files = FileUtility.LoadFilesFromRemote();
 
             foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
             {

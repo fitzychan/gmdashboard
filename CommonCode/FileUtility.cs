@@ -1,18 +1,19 @@
 ﻿using CommonCode.Charts;
-using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonCode.FileUtility
 {
-    public class FileUtility
+    public class FileUtility 
     {
         public static void SaveChartCommand(Chart resultMainBlock)
         {
@@ -56,6 +57,7 @@ namespace CommonCode.FileUtility
             }
 
         }
+
         public static void SaveSelectedChartCommand(List<string> blocks)
         {
             var saveRolldChart = new SaveFileDialog
@@ -98,6 +100,7 @@ namespace CommonCode.FileUtility
             }
 
         }
+
         public static void AddToFileRepo()
         {
             var saveRolldChart = new OpenFileDialog
@@ -171,6 +174,22 @@ namespace CommonCode.FileUtility
                 MessageBox.Show("This opens the raw data of the rtf file be careful when editing.", "This is not complete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }//TODO make this always open ina text window
             Process.Start(fileInfo.FullName);
+        }
+
+        public static IEnumerable<FileInfo> LoadFilesFromRemote()
+        {
+
+            string _apiKey = "e96cc48193e5e9e5f1bf3b563867beeb2d115cd2";
+            string _url = "http://192.168.21.6:32518/api/v1/";
+            string _user = "fitzy";
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            var auth = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(_user + ":" + _apiKey));
+            client.DefaultRequestHeaders.Add("Authorization", $"Basic {auth}");
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            var json = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/starred").Result;
+            return new List<FileInfo>();
         }
     }
 }

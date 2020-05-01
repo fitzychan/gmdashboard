@@ -51,7 +51,7 @@
                 <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Background="Red" Click="CloseProgram_Click">
                     <materialDesign:PackIcon Kind="close" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Button>
-                <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5 0" Text="{Binding ActiveUser.UserName, Mode=TwoWay}"/> 
+                <TextBlock DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5 0" FontSize="20" Text="{Binding ActiveUser.UserName, Mode=TwoWay}" /> 
             </DockPanel>
         </materialDesign:ColorZone>
         
@@ -102,7 +102,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <GroupBox  Header="Found Charts" Padding="5" Grid.Row="0" Style="{DynamicResource MaterialDesignCardGroupBox}">
+                        <GroupBox  Header="Chart Repositories" Padding="5" Grid.Row="0" Style="{DynamicResource MaterialDesignCardGroupBox}">
                             <GroupBox.ContextMenu >
                                 <ContextMenu >
                                     <MenuItem Header="Roll This One" Command="{Binding RollCommand}" Click="GetSelectedRollItem_Click"/>

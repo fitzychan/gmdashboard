@@ -19,19 +19,21 @@ namespace Pipes.PreParsedFileProject
     public class PreCommandPipe : IPreCommandPipe
     {
         IRollMeOne RollMeHandle;
+        FileUtility fileUtility;
 
         public PreCommandPipe()
         {
+            fileUtility = new FileUtility();
             RollMeHandle = new RollMeOne();
         }
 
         public ObservableCollection<string> LoadCommand()
         {
             var mainFileList = new ObservableCollection<string>();
-            here is async quick attempt to call an API
-            var files = FileUtility.LoadFilesFromRemote();
+            //here is async quick attempt to call an API
+            var files = fileUtility.LoadFilesFromRemote();
 
-            foreach (var chart in FileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
+            foreach (var chart in fileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
             {
                 mainFileList.Add(chart.Name);
             }
@@ -48,23 +50,23 @@ namespace Pipes.PreParsedFileProject
         }
         public void AddTablesToRepo()
         {
-            FileUtility.AddToFileRepo();
+            fileUtility.AddToFileRepo();
         }
 
         public void DeleteTableCommand(ObservableCollection<string> selectedCharts)
         {
-            var foundFiles = FileUtility.LocateSpecificCharts(selectedCharts).ToList();
+            var foundFiles = fileUtility.LocateSpecificCharts(selectedCharts).ToList();
             foundFiles.ForEach(x => File.Delete(x.FullName));
         }
         public void OpenFileLocation(ICollection<string> selectedChart)
         {
-            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
-            FileUtility.OpenFileLocation(foundFile);
+            var foundFile = fileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            fileUtility.OpenFileLocation(foundFile);
         }
         public void OpenFile(ICollection<string> selectedChart)
         {
-            var foundFile = FileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
-            FileUtility.OpenFile(foundFile);
+            var foundFile = fileUtility.LocateSpecificCharts(selectedChart).FirstOrDefault();
+            fileUtility.OpenFile(foundFile);
         }
     }
 }

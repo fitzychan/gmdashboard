@@ -13,6 +13,7 @@ namespace GmDashboard.ViewModel
         public List<FileInfo> FilesAtCurrentLevel { get; set; }
         public CloudRepoViewModel()
         {
+            //https://stackoverflow.com/questions/23713898/setting-datacontext-in-xaml-in-wpf
             //we were trying to get the tree view working.
             FilesAtCurrentLevel = fileUtility.LocateSpecificCharts(RepoName);
         }

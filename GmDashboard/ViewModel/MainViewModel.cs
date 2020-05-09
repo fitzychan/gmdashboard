@@ -35,7 +35,8 @@ namespace GmDashboard.ViewModel
         //IPreCommandPipe preCommandPipe;
         private ObservableCollection<string> foundCharts = new ObservableCollection<string>();
         private ObservableCollection<string> selectedCharts = new ObservableCollection<string>();
-        private ObservableCollection<MainRollOutcomeDataModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeDataModel>();
+        private ObservableCollection<MainRollOutcomeViewModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeViewModel>();
+        private ObservableCollection<CloudRepoViewModel> cloudRepoViewModels { get; set; }
         private ObservableCollection<IChart> mainFinishedBlock;
 
         //This needs to be bound to the datamodel
@@ -110,7 +111,7 @@ namespace GmDashboard.ViewModel
             }
         }
 
-        public ObservableCollection<MainRollOutcomeDataModel> OutcomeDataModel
+        public ObservableCollection<MainRollOutcomeViewModel> OutcomeDataModel
         {
             get
             {
@@ -164,21 +165,21 @@ namespace GmDashboard.ViewModel
             set
             {
                 mainFinishedBlock = value;
-                OutcomeDataModel = new ObservableCollection<MainRollOutcomeDataModel>();
+                OutcomeDataModel = new ObservableCollection<MainRollOutcomeViewModel>();
                 foreach (var mainBlock in mainFinishedBlock)
                 {
                     if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShellChart)
                     {
                         foreach (var powerShellResult in ((FunctionParamChart)mainBlock).PowerShellResult)
                         {
-                            OutcomeDataModel.Add(new MainRollOutcomeDataModel( powerShellResult));
+                            OutcomeDataModel.Add(new MainRollOutcomeViewModel( powerShellResult));
                         }
                     }
                     else if (mainBlock.TypeOfChart == GmDashboardTypes.Chart)
                     {
                         foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
                         {
-                            OutcomeDataModel.Add(new MainRollOutcomeDataModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            OutcomeDataModel.Add(new MainRollOutcomeViewModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
                         }
                     }
                     else if (mainBlock.TypeOfChart == GmDashboardTypes.RfgChart)
@@ -187,11 +188,11 @@ namespace GmDashboard.ViewModel
                         {
                             if(subBlockItem.BlockType == typeof(DescriptorRgf))
                             {
-                                OutcomeDataModel.Add(new MainRollOutcomeDataModel(subBlockItem.BlockDescriptor.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                                OutcomeDataModel.Add(new MainRollOutcomeViewModel(subBlockItem.BlockDescriptor.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
                             }
                             else
                             {
-                                OutcomeDataModel.Add(new MainRollOutcomeDataModel(((RollBlockRgf)subBlockItem).GetOutcome().Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                                OutcomeDataModel.Add(new MainRollOutcomeViewModel(((RollBlockRgf)subBlockItem).GetOutcome().Replace("\r", "").Replace("\n", "") + Environment.NewLine));
                             }
                         }
                     }

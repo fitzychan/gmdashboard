@@ -98,7 +98,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\MainRollOutcomeDataModel.cs" />
+    <Compile Include="ViewModel\MainRollOutcomeViewModel.cs" />
+    <Compile Include="ViewModel\CloudRepoViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

@@ -9,11 +9,10 @@ namespace GmDashboard
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CloudRepoViewModel cloudRepoViewModel;
+        //private CloudRepoViewModel cloudRepoViewModel;
         public MainWindow()
         {
             InitializeComponent();
-            cloudRepoViewModel = new CloudRepoViewModel();
         }
         private void GetSelectedRollItem_Click(object sender, RoutedEventArgs e)
         {

@@ -30,10 +30,15 @@ namespace Pipes.PreParsedFileProject
         public ObservableCollection<string> LoadCommand()
         {
             var mainFileList = new ObservableCollection<string>();
-            //here is async quick attempt to call an API
-            var files = fileUtility.LoadFilesFromRemote();
+            ////here is async quick attempt to call an API
+            //var files = fileUtility.LoadFilesFromRemote();
+            ////WE are going to need to fetch the urls for the logged in user. Then create CloudRepoViewModel for eachone
+            //foreach (var repo in repos)
+            //{
+            //    //Add the remote files to the list
+            //}
 
-            foreach (var chart in fileUtility.LoadChartsFromDefaultLocation(new string[] { ".txt", ".rgf", ".ps1"}))
+            foreach (var chart in fileUtility.LoadChartsFromLocation())
             {
                 mainFileList.Add(chart.Name);
             }

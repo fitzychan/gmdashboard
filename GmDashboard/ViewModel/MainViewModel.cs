@@ -36,7 +36,7 @@ namespace GmDashboard.ViewModel
         private ObservableCollection<string> foundCharts = new ObservableCollection<string>();
         private ObservableCollection<string> selectedCharts = new ObservableCollection<string>();
         private ObservableCollection<MainRollOutcomeViewModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeViewModel>();
-        private ObservableCollection<CloudRepoViewModel> cloudRepoViewModels { get; set; }
+        private CloudRepoViewModel cloudRepoViewModel;
         private ObservableCollection<IChart> mainFinishedBlock;
 
         //This needs to be bound to the datamodel
@@ -65,6 +65,7 @@ namespace GmDashboard.ViewModel
         public MainViewModel()
         {
             MainFinishedBlock = new ObservableCollection<IChart>();
+            CloudRepoViewModel = new CloudRepoViewModel();
             ////if (IsInDesignMode)
             ////{
             ////    // Code runs in Blend --> create design time data.
@@ -78,6 +79,7 @@ namespace GmDashboard.ViewModel
             StartLoginCommand = new RelayCommand(() => ActiveUser = Dialogs.ActivateLoginWindow());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
+            //WE ARE REALLY NEEDING TO MAKE THIS INTO SOME DELEGATE PATTERN.... 
             LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
             RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
             LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
@@ -107,6 +109,23 @@ namespace GmDashboard.ViewModel
             set
             {
                 currentUser = value;
+                RaisePropertyChanged();
+                //VALIDATE THE USER
+                //WE ARE GOING TO NEED TO TIER THE USERS IN TEH TABLE FOLDER...
+                //SO IF WE CHANGE USERS WE DONT SEE OTHER USERS TREES
+                CloudRepoViewModel = new CloudRepoViewModel(currentUser);
+            }
+        }
+
+        public CloudRepoViewModel CloudRepoViewModel
+        {
+            get
+            {
+                return cloudRepoViewModel;
+            }
+            set
+            {
+                cloudRepoViewModel = value;
                 RaisePropertyChanged();
             }
         }
@@ -199,6 +218,8 @@ namespace GmDashboard.ViewModel
                 }
             }
         }
+
+        
 
         private List<string> GetSelected()
         {

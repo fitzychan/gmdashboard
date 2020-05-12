@@ -16,8 +16,10 @@ namespace CommonCode.FileUtility
 {
     public class FileUtility 
     {
-        public string DefaultChartsLocation { get; set; } = "";
+        public string ChartsLocation { get; set; } = "";
+        public string[] SupportedFileTypes { get; set; } = new string[] { ".txt", ".rgf", ".ps1" };
         private IGitUtility _gitUtill;
+
         public FileUtility(IGitUtility gitUtility)
         {
             CreateDefaultFolder();
@@ -36,9 +38,9 @@ namespace CommonCode.FileUtility
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
 
             // Combine the base folder with your specific folder....
-            DefaultChartsLocation = Path.Combine(folder, "GmDashboard\\Tables");
+            ChartsLocation = Path.Combine(folder, "GmDashboard\\Tables");
 
-            Directory.CreateDirectory(DefaultChartsLocation);
+            Directory.CreateDirectory(ChartsLocation);
         }
 
         public void SaveChartCommand(Chart resultMainBlock)
@@ -150,7 +152,7 @@ namespace CommonCode.FileUtility
 
         public IEnumerable<FileInfo> LocateSpecificCharts(ICollection<string> itemList)
         {
-            var files = Directory.GetFiles(DefaultChartsLocation, "*" + "*" + "*", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(ChartsLocation, "*" + "*" + "*", SearchOption.AllDirectories);
 
             foreach (var item in itemList)
             {
@@ -164,18 +166,40 @@ namespace CommonCode.FileUtility
             }
         }
 
-        public IEnumerable<FileInfo> LoadChartsFromDefaultLocation(string[] exts)
+
+        public IEnumerable<FileInfo> LoadChartsFromLocation(string location)
         {
             var foundFiles = new List<string>();
             //This will be the default path for the files.
             try
             {
-                foreach (var ext in exts)
+                foreach (var ext in SupportedFileTypes)
+                {
+                    foundFiles.AddRange(Directory.GetFiles(location, "*" + ext + "*", SearchOption.AllDirectories).ToList());
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            foreach (string file in foundFiles)
+            {
+                yield return new FileInfo(file);
+            }
+        }
+
+        public IEnumerable<FileInfo> LoadChartsFromLocation()
+        {
+            var foundFiles = new List<string>();
+            //This will be the default path for the files.
+            try
+            {
+                foreach (var ext in SupportedFileTypes)
                 {
                     //var dSecurity = new DirectorySecurity();
                     //dSecurity.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), FileSystemRights.FullControl, InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit, PropagationFlags.NoPropagateInherit, AccessControlType.Allow));
                     //Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Tables", dSecurity);
-                    foundFiles.AddRange(Directory.GetFiles(DefaultChartsLocation, "*" + ext + "*", SearchOption.AllDirectories).ToList());
+                    foundFiles.AddRange(Directory.GetFiles(ChartsLocation, "*" + ext + "*", SearchOption.AllDirectories).ToList());
                 }
             }
             catch (Exception e)
@@ -203,9 +227,41 @@ namespace CommonCode.FileUtility
         }
 
         //We are always going to want to 
-        public IEnumerable<FileInfo> LoadFilesFromRemote()
-        {
+        //public IEnumerable<FileInfo> LoadFilesFromRemote()
+        //{
+        //    //WE need to create a new one of theese whenever we read from a remote repo.
+        //    string _apiKey = "e96cc48193e5e9e5f1bf3b563867beeb2d115cd2";
+        //    string _url = "http://192.168.21.6:32518/api/v1/";
+        //    string _user = "fitzy";
+        //
+        //    var client = new HttpClient();
+        //    client.DefaultRequestHeaders.Accept.Clear();
+        //    var auth = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(_user + ":" + _apiKey));
+        //    client.DefaultRequestHeaders.Add("Authorization", $"Basic {auth}");
+        //    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+        //    var json = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/starred").Result;
+        //    var json2 = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/subscriptions").Result;
+        //    var json3 = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/repos").Result;
+        //    var thinger = JsonConvert.DeserializeObject<List<GitBase>>(json)          ;
+        //    var thinger2 = JsonConvert.DeserializeObject<List<GitBase>>(json2)      ;
+        //    var thinger3 = JsonConvert.DeserializeObject<List<GitBase>>(json3);
+        //
+        //    foreach(var thing in thinger3)
+        //    {
+        //
+        //        _gitUtill.CloneRepo(ChartsLocation, thing);
+        //    }
+        //
+        //    return new List<FileInfo>();
+        //}
 
+        public List<GitBase> LoadReposFromRemote(string userName)
+        {
+            if(userName == string.Empty)
+            {
+                return new List<GitBase>();
+            }
+            //WE need to create a new one of theese whenever we read from a remote repo.
             string _apiKey = "e96cc48193e5e9e5f1bf3b563867beeb2d115cd2";
             string _url = "http://192.168.21.6:32518/api/v1/";
             string _user = "fitzy";
@@ -215,19 +271,20 @@ namespace CommonCode.FileUtility
             var auth = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(_user + ":" + _apiKey));
             client.DefaultRequestHeaders.Add("Authorization", $"Basic {auth}");
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            var json = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/starred").Result;
-            var json2 = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/subscriptions").Result;
-            var json3 = client.GetStringAsync("https://git.dustinti.me/api/v1/users/fitzy/repos").Result;
-            var thinger = JsonConvert.DeserializeObject<List<GitBase>>(json)          ;
-            var thinger2 = JsonConvert.DeserializeObject<List<GitBase>>(json2)      ;
-            var thinger3 = JsonConvert.DeserializeObject<List<GitBase>>(json3);
+            //var json = client.GetStringAsync($"https://git.dustinti.me/api/v1/users/{userName}/starred").Result;
+            //var json2 = client.GetStringAsync($"https://git.dustinti.me/api/v1/users/{userName}/subscriptions").Result;
+            var starredRepos = client.GetStringAsync($"https://git.dustinti.me/api/v1/users/{userName}/repos").Result;
+            //var thinger = JsonConvert.DeserializeObject<List<GitBase>>(json);
+            //var thinger2 = JsonConvert.DeserializeObject<List<GitBase>>(json2);
+            var gitRepoObjects = JsonConvert.DeserializeObject<List<GitBase>>(starredRepos);
 
-            foreach(var thing in thinger3)
-            {
-                _gitUtill.CloneRepo(DefaultChartsLocation, thing);
-            }
-
-            return new List<FileInfo>();
+            //foreach (var thing in thinger3)
+            //{
+            //
+            //    _gitUtill.CloneRepo(ChartsLocation, thing);
+            //}
+            return gitRepoObjects;
         }
+
     }
 }

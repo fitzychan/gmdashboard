@@ -8,6 +8,11 @@ namespace CommonCode
 {
     public class GitUtility : IGitUtility
     {
+        /// <summary>
+        /// this is a pull and clone in one...  for now.
+        /// </summary>
+        /// <param name="workingDirectory"></param>
+        /// <param name="gitRepo"></param>
         public void CloneRepo(string workingDirectory, GitBase gitRepo)
         {
             using (PowerShell powershell = PowerShell.Create())

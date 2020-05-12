@@ -1,5 +1,6 @@
 using CommonCode;
 using CommonCode.Charts;
+using CommonCode.DataModels;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
 using DialogService;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security;
 
 namespace GmDashboard.ViewModel
 {
@@ -27,10 +29,14 @@ namespace GmDashboard.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        //User creds
+        private Creds currentUser = new Creds();
+
         //IPreCommandPipe preCommandPipe;
         private ObservableCollection<string> foundCharts = new ObservableCollection<string>();
         private ObservableCollection<string> selectedCharts = new ObservableCollection<string>();
-        private ObservableCollection<MainRollOutcomeDataModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeDataModel>();
+        private ObservableCollection<MainRollOutcomeViewModel> rollBlockOutcome = new ObservableCollection<MainRollOutcomeViewModel>();
+        private CloudRepoViewModel cloudRepoViewModel;
         private ObservableCollection<IChart> mainFinishedBlock;
 
         //This needs to be bound to the datamodel
@@ -38,7 +44,8 @@ namespace GmDashboard.ViewModel
 
         //Main menu bar Commands
         public RelayCommand StartChartBuilderCommand { get; private set; }
-
+        public RelayCommand StartLoginCommand { get; private set; }
+        
         //IPreCommandPipe
         public RelayCommand LoadCommand { get; private set; }
         public RelayCommand RollCommand { get; private set; }
@@ -58,6 +65,7 @@ namespace GmDashboard.ViewModel
         public MainViewModel()
         {
             MainFinishedBlock = new ObservableCollection<IChart>();
+            CloudRepoViewModel = new CloudRepoViewModel();
             ////if (IsInDesignMode)
             ////{
             ////    // Code runs in Blend --> create design time data.
@@ -67,9 +75,11 @@ namespace GmDashboard.ViewModel
             ////    // Code runs "for real"
             ////}
             //These commands are used in the main menu stuff.  Its where we are going to stick most of our secondary functions
-            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder());
+            StartChartBuilderCommand = new RelayCommand(() => Dialogs.ActivateChartBuilder()); 
+            StartLoginCommand = new RelayCommand(() => ActiveUser = Dialogs.ActivateLoginWindow());
 
             //These commands and this command pipe is for code relating to loading and parseing charts
+            //WE ARE REALLY NEEDING TO MAKE THIS INTO SOME DELEGATE PATTERN.... 
             LoadCommand = new RelayCommand(() => FoundCharts = PipeAssessor.PrePipe.LoadCommand());
             RollCommand = new RelayCommand(() => MainFinishedBlock = new ObservableCollection<IChart>(PipeAssessor.PrePipe.RollOneCommand(SelectedCharts)));
             LocateCommand = new RelayCommand(() => { PipeAssessor.PrePipe.AddTablesToRepo(); LoadCommand.Execute(null); });
@@ -90,7 +100,37 @@ namespace GmDashboard.ViewModel
             LoadCommand.Execute(null);
         }
 
-        public ObservableCollection<MainRollOutcomeDataModel> OutcomeDataModel
+        public Creds ActiveUser
+        {
+            get
+            {
+                return currentUser;
+            }
+            set
+            {
+                currentUser = value;
+                RaisePropertyChanged();
+                //VALIDATE THE USER
+                //WE ARE GOING TO NEED TO TIER THE USERS IN TEH TABLE FOLDER...
+                //SO IF WE CHANGE USERS WE DONT SEE OTHER USERS TREES
+                CloudRepoViewModel = new CloudRepoViewModel(currentUser);
+            }
+        }
+
+        public CloudRepoViewModel CloudRepoViewModel
+        {
+            get
+            {
+                return cloudRepoViewModel;
+            }
+            set
+            {
+                cloudRepoViewModel = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<MainRollOutcomeViewModel> OutcomeDataModel
         {
             get
             {
@@ -144,33 +184,49 @@ namespace GmDashboard.ViewModel
             set
             {
                 mainFinishedBlock = value;
-                OutcomeDataModel = new ObservableCollection<MainRollOutcomeDataModel>();
+                OutcomeDataModel = new ObservableCollection<MainRollOutcomeViewModel>();
                 foreach (var mainBlock in mainFinishedBlock)
                 {
-                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShell)
+                    if(mainBlock.TypeOfChart == GmDashboardTypes.PowerShellChart)
                     {
                         foreach (var powerShellResult in ((FunctionParamChart)mainBlock).PowerShellResult)
                         {
-                            OutcomeDataModel.Add(new MainRollOutcomeDataModel( powerShellResult));
+                            OutcomeDataModel.Add(new MainRollOutcomeViewModel( powerShellResult));
                         }
                     }
                     else if (mainBlock.TypeOfChart == GmDashboardTypes.Chart)
                     {
                         foreach (var subBlockItem in ((Chart)mainBlock).ChartRolls)
                         {
-                            OutcomeDataModel.Add(new MainRollOutcomeDataModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            OutcomeDataModel.Add(new MainRollOutcomeViewModel(((StandardRoll)subBlockItem).Outcome.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
                         }
                     }
-
+                    else if (mainBlock.TypeOfChart == GmDashboardTypes.RfgChart)
+                    {
+                        foreach (var subBlockItem in ((ChartRgf)mainBlock).Blocks)
+                        {
+                            if(subBlockItem.BlockType == typeof(DescriptorRgf))
+                            {
+                                OutcomeDataModel.Add(new MainRollOutcomeViewModel(subBlockItem.BlockDescriptor.Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            }
+                            else
+                            {
+                                OutcomeDataModel.Add(new MainRollOutcomeViewModel(((RollBlockRgf)subBlockItem).GetOutcome().Replace("\r", "").Replace("\n", "") + Environment.NewLine));
+                            }
+                        }
+                    }
                 }
             }
         }
-        private List<IRoll> GetSelected()
+
+        
+
+        private List<string> GetSelected()
         {
-            var selectedBlocks = new List<IRoll>();
+            var selectedBlocks = new List<string>();
             foreach (var dataModel in OutcomeDataModel.Where(x => x.IsSelected))
             {
-                selectedBlocks.Add(dataModel.Block);
+                selectedBlocks.Add(dataModel.RollResult);
             }
             return selectedBlocks;
         }

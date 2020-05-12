@@ -1,9 +1,8 @@
 ﻿using CommonCode.Charts;
 using CommonCode.FileUtility;
-using CommonCode.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-
+//todo this just seems incorrect
 namespace Pipes.PostParsedProject
 {
     public interface IPostCommandPipe
@@ -14,31 +13,37 @@ namespace Pipes.PostParsedProject
 
     public class PostCommandPipe : IPostCommandPipe
     {
+        FileUtility fileUtility;
+        public PostCommandPipe()
+        {
+            fileUtility = new FileUtility();
+        }
+
         public void AddToChartCommand(Chart block)
         {
             if (block == null)
                 return;
-            FileUtility.AddToChartCommand(block);
+            fileUtility.AddToChartCommand(block);
         }
 
         public void SaveChartCommand(Chart block)
         {
             if (block == null)
                 return;
-            FileUtility.SaveChartCommand(block);
+            fileUtility.SaveChartCommand(block);
         }
-        public void AddSelectedToChartCommand(List<IRoll> blocks)
+        public void AddSelectedToChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;
-            FileUtility.AddSelectedToChartCommand(blocks);
+            fileUtility.AddSelectedToChartCommand(blocks);
         }
 
-        public void SaveSelectedChartCommand(List<IRoll> blocks)
+        public void SaveSelectedChartCommand(List<string> blocks)
         {
             if (!blocks.Any())
                 return;
-            FileUtility.SaveSelectedChartCommand(blocks);
+            fileUtility.SaveSelectedChartCommand(blocks);
         }
     }
 }

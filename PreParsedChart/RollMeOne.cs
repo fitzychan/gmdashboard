@@ -17,12 +17,14 @@ namespace GmDashboard.RollMeOne
     {
         private readonly IContentExtractor contentExtractor;
         private readonly IRollUtility rollUtill;
+        private FileUtility fileUtility;
         ICollection<string> selectedItems = new List<string>();
 
         public RollMeOne()
         {
             contentExtractor = new ContentExtractor();
             rollUtill = new RollUtility();
+            fileUtility = new FileUtility();
         }
 
         public void SetSelectedItems(ICollection<string> items)
@@ -33,7 +35,7 @@ namespace GmDashboard.RollMeOne
         public ICollection<IChart> RollOnTables(ICollection<string> chartPaths)
         {
             List<IChart> rolledMainBlocks = new List<IChart>();
-            foreach (var file in FileUtility.LocateSpecificCharts(chartPaths))
+            foreach (var file in fileUtility.LocateSpecificCharts(chartPaths))
             {
                 IChart builtChart;
                 if (file.Extension.Contains(".txt"))

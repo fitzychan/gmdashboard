@@ -1,10 +1,11 @@
 ﻿using CommonCode;
 using CommonCode.Charts;
+using CommonCode.DataModels;
 using CommonCode.Interfaces;
 using DialogService.ChartBuilderDialog;
+using DialogService.LoginDialog;
 using DialogService.PowerShellParamDialog;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DialogService
 {
@@ -12,7 +13,7 @@ namespace DialogService
     {
         public static void ActivateChartBuilder()
         {
-            ChartBuilderView dlg = new ChartBuilderView();
+            var dlg = new ChartBuilderView();
             dlg.Show();
         }
 
@@ -20,7 +21,7 @@ namespace DialogService
         {
             List<FunctionParameters> extractedParams = new List<FunctionParameters>();
 
-            if (powerShellChart.TypeOfChart.Equals(GmDashboardTypes.PowerShell))
+            if (powerShellChart.TypeOfChart.Equals(GmDashboardTypes.PowerShellChart))
             {
                 var functionalParams = new FunctionParameterViewModel();
                 foreach (var param in ((FunctionParamChart)powerShellChart).Parameters)
@@ -46,6 +47,11 @@ namespace DialogService
 
             return extractedParams;
         }
-
+        public static Creds ActivateLoginWindow()
+        {
+            var dlg = new LoginParamsView();
+            dlg.ShowDialog();
+            return dlg.Credentials;
+        }
     }
 }

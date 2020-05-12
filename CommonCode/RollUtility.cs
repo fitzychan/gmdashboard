@@ -1,6 +1,7 @@
 ﻿using CommonCode.Charts;
 using CommonCode.Interfaces;
 using CommonCode.Rolls;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using System.Windows.Forms;
 
 namespace CommonCode.RollUtility
 {
@@ -28,11 +30,15 @@ namespace CommonCode.RollUtility
                     RollOnRoll(chartRoll);
                 }
             }
-            else if(chart.TypeOfChart == GmDashboardTypes.PowerShell)
+            else if (chart.TypeOfChart == GmDashboardTypes.PowerShellChart)
             {
                 var powershellFile = (FunctionParamChart)chart;
 
                 powershellFile.PowerShellResult = RunPowershell(powershellFile, powershellFile.Parameters);
+            }
+            else if (chart.TypeOfChart == GmDashboardTypes.RfgChart)
+            {
+                RollOnRgf((ChartRgf)chart);
             }
             return chart;
         }
@@ -64,10 +70,13 @@ namespace CommonCode.RollUtility
                 return "";
             }
         }
+         
         public List<string> RunPowershell(FunctionParamChart functionChart, List<Parameter> powershellParams)
         {
+            var workingFile = Path.GetTempPath() + "\\" + Guid.NewGuid() + ".txt";
             var shellResult = new List<string>();
-            if(powershellParams.Any(x=>x.Value == null))
+
+            if (powershellParams.Any(x=>x.Value == null))
             {
                 return shellResult;
             }
@@ -83,12 +92,12 @@ namespace CommonCode.RollUtility
                         {
                             shell.AddScript(functionChart.PowershellFileInfo.FullName);
                             string aggParam = string.Empty;
-                            foreach(var param in powershellParams)
+                            foreach (var param in powershellParams)
                             {
-                                aggParam += " -" +param.Name + " " + param.Value;
+                                aggParam += " -" + param.Name + " " + param.Value;
                             }
 
-                            using(var shellProcess = new Process())
+                            using (var shellProcess = new Process())
                             {
                                 shellProcess.StartInfo = new ProcessStartInfo
                                 {
@@ -97,19 +106,30 @@ namespace CommonCode.RollUtility
                                     UseShellExecute = false,
                                     RedirectStandardOutput = true,
                                     RedirectStandardError = true,
-                                    CreateNoWindow = true
+                                    CreateNoWindow = true,
                                 };
-                            
-                                shellProcess.Start();
 
-                                while (!shellProcess.StandardOutput.EndOfStream)
+                                shellProcess.Start();
+                                using (var fileStream = File.Create(workingFile))
                                 {
-                                    shellResult.Add(shellProcess.StandardOutput.ReadLine() + Environment.NewLine);
+                                    using (var streamWriter = new StreamWriter(fileStream))
+                                    {
+                                        var errorValues = shellProcess.StandardError.BaseStream.ReadToEnd();
+                                        var values = shellProcess.StandardOutput.BaseStream.ReadToEnd();
+                                        if (!string.IsNullOrEmpty(errorValues))
+                                        {
+                                            streamWriter.WriteLine(errorValues);
+                                        }
+                                        if (!string.IsNullOrEmpty(values))
+                                        {
+                                            streamWriter.WriteLine(values);
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         shellResult.Add(e.Message);
                     }
@@ -117,12 +137,70 @@ namespace CommonCode.RollUtility
                     {
                         scriptInvoker.Invoke("Set-ExecutionPolicy -Scope CurrentUser Restricted");
                         runspace.Close();
+                        shellResult.AddRange(File.ReadAllLines(workingFile));
+                        File.Delete(workingFile);
                     }
                 }
                
             }
 
             return shellResult;
+        }
+
+        public IChart RollOnRgf(ChartRgf rgfChart)
+        {
+            if (rgfChart == null)
+            {
+                MessageBox.Show("The file is improperly formatted", "Bad file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new Chart();
+            }
+            else
+            {
+                foreach (var rollBlock in rgfChart.Blocks)
+                {
+                    if (rollBlock.BlockType == typeof(RollBlockRgf))
+                    {
+                        var localRollBlock = ((RollBlockRgf)rollBlock);
+                        localRollBlock.Result = RollOnRgfBlock(rollBlock);
+                    }
+                }
+            }
+            return rgfChart;
+        }
+
+        private string RollOnRgfBlock(IBlockRgf roll)
+        {
+            string returnString = string.Empty;
+            try
+            {
+                using (var randUtill = new RandomUtility())
+                {
+                    //This is because arrays start at 0 we need to shift the outcome by one.  NOT the dice passed in.
+                    int rolledNumber = randUtill.RollDice(((RollBlockRgf)roll).Dice) - 1;
+
+                    if (roll.BlockType == typeof(DescriptorRgf))
+                    {
+                        return roll.GetOutcome();
+                    }
+
+                    var tempRoll = ((RollBlockRgf)roll).Outcomes.ElementAt(rolledNumber);
+                    if (tempRoll.GetType() == typeof(RollRgf))
+                    {
+                        returnString = (((RollRgf)tempRoll).GetOutcome());
+                    }
+                    else if (tempRoll.GetType() == typeof(SubRollRgf))
+                    {
+                        //TODO we are here trying to get the spacing correct.... We should be doing this all in one place...
+                        returnString = (((SubRollRgf)tempRoll).SubBlockOutcome.BlockDescriptor + Environment.NewLine + "\t" + RollOnRgfBlock(((SubRollRgf)tempRoll).SubBlockOutcome)) + Environment.NewLine;
+                    }
+                }
+                return returnString;
+            }
+            catch (Exception e)
+            {
+                // throw;
+                return "Error in RollOnBlock:" + e.Message;
+            }
         }
     }
 }

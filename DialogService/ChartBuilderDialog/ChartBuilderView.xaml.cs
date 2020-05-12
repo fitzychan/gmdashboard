@@ -1,17 +1,22 @@
-﻿using System;
+﻿using CommonCode;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using unvell.ReoGrid;
-using unvell.ReoGrid.Graphics;
-using System.Xml.Linq;
 using System.Windows;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using unvell.Common;
+using unvell.ReoGrid;
+using unvell.ReoGrid.Actions;
+using unvell.ReoGrid.Events;
+using unvell.ReoGrid.Graphics;
 
 namespace DialogService.ChartBuilderDialog
 {
     public class SpecialRollData
     {
+        //We really should be making the key CellPosition
         //Where the cell is,  The linked cells id
         public static Dictionary<string, int> SubRollProperty { get; set; }
         //Location of the Main cell in the roll,  A list of the rolls that are under it...
@@ -24,6 +29,8 @@ namespace DialogService.ChartBuilderDialog
     /// </summary>
     public partial class ChartBuilderView : Window
     {
+        private readonly IRegexDetectionUtility rollDetection;
+        Worksheet Worksheet;
         
         /// <summary>
         /// Initializes a new instance of the ChartBuilderView class.
@@ -31,15 +38,33 @@ namespace DialogService.ChartBuilderDialog
         public ChartBuilderView()
         {
             InitializeComponent();
-
+            rollDetection = new RegexDetectionUtility();
             SpecialRollData.SubRollProperty = new Dictionary<string, int>();
             SpecialRollData.TitleCellProperty = new List<CellPosition>();
 
-            var workSheet = grid.CurrentWorksheet;
-            workSheet.DisableSettings(WorksheetSettings.Edit_AutoFormatCell);
-            workSheet.Resize(1000, 1000);
+            Worksheet = grid.CurrentWorksheet;
+            Worksheet.DisableSettings(WorksheetSettings.Edit_AutoFormatCell);
+            Worksheet.Resize(1000, 1000);
+            grid.ActionPerformed += OnActionPerformed;
+            //public event EventHandler<WorkbookActionEventArgs> ActionPerformed;
+            //grid.KeyDown += new System.Windows.Input.KeyEventHandler(MainWindow_KeyDown);
         }
-
+        //void MainWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        //{
+        //    //if (e.Key == Key.Subtract)
+        //    //{
+        //    //    // Do something
+        //    //}
+        //}
+        private void OnActionPerformed(object sender, EventArgs e)
+        {
+            var runningAction = ((WorkbookActionEventArgs)e).Action;
+            if(runningAction.GetType().Equals(typeof(RemoveRangeDataAction)))
+            {
+                RemoveSpecialCell(((RemoveRangeDataAction)runningAction).Range);
+                Worksheet.ClearRangeContent(((RemoveRangeDataAction)runningAction).Range, CellElementFlag.All);
+            }
+        }
         private void ResetSheet_Click(object sender, RoutedEventArgs e)
         {
             Reset();
@@ -56,7 +81,6 @@ namespace DialogService.ChartBuilderDialog
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            var sheet = grid.CurrentWorksheet;
             var saveLocation = SaveCurrentChartCommand();
 
             //We will save the file with the default mode that comes with the ReoGrid...  Then we will openit and save a specific chucnk that stores the relationship data...
@@ -77,7 +101,7 @@ namespace DialogService.ChartBuilderDialog
                     {
                         if (string.IsNullOrWhiteSpace(item.ToString()))
                         {
-                            linkedXml.Add(new XElement(item.ToAddress().ToString() + sheet.Cells[item.ToAddress()].Data.ToString()));
+                            linkedXml.Add(new XElement(item.ToAddress().ToString() + Worksheet.Cells[item.ToAddress()].Data.ToString()));
                         }
                     }
                     var xDoc = XDocument.Load(memStream);
@@ -89,7 +113,7 @@ namespace DialogService.ChartBuilderDialog
 
         private void Import_Click(object sender, RoutedEventArgs e)
         {
-            var openFileDialog1 = new OpenFileDialog
+            var openFileWindow = new OpenFileDialog
             {
                 Filter = "rgf files (*.rgf) | *.rgf",
                 FilterIndex = 2,
@@ -97,13 +121,22 @@ namespace DialogService.ChartBuilderDialog
                 InitialDirectory = Directory.GetCurrentDirectory() + "\\Tables"
             };
 
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileWindow.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
                     Reset();
-                    var sheet = grid.CurrentWorksheet;
-                    sheet.LoadRGF(openFileDialog1.FileName);
+
+                    Worksheet.LoadRGF(openFileWindow.FileName);
+
+                    var xDoc = XDocument.Load(openFileWindow.FileName);
+                    var foundElements = xDoc.Descendants("cell").Attributes("body-type").Where(x => x.Value.Equals("DescriptorCell"));
+
+                    foreach(var descriptor in foundElements)
+                    {
+                        Worksheet.FocusPos = new CellPosition(int.Parse(descriptor.Parent.Attribute("row").Value), int.Parse(descriptor.Parent.Attribute("col").Value));
+                        SetDescriptor();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -111,6 +144,7 @@ namespace DialogService.ChartBuilderDialog
                 }
             }
         }
+
         private string SaveCurrentChartCommand()
         {
             var saveRolldChart = new SaveFileDialog
@@ -133,55 +167,87 @@ namespace DialogService.ChartBuilderDialog
         //Ctrl+Q
         private void DesignateDescriptor_Click(object sender, RoutedEventArgs e)
         {
+            SetDescriptor();
+        }
+
+        private void SetDescriptor()
+        {
             //We need to find a way to save the cells that are being highlighted
             //We could also just make a moniker to save to the data.... And save it and rewrite the parserfor that specific chart type.
-            var sheet = grid.CurrentWorksheet;
-            var selected = sheet.FocusPos;
-            var cell = sheet.Cells[selected];
+            var selected = Worksheet.FocusPos;
+            var cell = Worksheet.Cells[selected];
             
-            if(cell.Data == null)
+            if (cell.Data == null)
             {
                 return;
             }
             SpecialRollData.TitleCellProperty.Add(selected);
-            sheet[selected] = new DescriptorCell();
+            Worksheet[selected] = new DescriptorCell();
             cell.Style.BackColor = SolidColor.LightSteelBlue;
         }
 
         //Ctrl+W
         private void DesignateRoll_Click(object sender, RoutedEventArgs e)
         {
-            var range = grid.CurrentWorksheet.SelectionRange;
+            var range = Worksheet.SelectionRange;
             var totalRows = range.Rows - 1;
             int rollCounter = 0;
-            var sheet = grid.CurrentWorksheet;
 
-            sheet.IterateCells(range, false, (row, col, cell) =>
+            Worksheet.IterateCells(range, false, (row, col, cell) =>
             {
                 
                 if (cell == null || cell.Body != null && cell.Body.GetType().Equals(typeof(DescriptorCell)))
                 {
                     if(rollCounter != 0)
                     {
-                        cell = sheet.CreateAndGetCell(row, col);
+                        cell = Worksheet.CreateAndGetCell(row, col);
+                        cell.Body = new StandardRollCell();
+                        cell.Style.BackColor = new SolidColor("#D8D7DB");
                         cell.Data = rollCounter + ". __________ .";
                     }
                     else
                     {
-                        cell = sheet.CreateAndGetCell(row, col);
-                        cell.Data = "d" + totalRows + " ___________ .";
+                        cell = Worksheet.CreateAndGetCell(row, col);
+                        cell.Body = new HeadRollCell();
+                        cell.Style.BackColor = new SolidColor("#BDBCC3");
+                        cell.Data = "d" + totalRows + " ___________ ...";
                     }
-
                 }
                 else
                 {
                     if(rollCounter != 0 )
                     {
-                        cell.Data = rollCounter + ". " + cell.Data + " .";
+                        cell.Body = new StandardRollCell();
+                        cell.Style.BackColor = new SolidColor("#D8D7DB");
+                        if (!rollDetection.OutcomeDetector().IsMatch(cell.Data.ToString()))
+                        {
+                            var peroid = ".";
+                            if (cell.Data.ToString().Replace(" ", "").EndsWith(peroid))
+                            {
+                                cell.Data = rollCounter + ". " + cell.Data;
+                            }
+                            else
+                            {
+                                cell.Data = rollCounter + ". " + cell.Data + " .";
+                            }
+                        }
                     }
                     else
                     {
-                        cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                        cell.Body = new HeadRollCell();
+                        cell.Style.BackColor = new SolidColor("#BDBCC3");
+                        //We need to see if the formating is already there.  If it is we can ignore it
+                        if (!rollDetection.RollTitleDetector().IsMatch(cell.Data.ToString().TrimStart().TrimEnd()))
+                        {
+                            if (cell.Data.ToString().Replace(" ", "").EndsWith("..."))
+                            {
+                                cell.Data = "d" + totalRows + " " + cell.Data;
+                            }
+                            else
+                            {
+                                cell.Data = "d" + totalRows + " " + cell.Data + " ...";
+                            }
+                        }
                     }
                 }
 
@@ -189,16 +255,14 @@ namespace DialogService.ChartBuilderDialog
                 return true;
 
             });
-            sheet.AutoFitColumnWidth(range.Col, true);
+            Worksheet.AutoFitColumnWidth(range.Col, true);
         }
         
         //Ctrl+E
         private void DesignateSubroll_Click(object sender, RoutedEventArgs e)
         {
-
-            var sheet = grid.CurrentWorksheet;
-            var selected = sheet.FocusPos;
-            var cell = sheet.Cells[selected];
+            var selected = Worksheet.FocusPos;
+            var cell = Worksheet.Cells[selected];
             if(cell.Data == null)
             {
                 return;
@@ -219,8 +283,15 @@ namespace DialogService.ChartBuilderDialog
                 //This needs to be called before we add it to the list... This is where the counting logic is for adding the linked cells.
 
                 SpecialRollData.SubRollProperty.Add(selected.Row + ":" + selected.Col , AddSubChartMoniker());
-                
-                sheet[selected] = new SubRollCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+
+                if (cell.Body != null && cell.Body.GetType() == typeof(HeadRollCell))
+                {
+                    Worksheet[selected] = new SubRollHeadCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+                }
+                else
+                {
+                    Worksheet[selected] = new SubRollCell("Link: " + SpecialRollData.SubRollProperty.Last().Value);
+                }
             }
         }
         
@@ -239,21 +310,19 @@ namespace DialogService.ChartBuilderDialog
             Close();
         }
 
-        private void CollapseItems_Click(object sender, RoutedEventArgs e)
+        private void OrganizeItems_Click(object sender, RoutedEventArgs e)
         {
-            var sheet = grid.CurrentWorksheet;
-            var range = sheet.SelectionRange;
+            var range = Worksheet.SelectionRange;
 
+            var listOfItems = new List<Cell>();
 
-            var listOfItems = new List<string>();
-            
-            sheet.IterateCells(range, false, (row, col, cell) =>
+            Worksheet.IterateCells(range, false, (row, col, cell) =>
             {
                 if(cell != null)
                 {
                     if(cell.DisplayText != null && cell.DisplayText != "")
                     {
-                        listOfItems.Add(cell.DisplayText);
+                        listOfItems.Add(cell);
                     }
                 }
                 
@@ -266,14 +335,29 @@ namespace DialogService.ChartBuilderDialog
             {
                 if(listOfItems.Count > i)
                 {
-                    sheet[startCell.Row + i, startCell.Col] = listOfItems[i];
+                    Worksheet[startCell.Row + i, startCell.Col] = listOfItems[i].DisplayText;
                 }
                 else
                 {
-                    sheet[startCell.Row + i, startCell.Col] = string.Empty;
+                    Worksheet[startCell.Row + i, startCell.Col] = string.Empty;
                 }
             }
+        }
 
+        private void RemoveSpecialCell(CellPosition cellPosition)
+        {
+            SpecialRollData.SubRollProperty.Remove(cellPosition.Row + ":" + cellPosition.Col);
+            SpecialRollData.TitleCellProperty.Remove(cellPosition);
+        }
+        private void RemoveSpecialCell(RangePosition cellRange)
+        {
+            for(var colCounter = cellRange.StartPos.Col; colCounter <= cellRange.EndPos.Col; colCounter++)
+            {
+                for(var rowCounter = cellRange.StartPos.Row; rowCounter <= cellRange.EndPos.Row; rowCounter++)
+                {
+                    RemoveSpecialCell(new CellPosition(rowCounter, colCounter));
+                }
+            }
         }
     }
 }

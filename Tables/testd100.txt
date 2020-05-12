@@ -1,0 +1,5 @@
+d100 The server carries...
+1-25. A filthy rag.
+26-50. A pristine silk handkerchief.
+51-75. A piece of conspicuous jewelry.
+76-100. An unusual belt purse.

@@ -12,10 +12,9 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using CommonServiceLocator;
 using DialogService.ChartBuilderDialog;
-using DialogService.PowerShellParamDialog;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 
 namespace GmDashboard.ViewModel
 {
@@ -45,6 +44,7 @@ namespace GmDashboard.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ChartBuilderViewModel>();
+            SimpleIoc.Default.Register<CloudRepoViewModel>();
             //SimpleIoc.Default.Register<FunctionParameterViewModel>();
         }
 
@@ -64,6 +64,15 @@ namespace GmDashboard.ViewModel
                 return ServiceLocator.Current.GetInstance<ChartBuilderViewModel>();
             }
         }
+
+        public CloudRepoViewModel CloudRepo
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CloudRepoViewModel>();
+            }
+        }
+
         //public FunctionParameterViewModel FunctionParamDialog
         //{
         //    get
